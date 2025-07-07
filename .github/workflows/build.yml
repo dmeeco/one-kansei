@@ -33,9 +33,6 @@ jobs:
         npm install
         npm audit fix || true
         
-    - name: Create .nojekyll file
-      run: touch public/.nojekyll
-        
     - name: Build TinaCMS
       run: npm run build:tina
       
@@ -44,6 +41,11 @@ jobs:
       env:
         NODE_ENV: production
       
+    - name: Create .nojekyll file
+      run: |
+        mkdir -p public
+        touch public/.nojekyll
+        
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
