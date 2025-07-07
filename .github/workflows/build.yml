@@ -7,7 +7,7 @@ on:
     branches: [ main, master ]
 
 permissions:
-  contents: read
+  contents: write # Changed to write
   pages: write
   id-token: write
 
@@ -22,7 +22,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Fetch all history for git operations
+        fetch-depth: 0
       
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -34,18 +34,23 @@ jobs:
       run: |
         npm install
         npm audit fix || true
-
-    - name: Setup Git Config
+        
+    - name: Clean Tina cache
       run: |
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "github-actions[bot]"
+        rm -rf .tina/cache || true
+        rm -rf admin || true
+        rm -rf public/admin || true
+        
+    - name: Initialize Tina
+      run: npx tinacms init
+      env:
+        TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
         
     - name: Build TinaCMS
       run: |
-        # Ensure we're on the right branch
-        git checkout master
-        # Build TinaCMS
-        npm run build:tina || (sleep 10 && npm run build:tina)
+        mkdir -p admin
+        npm run build:tina
       env:
         TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
@@ -55,6 +60,11 @@ jobs:
       env:
         NODE_ENV: production
         BASE_URL: "/one-kansei"
+        
+    - name: Copy admin files
+      run: |
+        mkdir -p public/admin
+        cp -r admin/* public/admin/ || true
         
     - name: Create .nojekyll file
       run: |
