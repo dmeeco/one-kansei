@@ -61,4 +61,14 @@
     "url": ""
   },
   "homepage": "https://11straps.com/"
+  {
+    "scripts": {
+      "dev": "concurrently \"npm run dev:tina\" \"npm run dev:11ty\"",
+      "dev:tina": "tinacms dev",
+      "dev:11ty": "eleventy --serve",
+      "build": "npm run build:tina && npm run build:11ty",
+      "build:tina": "tinacms build",
+      "build:11ty": "eleventy"
+    }
+  }
 }
