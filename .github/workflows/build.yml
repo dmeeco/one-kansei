@@ -33,21 +33,21 @@ jobs:
         npm install
         npm audit fix || true
         
-    - name: Build TinaCMS
-      run: |
-        npm run build:tina
-        mkdir -p public/admin
-        cp -r .tina/public/* public/admin/
-      env:
-        TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
-        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-        
     - name: Build 11ty
       run: npm run build
       env:
         NODE_ENV: production
         BASE_URL: "/one-kansei"
-      
+        
+    - name: Build TinaCMS
+      run: |
+        npm run build:tina
+        mkdir -p public/admin
+        cp -r admin/* public/admin/
+      env:
+        TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+        
     - name: Create .nojekyll file
       run: |
         touch public/.nojekyll

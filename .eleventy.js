@@ -58,23 +58,16 @@ module.exports = function(eleventyConfig) {
     }).toFormat('yyyy-LL-dd');
   });
 
-  // Add custom URL filter
-  eleventyConfig.addFilter("url", function(url) {
-    const pathPrefix = process.env.BASE_URL || "/one-kansei";
-    if (url.startsWith("/")) {
-      return `${pathPrefix}${url}`;
-    }
-    return url;
-  });
-
   // Add Passthrough Copy
   eleventyConfig.addPassthroughCopy({"src/assets": "assets"});
   eleventyConfig.addPassthroughCopy({"src/css": "css"});
   eleventyConfig.addPassthroughCopy({"src/js": "js"});
   eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
+  eleventyConfig.addPassthroughCopy({"src/img": "img"});
 
   // Ignore TinaCMS files during build
   eleventyConfig.ignores.add(".tina/**");
+  eleventyConfig.ignores.add("admin/**");
 
   return {
     pathPrefix: "/one-kansei",
