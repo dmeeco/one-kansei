@@ -7,7 +7,7 @@ on:
     branches: [ main, master ]
 
 permissions:
-  contents: write # Changed to write
+  contents: write
   pages: write
   id-token: write
 
@@ -50,7 +50,7 @@ jobs:
     - name: Build TinaCMS
       run: |
         mkdir -p admin
-        npm run build:tina
+        npm run build:tina || echo "TinaCMS build failed, continuing without admin interface"
       env:
         TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
@@ -61,10 +61,12 @@ jobs:
         NODE_ENV: production
         BASE_URL: "/one-kansei"
         
-    - name: Copy admin files
+    - name: Copy admin files (if they exist)
       run: |
         mkdir -p public/admin
-        cp -r admin/* public/admin/ || true
+        if [ -d "admin" ] && [ "$(ls -A admin)" ]; then
+          cp -r admin/* public/admin/
+        fi
         
     - name: Create .nojekyll file
       run: |
