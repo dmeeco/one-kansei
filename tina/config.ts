@@ -174,7 +174,7 @@ export default defineConfig({
         path: "src",
         format: "md",
         match: {
-          include: ["kansei-philosophy", "way-of-life", "services", "special-thanks", "privacy-policy"],
+          include: "{kansei-philosophy,way-of-life,services,special-thanks,privacy-policy}",
         },
         fields: [
           {
