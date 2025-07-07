@@ -39,8 +39,10 @@ jobs:
         NODE_ENV: production
         BASE_URL: "/one-kansei"
         
-    - name: Build TinaCMS
+    - name: Build and sync TinaCMS
       run: |
+        # First, ensure the schema is in sync
+        npx tinacms init
         npm run build:tina
         mkdir -p public/admin
         cp -r admin/* public/admin/
