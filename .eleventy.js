@@ -4,15 +4,15 @@ const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function(eleventyConfig) {
-  function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav"].indexOf(tag) === -1);
-  }
-  eleventyConfig.setDataDeepMerge(true);
+  // Add plugins
+  eleventyConfig.addPlugin(navigationPlugin);
+  eleventyConfig.addPlugin(rssPlugin);
 
   function filterTagList(tags) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   }
 
+  eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addFilter("filterTagList", filterTagList)
 
   eleventyConfig.addCollection("tagList", collection => {
@@ -37,39 +37,47 @@ module.exports = function(eleventyConfig) {
     return tagList.sort((a, b) => b.tagCount - a.tagCount)
   });
 
-  // Add a filter using the Config API
+  // Add watch target
   eleventyConfig.addWatchTarget("./src/scss/");
+  
+  // Browser Sync Config
   eleventyConfig.setBrowserSyncConfig({
     reloadDelay: 400
   });
 
+  // Date filters
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {
       zone: 'utc'
     }).toFormat("dd LLL yyyy");
   });
 
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {
       zone: 'utc'
     }).toFormat('yyyy-LL-dd');
   });
 
+  // Add custom URL filter
+  eleventyConfig.addFilter("url", function(url) {
+    const pathPrefix = process.env.BASE_URL || "/one-kansei";
+    if (url.startsWith("/")) {
+      return `${pathPrefix}${url}`;
+    }
+    return url;
+  });
+
   // Add Passthrough Copy
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy({"src/assets": "assets"});
+  eleventyConfig.addPassthroughCopy({"src/css": "css"});
+  eleventyConfig.addPassthroughCopy({"src/js": "js"});
+  eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
 
   // Ignore TinaCMS files during build
   eleventyConfig.ignores.add(".tina/**");
 
-  // Dynamic path prefix based on environment
-  const pathPrefix = process.env.CUSTOM_DOMAIN ? "/" : "/one-kansei/";
-
   return {
-    pathPrefix: pathPrefix,
+    pathPrefix: "/one-kansei",
     dir: {
       input: "src",
       output: "public",
