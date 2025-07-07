@@ -1,8 +1,11 @@
 ---
-title: The Future of Sustainable Design in 2024
-date: 2024-01-15
-coverImg: https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop
-summary: Exploring how sustainable design principles are reshaping industries and creating positive environmental impact through innovative approaches and conscious decision-making.
+title: The Future of Sustainable Design in 2025
+date: 2024-01-15T00:00:00.000Z
+coverImg: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop'
+summary: >-
+  Exploring how sustainable design principles are reshaping industries and
+  creating positive environmental impact through innovative approaches and
+  conscious decision-making.
 category: DESIGN
 tags:
   - design
@@ -21,10 +24,10 @@ Circular design principles are gaining momentum across industries. Companies are
 
 The choice of materials has become a critical decision in sustainable design. Designers are exploring alternatives to traditional materials, including:
 
-- **Bamboo and cork** for furniture and construction
-- **Recycled plastics** for packaging and products
-- **Mycelium-based materials** for packaging and insulation
-- **Hemp and organic cotton** for textiles
+* **Bamboo and cork** for furniture and construction
+* **Recycled plastics** for packaging and products
+* **Mycelium-based materials** for packaging and insulation
+* **Hemp and organic cotton** for textiles
 
 ## Technology as an Enabler
 

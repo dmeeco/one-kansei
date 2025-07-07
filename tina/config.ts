@@ -5,8 +5,8 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
-  clientId: null, // Get this from tina.io
-  token: null, // Get this from tina.io
+  clientId: process.env.TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
   build: {
     outputFolder: "admin",
     publicFolder: "dev",
@@ -172,7 +172,7 @@ export default defineConfig({
         name: "pages",
         label: "Pages",
         path: "src",
-        format: "njk",
+        format: "md",
         match: {
           include: ["kansei-philosophy", "way-of-life", "services", "special-thanks", "privacy-policy"],
         },
@@ -182,6 +182,7 @@ export default defineConfig({
             name: "title",
             label: "Page Title",
             isTitle: true,
+            required: true,
           },
           {
             type: "string",
