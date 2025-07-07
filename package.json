@@ -10,8 +10,8 @@
   "main": "index.html",
   "scripts": {
     "build": "npm run clean && npm run clean-prod && npx eleventy && gulp sass && gulp dist-assets && gulp minify-css && gulp prod-copy && gulp inject-min-css && gulp purgecss && gulp minify-html",
+    "build:tina": "tinacms build && cp -r public/admin/* admin/",
     "build:11ty": "npm run build",
-    "build:tina": "tinacms build",
     "build-dev": "eleventy && gulp dist-assets && gulp sass",
     "11ty": "eleventy && gulp inject-css",
     "sync": "gulp browser-sync",
@@ -22,7 +22,7 @@
     "watch": "npm run clean && npm run build-dev && run-p sync watch:all",
     "clean": "gulp clean-dev",
     "clean-prod": "gulp clean-public",
-    "dev": "concurrently \"npx tinacms dev\" \"eleventy --serve\"",
+    "dev": "tinacms dev -c \"npm run dev:11ty\"",
     "dev:tina": "tinacms dev",
     "dev:11ty": "eleventy --serve"
   },
@@ -31,7 +31,7 @@
     "bootstrap": "5.3.0",
     "browser-sync": "^3.0.4",
     "clean-css": "^5.3.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.1",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-dart-sass": "^1.0.2",

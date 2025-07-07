@@ -4,12 +4,13 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master"
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID, // Make sure this matches your Tina Cloud client ID
-  token: process.env.TINA_TOKEN,        // Make sure this matches your Tina Cloud token
+  clientId: process.env.TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
   
   build: {
-    outputFolder: "admin",
+    outputFolder: "public/admin", // Changed to direct output
     publicFolder: "public",
+    basePath: "one-kansei", // Added for GitHub Pages
   },
   
   media: {
@@ -18,7 +19,6 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  
   schema: {
     collections: [
       {
