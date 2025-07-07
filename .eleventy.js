@@ -34,9 +34,7 @@ module.exports = function(eleventyConfig) {
       tagList.push({ tagName: tag, tagCount: tagsObject[tag] })
     })
     return tagList.sort((a, b) => b.tagCount - a.tagCount)
-
   });
-
 
   // Add a filter using the Config API
   eleventyConfig.addWatchTarget("./src/scss/");
@@ -56,15 +54,26 @@ module.exports = function(eleventyConfig) {
       zone: 'utc'
     }).toFormat('yyyy-LL-dd');
   });
-  // Add TinaCMS admin route
-eleventyConfig.addPassthroughCopy("admin");
 
-// Ignore TinaCMS files during build
-eleventyConfig.ignores.add(".tina/**");
+  // Add TinaCMS admin route and assets
+  eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
+
+  // Ignore TinaCMS files during build
+  eleventyConfig.ignores.add(".tina/**");
+
+  // Dynamic path prefix based on environment
+  const pathPrefix = process.env.CUSTOM_DOMAIN ? "/" : "/one-kansei/";
+
   return {
+    pathPrefix: pathPrefix,
     dir: {
       input: "src",
-      output: "public"  // Changed from "dev" to "public"
+      output: "public",
+      includes: "_includes",
+      layouts: "_layouts"
     }
   };
 };
