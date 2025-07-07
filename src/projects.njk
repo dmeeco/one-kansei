@@ -1,0 +1,56 @@
+---
+layout: layouts/blank.njk
+title: Discover how
+subtitle: we apply conscious design principles to create impactful, planet-centered solutions that address real-world challenges
+---
+
+<div class="container my-vh-6">
+  <div class="row">
+    <div class="col-12 col-lg-10 my-4">
+      <h1 class="display-6 fw-bolder">
+        {{ title }}
+        <small class="text-body-secondary">{{ subtitle }}</small>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container my-vh-4">
+  <div class="row g-5">
+    {% for project in collections.project %}
+    <div class="col-12 col-md-6 col-lg-4 project-card">
+      <div class="card border-0 shadow-sm rounded-3 h-100 project-card-hover">
+        <!-- Top 50%: Image -->
+        <div class="card-img-top" style="height: 50%; overflow: hidden;">
+          <img src="{{ project.data.coverImg }}" class="w-100 h-100" alt="{{ project.data.title }}" style="object-fit: cover;">
+        </div>
+        
+        <!-- Bottom 50%: Content -->
+        <div class="card-body d-flex flex-column p-4">
+          <!-- Industry Type -->
+          <small class="text-light-emphasis fw-bold mb-2">{{ project.data.industry }}</small>
+          
+          <!-- Title -->
+          <h5 class="card-title fw-bold mb-3 fs-4" style="line-height: 1.5;">{{ project.data.shortTitle }}</h5>
+          
+          <!-- Read More Link -->
+          <a href="{{ project.url | url }}" class="text-decoration-none text-primary small mt-auto">
+            Read the case study &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.project-card-hover {
+  transition: box-shadow 0.3s ease;
+  box-shadow: none !important;
+}
+
+.project-card-hover:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+</style> 

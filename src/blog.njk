@@ -1,0 +1,258 @@
+---
+layout: layouts/blog.njk
+title: Xpressions'
+subtitle: is a curious minds digital hub to share design insights, climate innovations, and the reimagining of technology for sustainability
+pagination:
+    data: collections.post
+    size: 6
+    reverse: true
+    alias: posts
+---
+
+<!-- Page Title Section -->
+<div class="container my-vh-6">
+  <div class="row">
+    <div class="col-12 col-lg-10 my-4">
+      <h1 class="display-6 fw-bolder">
+        {{ title }}
+        <small class="text-body-secondary">{{ subtitle }}</small>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Post Section -->
+<div class="container my-vh-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+        <div class="row g-0">
+          <!-- Image Section with 16:9 aspect ratio -->
+          <div class="col-12 col-md-7 position-relative">
+            <div class="ratio ratio-16x9" style="max-height: 640px;">
+              <img src="{{ collections.post[0].data.coverImg }}" class="w-100 h-100" alt="{{ collections.post[0].data.title }}" style="object-fit: cover;">
+            </div>
+          </div>
+          <!-- Content Section (40%) -->
+          <div class="col-12 col-md-5">
+            <div class="card-body p-4 d-flex flex-column h-100">
+              <small class="text-uppercase fw-bold text-muted mb-4">{{ collections.post[0].data.category or 'ARTICLE' }}</small>
+              <h3 class="card-title fw-bold mb-4">{{ collections.post[0].data.title }}</h3>
+              <p class="card-text text-muted mb-4">{{ collections.post[0].data.summary }} This approach reduces environmental impact while creating new opportunities for innovation.</p>
+              <a href="{{ collections.post[0].url | url }}" class="text-decoration-none text-primary small mt-auto">
+                Read more &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content and Sidebar Section -->
+<div class="container my-vh-6">
+  <div class="row g-5">
+    <!-- Main Content -->
+    <div class="col-12 col-lg-9">
+      <!-- Tabbed Filters -->
+      <div class="mb-5">
+        <ul class="nav nav-tabs border-0" id="blogTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active border-0 text-uppercase fw-bold" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">
+              All
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="new-tab" data-bs-toggle="tab" data-bs-target="#new" type="button" role="tab">
+              New
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="latest-tab" data-bs-toggle="tab" data-bs-target="#latest" type="button" role="tab">
+              Latest
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="guides-tab" data-bs-toggle="tab" data-bs-target="#guides" type="button" role="tab">
+              Guides
+            </button>
+          </li>
+          <li class="nav-item d-lg-none" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="popular-tab" data-bs-toggle="tab" data-bs-target="#popular" type="button" role="tab">
+              Popular
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="blogTabContent">
+        <div class="tab-pane fade show active" id="all" role="tabpanel">
+          <div class="row g-4">
+            {% for post in posts %}
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                {% if post.data.coverImg %}
+                <div class="ratio ratio-4x3">
+                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                </div>
+                {% endif %}
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">{{ post.data.category or 'ARTICLE' }}</small>
+                  <h5 class="card-title fw-bold mb-3">{{ post.data.title }}</h5>
+                  <a href="{{ post.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="new" role="tabpanel">
+          <div class="row g-4">
+            {% for post in posts %}
+            {% if 'new' in post.data.tags %}
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                {% if post.data.coverImg %}
+                <div class="ratio ratio-4x3">
+                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                </div>
+                {% endif %}
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">{{ post.data.category or 'ARTICLE' }}</small>
+                  <h5 class="card-title fw-bold mb-3">{{ post.data.title }}</h5>
+                  <a href="{{ post.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="latest" role="tabpanel">
+          <div class="row g-4">
+            {% for post in posts %}
+            {% if 'latest' in post.data.tags %}
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                {% if post.data.coverImg %}
+                <div class="ratio ratio-4x3">
+                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                </div>
+                {% endif %}
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">{{ post.data.category or 'ARTICLE' }}</small>
+                  <h5 class="card-title fw-bold mb-3">{{ post.data.title }}</h5>
+                  <a href="{{ post.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="guides" role="tabpanel">
+          <div class="row g-4">
+            {% for post in posts %}
+            {% if 'guides' in post.data.tags %}
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                {% if post.data.coverImg %}
+                <div class="ratio ratio-4x3">
+                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                </div>
+                {% endif %}
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">{{ post.data.category or 'GUIDE' }}</small>
+                  <h5 class="card-title fw-bold mb-3">{{ post.data.title }}</h5>
+                  <a href="{{ post.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Popular Tab (Mobile Only) -->
+        <div class="tab-pane fade" id="popular" role="tabpanel">
+          <div class="row g-4">
+            {% for post in collections.post %}
+            {% if 'popular' in post.data.tags %}
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                {% if post.data.coverImg %}
+                <div class="ratio ratio-4x3">
+                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                </div>
+                {% endif %}
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">{{ post.data.category or 'ARTICLE' }}</small>
+                  <h5 class="card-title fw-bold mb-3">{{ post.data.title }}</h5>
+                  <a href="{{ post.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar (Desktop Only) -->
+    <div class="col-12 col-lg-3 d-none d-lg-block">
+      <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-body p-4">
+          <h4 class="h5 fw-bold mb-4">Most Popular</h4>
+          <div class="d-flex flex-column">
+            {% for post in collections.post %}
+            {% if 'popular' in post.data.tags %}
+            <div class="{% if not loop.last %}mb-4 pb-3 border-bottom{% else %}mb-0{% endif %}">
+              <small class="text-uppercase fw-bold text-muted d-block mb-2">{{ post.data.category or 'ARTICLE' }}</small>
+              <h6 class="fw-bold mb-3">{{ post.data.title }}</h6>
+              <a href="{{ post.url | url }}" class="text-decoration-none text-primary small">
+                Read more &rarr;
+              </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.nav-tabs .nav-link {
+  color: #6c757d;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000;
+  background: none;
+  border-bottom: 2px solid #000;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #000;
+  border: none;
+}
+</style>
