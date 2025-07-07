@@ -60,6 +60,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   // Ignore TinaCMS files during build
   eleventyConfig.ignores.add(".tina/**");
@@ -72,8 +73,11 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src",
       output: "public",
-      includes: "_includes",
-      layouts: "_layouts"
-    }
+      includes: "_includes"  // This is important - we're not specifying layouts separately
+    },
+    templateFormats: ["md", "njk"],
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk"
   };
 };
