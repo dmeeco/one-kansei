@@ -40,9 +40,7 @@ jobs:
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
         
     - name: Build 11ty
-      run: |
-        npm run build
-        cp -r admin public/admin
+      run: npm run build
       env:
         NODE_ENV: production
       

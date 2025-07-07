@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const fs = require('fs');
 const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 
@@ -55,8 +56,7 @@ module.exports = function(eleventyConfig) {
     }).toFormat('yyyy-LL-dd');
   });
 
-  // Add TinaCMS admin route and assets
-  eleventyConfig.addPassthroughCopy("admin");
+  // Add Passthrough Copy
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src",
       output: "public",
-      includes: "_includes"  // This is important - we're not specifying layouts separately
+      includes: "_includes"
     },
     templateFormats: ["md", "njk"],
     markdownTemplateEngine: "njk",
