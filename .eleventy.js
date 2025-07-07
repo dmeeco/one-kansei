@@ -64,7 +64,7 @@ eleventyConfig.ignores.add(".tina/**");
   return {
     dir: {
       input: "src",
-      output: "dev"
+      output: "public"  // Changed from "dev" to "public"
     }
   };
 };
