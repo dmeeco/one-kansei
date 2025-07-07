@@ -32,10 +32,10 @@ jobs:
       run: npm ci
       
     - name: Build TinaCMS
-      run: npm run build
+      run: npm run build:tina
       
     - name: Build 11ty
-      run: npm run build:11ty
+      run: npm run build
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
