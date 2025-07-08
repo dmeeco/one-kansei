@@ -1,0 +1,35 @@
+name: Dev Branch Dependencies
+
+on:
+  pull_request:
+    branches:
+      - dev
+  push:
+    branches:
+      - dev
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev' || github.base_ref == 'dev'
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Test Build
+      run: |
+        npm run build:tina
+        npm run build
+      env:
+        TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+        NODE_ENV: development
+        BASE_URL: "/one-kansei"

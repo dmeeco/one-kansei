@@ -1,11 +1,25 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "dev"
     schedule:
-      interval: "daily"
+      interval: "monthly"
+    versioning-strategy: "lockfile-only"
+    open-pull-requests-limit: 3
+    groups:
+      development:
+        patterns:
+          - "gulp*"
+          - "@11ty*"
+          - "browser-sync"
+          - "clean-css"
+          - "sass"
+    ignore:
+      - dependency-name: "tinacms"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@11ty/eleventy"
+        update-types: ["version-update:semver-major"]
+    labels:
+      - "dependencies"
+      - "dev-only"
