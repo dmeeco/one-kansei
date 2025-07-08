@@ -16,6 +16,7 @@ export default defineConfig({
   token: process.env.TINA_TOKEN, // Get this from tina.io (content read-only token)
   
   build: {
+    basePath: 'one-kansei', // Set this to your sub-path for Github pages or Sub-domains
     outputFolder: "admin",
     publicFolder: "public", // Your 11ty output folder
   },
