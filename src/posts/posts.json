@@ -1,6 +1,7 @@
 {
-    "layout": "layouts/post.njk",
-    "tags": [
-      "post"
-    ]
+  "layout": "layouts/post.njk",
+  "permalink": "/blog/{{ slug or title | slug }}/index.html",
+  "tags": [
+    "post"
+  ]
 }

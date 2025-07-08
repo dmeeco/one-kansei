@@ -1,5 +1,6 @@
 ---
 title: 'Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025'
+slug: building-sustainable-business
 date: 2024-02-05T00:00:00.000Z
 coverImg: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop'
 summary: >-

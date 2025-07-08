@@ -1,5 +1,6 @@
 ---
 title: The Future of Sustainable Design in 2025
+slug: The-future-of-sustainable-design
 date: 2024-01-15T00:00:00.000Z
 coverImg: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop'
 summary: >-

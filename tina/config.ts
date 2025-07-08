@@ -39,11 +39,27 @@ export default defineConfig({
           filename: {
             readonly: false,
             slugify: (values) => {
-              return `${values?.title?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
+              const generated = values?.title?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+              // If slug is not set, use generated
+              return values?.slug || generated;
             },
           },
         },
         fields: [
+          {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            description: "URL slug (auto-generated from title, but you can edit it)",
+            required: false,
+            ui: {
+              validate: (value) => {
+                if (value && !/^[a-z0-9-]+$/.test(value)) {
+                  return "Slug can only contain lowercase letters, numbers, and hyphens";
+                }
+              },
+            },
+          },
           {
             type: "string",
             name: "title",

@@ -1,5 +1,6 @@
 ---
 title: "Revolutionary Climate Technologies That Are Changing the World"
+slug: revolutionary-climate-technologies
 date: 2024-01-20
 coverImg: https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=400&fit=crop
 summary: Discover the cutting-edge technologies that are revolutionizing our approach to climate change and creating a more sustainable future for generations to come.
