@@ -15,9 +15,6 @@ export default defineConfig({
   clientId: process.env.TINA_PUBLIC_CLIENT_ID, // Get this from tina.io
   token: process.env.TINA_TOKEN, // Get this from tina.io (content read-only token)
   
-  // Configure base URL for GitHub Pages
-  baseUrl: baseUrl,
-  
   build: {
     outputFolder: "admin",
     publicFolder: "public", // Your 11ty output folder
