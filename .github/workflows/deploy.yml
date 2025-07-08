@@ -37,6 +37,16 @@ jobs:
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
+    # ADD THIS STEP - Build TinaCMS admin before building your site
+    - name: Build TinaCMS
+      env:
+        TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+        TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
+        TINA_PUBLIC_BASE_URL: https://dmeeco.github.io/one-kansei
+        NODE_ENV: production
+      run: npx tinacms build
+      
     - name: Build site
       run: npm run build:github
       env:
