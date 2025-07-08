@@ -99,10 +99,10 @@ gulp.task('clean', function() {
 gulp.task('browser-sync', function(done) {
     browserSync.init({
         server: {
-            baseDir: "./dev"
+            baseDir: "./public"
         }
     });
-gulp.watch("dev/**/*.*").on('change', browserSync.reload);
+    gulp.watch("public/**/*.*").on('change', browserSync.reload);
 });
 
 // Compile sass to css

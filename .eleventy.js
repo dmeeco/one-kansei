@@ -58,19 +58,24 @@ module.exports = function(eleventyConfig) {
     }).toFormat('yyyy-LL-dd');
   });
 
-  // Add Passthrough Copy
+  // Add Passthrough Copy - FIXED: Copy from dev/ where gulp processes files
+  eleventyConfig.addPassthroughCopy({"dev/css": "css"});
+  eleventyConfig.addPassthroughCopy({"dev/js": "js"});
+  eleventyConfig.addPassthroughCopy({"dev/fonts": "fonts"});
+  eleventyConfig.addPassthroughCopy({"dev/img": "img"});
   eleventyConfig.addPassthroughCopy({"src/assets": "assets"});
-  eleventyConfig.addPassthroughCopy({"src/css": "css"});
-  eleventyConfig.addPassthroughCopy({"src/js": "js"});
-  eleventyConfig.addPassthroughCopy({"src/fonts": "fonts"});
-  eleventyConfig.addPassthroughCopy({"src/img": "img"});
+
+  // Add TinaCMS admin route - IMPORTANT: This must come AFTER eleventy build
+  eleventyConfig.addPassthroughCopy("admin");
 
   // Ignore TinaCMS files during build
   eleventyConfig.ignores.add(".tina/**");
-  eleventyConfig.ignores.add("admin/**");
 
+  // Get path prefix from environment
+  const pathPrefix = process.env.PATH_PREFIX || "/";
+  
   return {
-    pathPrefix: "/one-kansei",
+    pathPrefix: pathPrefix,
     dir: {
       input: "src",
       output: "public",

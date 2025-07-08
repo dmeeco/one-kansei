@@ -9,9 +9,12 @@
   },
   "main": "index.html",
   "scripts": {
-    "build": "npm run clean && npm run clean-prod && npx eleventy && gulp sass && gulp dist-assets && gulp minify-css && gulp prod-copy && gulp inject-min-css && gulp purgecss && gulp minify-html",
-    "build:tina": "tinacms build && cp -r public/admin/* admin/",
-    "build:11ty": "npm run build",
+    "dev": "tinacms dev -c \"npm run serve\"",
+    "build": "npm run clean-prod && npm run build:assets && npm run build:eleventy && npm run build:tina",
+    "build:eleventy": "eleventy",
+    "build:assets": "gulp dist-assets && gulp sass",
+    "build:tina": "tinacms build",
+    "build:github": "npm run clean-prod && PATH_PREFIX=/one-kansei/ npm run build:assets && PATH_PREFIX=/one-kansei/ npm run build:eleventy && npm run build:tina",
     "build-dev": "eleventy && gulp dist-assets && gulp sass",
     "11ty": "eleventy && gulp inject-css",
     "sync": "gulp browser-sync",
@@ -22,7 +25,6 @@
     "watch": "npm run clean && npm run build-dev && run-p sync watch:all",
     "clean": "gulp clean-dev",
     "clean-prod": "gulp clean-public",
-    "dev": "tinacms dev -c \"npm run dev:11ty\"",
     "dev:tina": "tinacms dev",
     "dev:11ty": "eleventy --serve"
   },
