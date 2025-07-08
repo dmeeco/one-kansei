@@ -16,8 +16,10 @@ dev/
 .env.development
 
 # TinaCMS
-.tina/__generated__/
 admin/
+
+# Keep the generated files for indexing
+# .tina/__generated__/
 
 # OS generated files
 .DS_Store
