@@ -29,7 +29,8 @@ jobs:
         npm run build:tina
         npm run build
       env:
-        TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+        TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+        TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
         NODE_ENV: development
         BASE_URL: "/one-kansei"
