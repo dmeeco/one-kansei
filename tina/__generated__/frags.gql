@@ -1,0 +1,23 @@
+fragment PostsParts on Posts {
+  __typename
+  slug
+  title
+  date
+  coverImg
+  summary
+  category
+  tags
+  body
+}
+
+fragment ProjectsParts on Projects {
+  __typename
+  title
+  shortTitle
+  date
+  coverImg
+  summary
+  industry
+  tags
+  body
+}
