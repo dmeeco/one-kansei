@@ -19,7 +19,7 @@ var config_default = defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "public/img",
+      mediaRoot: "public/dev/img",
       // Use dev folder where gulp processes images
       publicFolder: "public"
       // Your 11ty output folder
