@@ -2,8 +2,7 @@
 slug: where-technology-meets-sustainability
 title: 'Where Technology Meets Sustainability: The Perfect Intersection'
 date: 2024-01-30T00:00:00.000Z
-coverImg: >-
-  /dev/imghttps://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&h=400&fit=crop
+coverImg: https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&h=400&fit=crop
 summary: >-
   Exploring how cutting-edge technology is enabling sustainable solutions and
   creating new opportunities for environmental protection and resource
