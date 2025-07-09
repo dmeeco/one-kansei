@@ -11,7 +11,12 @@
       <!-- Cover Image -->
       {% if coverImg %}
       <div class="mb-4">
-          <img src="{{ coverImg | replace('/dev/img/', '/img/') | url }}" alt="{{ title }}" class="img-fluid rounded shadow-sm" style="width: 100%; height: 400px; object-fit: cover;">      </div>
+        {% if coverImg | slice(0, 7) == "http://" or coverImg | slice(0, 8) == "https://" %}
+          <img src="{{ coverImg }}" alt="{{ title }}" class="img-fluid rounded shadow-sm" style="width: 100%; height: 400px; object-fit: cover;">
+        {% else %}
+          <img src="{{ coverImg | replace('/dev/img/', '/img/') | url }}" alt="{{ title }}" class="img-fluid rounded shadow-sm" style="width: 100%; height: 400px; object-fit: cover;">
+        {% endif %}
+      </div>
       {% endif %}
       
       {{ content | safe }}
