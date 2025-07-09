@@ -6,7 +6,11 @@ yarn-error.log*
 
 # Build outputs
 # public/
+<<<<<<< HEAD
 # dev/
+=======
+dev/
+>>>>>>> d70ae3276c3352f8064e238632c03adb69750dc3
 .tmp/
 
 # Environment variables
