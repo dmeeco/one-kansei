@@ -1,0 +1,634 @@
+<!doctype html>
+<html class="h-100" lang="en" data-bs-theme="light">
+
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Combination of static site generator eleventy and CSS framework Bootstrap 5 into one solid boilerplate">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.1">
+  <meta name="HandheldFriendly" content="true"/>
+  <title>We transform</title>
+  <!-- build:css -->
+  <link rel="stylesheet" href="/css/theme.css">
+   <!-- endbuild -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <style>
+   /* inter-300 - latin */
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 300;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+
+   /* inter-400 - latin */
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 500;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 700;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   
+   /* Title line-height */
+   title {
+     line-height: 1.5;
+   }
+   
+   /* Display-6 line-height for page titles */
+   .display-6 {
+     line-height: 1.5 !important;
+   }
+   </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light pt-0">
+  <div class="container">
+    <a class="navbar-brand mb-0 py-4 px-3 pt-5 text-center text-white bg-primary" href="/">Kansei</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/services">Services</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/projects">Projects</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/way-of-life">Way of Life</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/blog">Xpressions'</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/contact">Get in Touch</a>
+         </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <main>
+      
+<div class="container my-vh-6">
+  <div class="row">
+    <div class="col-12 col-lg-10 my-4">
+      <h1 class="display-6 fw-bolder">
+        We transform
+        <small class="text-body-secondary">climate challenges into sustainable breakthroughs using four design disciplines, helping to create lasting impact.</small>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<!-- Hero Image -->
+<div class="container my-vh-4">
+  <div class="row">
+    <div class="col-12">
+      <img src="https://images.unsplash.com/photo-1691000674583-272ddaf820f6?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+           alt="Sustainability and climate change solutions" 
+           class="img-fluid w-100 rounded-2 shadow-sm" 
+           style="aspect-ratio: 16/9; object-fit: cover;">
+    </div>
+  </div>
+</div>
+
+<!-- Main Content Section -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      
+      <!-- Our Approach Section -->
+<section class="pt-xl-6 pb-xl-10 py-lg-7 py-5">
+   <div class="container">
+      <div class="row mb-5">
+         <div class="col-lg-4">
+            <div>
+               <h2 class="fw-bold mb-4">Our Approach</h2>
+            </div>
+         </div>
+         <div class="col-lg-8">
+            <div class="fs-5 lh-base">
+               <p class="mb-0">
+                  Our comprehensive approach combines multiple design methodologies to create solutions that work across technical, behavioral, and systemic levels.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="row g-4">
+         <div class="col-lg-3 col-md-6">
+            <div class="card bg-primary bg-opacity-10 p-4 border-0 h-100 card-lift">
+               <div class="mb-4">
+                  <!-- Research: bi-puzzle-fill -->
+                  <i class="bi bi-puzzle-fill" style="font-size: 2.5rem; color: #8B3DFF;"></i>
+               </div>
+               <div>
+                  <h3>Research</h3>
+                  <p class="mb-0 text-primary-emphasis">Every design decision is grounded in deep research. We reveal real drivers behind your challenge before crafting solutions, ensuring interventions address root causes.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="card bg-success bg-opacity-10 p-4 border-0 h-100 card-lift">
+               <div class="mb-4">
+                                     <!-- Sustainability: bi-leaf-fill -->
+                   <i class="bi bi-leaf-fill" style="font-size: 2.5rem; color: #198754;"></i>
+               </div>
+               <div>
+                  <h3>Sustainability</h3>
+                  <p class="mb-0 text-success-emphasis">
+                     Our focus centers on sustainability challenges - carbon reduction, circular supply chains, behavior change, and systemic transformation with specialized knowledge.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="card bg-info bg-opacity-10 p-4 border-0 h-100 card-lift">
+               <div class="mb-4">
+                  <!-- Solution: bi-fingerprint -->
+                  <i class="bi bi-fingerprint" style="font-size: 2.5rem; color: #0677AC;"></i>
+               </div>
+               <div>
+                  <h3>Solution</h3>
+                  <p class="mb-0 text-info-emphasis">We prototype and test solutions iteratively, validating assumptions through user feedback and performance metrics before full implementation to ensure effectiveness.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="card bg-warning bg-opacity-10 p-4 border-0 h-100 card-lift">
+               <div class="mb-4">
+                  <!-- Implementation: bi-rocket-fill -->
+                  <i class="bi bi-send-check-fill" style="font-size: 2.5rem; color: #FFC107;"></i>
+               </div>
+               <div>
+                  <h3>Partnership</h3>
+                  <p class="mb-0 text-warning-emphasis">While we focus on research and design, we partner with trusted developers in your location for implementation. You get strategic innovation with local expertise.</p>
+               </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Four Design Disciplines Section -->
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="mb-5">
+        <h2 class="fw-bold mb-4">Four Design Disciplines</h2>
+        <div class="fs-5 text-muted lh-base">
+          <p class="mb-0">
+            We combine four design disciplines to understand how systems interact, people behave, services function, and resources flow sustainably for comprehensive solutions that address root causes and create lasting impact.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row align-items-center">
+    <div class="col-xl-5 col-md-6 col-12">
+      <div class="nav flex-column nav-pills services-nav-pills mb-5 mb-lg-0" id="disciplines-tab" role="tablist" aria-orientation="vertical">
+        
+        <!-- Systems Design -->
+        <a href="#" class="nav-link active d-flex text-start align-items-center p-4 mb-2 bg-transparent text-dark border-0" 
+           id="systems-tab" data-bs-toggle="pill" data-bs-target="#systems" role="tab" 
+           aria-controls="systems" aria-selected="true">
+          <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
+            <i class="bi bi-diagram-3" style="font-size: 1.25rem; color: currentColor;"></i>
+          </div>
+          <h4 class="mb-0 fw-medium">Systems Design</h4>
+        </a>
+        
+        <!-- Service Design -->
+        <a href="#" class="nav-link d-flex text-start align-items-center p-4 mb-2 bg-transparent text-dark border-0" 
+           id="service-tab" data-bs-toggle="pill" data-bs-target="#service" role="tab" 
+           aria-controls="service" aria-selected="false">
+          <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
+            <i class="bi bi-people" style="font-size: 1.25rem; color: currentColor;"></i>
+          </div>
+          <h4 class="mb-0 fw-medium">Service Design</h4>
+        </a>
+        
+        <!-- Circular Design -->
+        <a href="#" class="nav-link d-flex text-start align-items-center p-4 mb-2 bg-transparent text-dark border-0" 
+           id="circular-tab" data-bs-toggle="pill" data-bs-target="#circular" role="tab" 
+           aria-controls="circular" aria-selected="false">
+          <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
+            <i class="bi bi-arrow-repeat" style="font-size: 1.25rem; color: currentColor;"></i>
+          </div>
+          <h4 class="mb-0 fw-medium">Circular Design</h4>
+        </a>
+        
+        <!-- Behavioral Design -->
+        <a href="#" class="nav-link d-flex text-start align-items-center p-4 bg-transparent text-dark border-0" 
+           id="behavioral-tab" data-bs-toggle="pill" data-bs-target="#behavioral" role="tab" 
+           aria-controls="behavioral" aria-selected="false">
+                    <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
+            <i class="bi bi-person-bounding-box" style="font-size: 1.25rem; color: currentColor;"></i>
+        </div>
+          <h4 class="mb-0 fw-medium">Behavioral Design</h4>
+        </a>
+      </div>
+    </div>
+    
+    <div class="col-xl-6 offset-xl-1 col-md-6 col-12">
+      <div class="tab-content" id="disciplines-tabContent">
+        <!-- Systems Design Content -->
+        <div class="tab-pane fade show active" id="systems" role="tabpanel" aria-labelledby="systems-tab">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-5">
+              <p class="text-muted mb-4">
+                Sees the big picture - how everything connects and affects everything else, so changes create positive ripple effects that solve multiple problems at once.
+              </p>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Architectural Orchestration</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Stakeholder Alignment and Requirements Synthesis</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Technology Stack Evaluation and Selection</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Risk Assessment and Mitigation Planning</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Interface and Integration Strategy</span>
+                  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Service Design Content -->
+        <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-5">
+              <p class="text-muted mb-4">
+                Makes every interaction smooth and meaningful, from first contact to final delivery and beyond, ensuring people love working with you.
+              </p>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">End-to-End Experience Architecture</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Stakeholder Ecosystem Orchestration</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Service Blueprint Development</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Emotional Journey Design</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Feedback Loop Integration and Continuous Improvement</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+        <!-- Circular Design Content -->
+        <div class="tab-pane fade" id="circular" role="tabpanel" aria-labelledby="circular-tab">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-5">
+              <p class="text-muted mb-4">
+                Turns waste into resources by designing things that give back more than they take from the planet, creating regenerative business models.
+              </p>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Closed-Loop System Architecture</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Lifecycle Impact Assessment and Optimization</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Stakeholder Ecosystem Integration</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Regenerative Business Model Innovation</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Material Flow Strategy and Sourcing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+        <!-- Behavioral Design Content -->
+        <div class="tab-pane fade" id="behavioral" role="tabpanel" aria-labelledby="behavioral-tab">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-5">
+              <p class="text-muted mb-4">
+                Makes the right choice the easy choice by understanding what motivates people to act sustainably, removing barriers to positive change.
+              </p>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Cognitive Architecture and Decision Framework Design</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Motivation Mapping and Incentive Alignment</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Friction Analysis and Path Optimization</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Social Proof and Norm Cultivation</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    <span class="small fw-semibold">Habit Formation and Behavioral Persistence Strategy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 pt-3 border-top">
+        <p class="text-muted mb-0" style="font-size: 11px; line-height: 1.4;">
+          Note: Each design discipline highlights some key areas of focus but is not exhaustive; we employ additional methodologies and specialized techniques based on each project's unique scope and requirements.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Design Motto Card -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="row px-lg-5 py-5 p-4 align-items-center bg-dark rounded-3 g-0">
+                <div class="col-xl-6 col-lg-7 col-md-12 mb-4 mb-md-0">
+                    <div class="pe-xl-4">
+                        <h2 class="text-white mb-4 fw-bold">Design w/ Kansei</h2>
+                        <p class="text-light mb-0 fs-6 lh-base">
+                            Complex global challenges require <span tabindex="0" class="text-warning text-decoration-underline" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-custom-class="services-custom-popover" data-bs-title="Dictionary Meaning" data-bs-content="Sophisticated often implies refinement, urbanity, cleverness, and cultivation.">sophisticated</span> systems thinking, that is all we aim for.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-md-12">
+                    <div class="text-center text-lg-start ps-xl-4">
+                        <p class="text-white mb-4 fs-6 lh-base">
+                            Ready to discuss how our four design disciplines can create lasting impact for your organization?
+                        </p>
+                        <a href="/contact" class="btn btn-primary btn-sm px-4 py-2">Start Your Project →</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<script src="/js/services.js"></script> 
+    </main>
+
+    <footer class="container">
+      <footer class="border-top py-5" style="margin-top:4rem; margin-bottom:4rem;">
+  <div class="container">
+    <div class="row">
+      <!-- Reach Us Column -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <div class="mb-3">
+          <p class="mb-2 fw-medium text-dark">REACH US</p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <span class="text-body-secondary">Design</span>
+              <a href="mailto:projects@kansei.com" class="fs-6 link-fancy">projects@kansei.com</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <span class="text-body-secondary">Office</span>
+              <a href="mailto:desk@kansei.com" class="fs-6 link-fancy">desk@kansei.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Follow Us Column -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <div class="mb-3">
+          <p class="mb-2 fw-medium text-dark">FOLLOW US</p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <i class="bi bi-linkedin fs-5"></i>
+              <span class="text-body-secondary">LinkedIn</span>
+              <a href="https://linkedin.com/company/design4kansei" class="fs-6 link-fancy" target="_blank" rel="noopener">/design4kansei</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <i class="bi bi-instagram fs-5"></i>
+              <span class="text-body-secondary">Instagram</span>
+              <a href="https://instagram.com/design4kansei" class="fs-6 link-fancy" target="_blank" rel="noopener">/design4kansei</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Divider -->
+    <div class="border-bottom my-4"></div>
+    <!-- Bottom Row -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
+      <div class="mb-3 mb-md-0">
+        <span class="small">© 2025 KANSEI DESIGN</span>
+      </div>
+      <div>
+        <a href="/special-thanks" class="mx-2 footer-link small">SPECIAL THANKS</a>
+        <a href="/privacy-policy" class="mx-2 footer-link small">PRIVACY POLICY</a>
+        <a href="#" class="mx-2 footer-link small" data-bs-toggle="modal" data-bs-target="#newsletterModal">JOIN NEWSLETTER</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Newsletter Modal -->
+<div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4 pb-4">
+        <div class="text-center mb-4">
+          <div class="mb-3">
+            <i class="bi bi-envelope text-dark" style="font-size: 2rem;"></i>
+          </div>
+          <h3 class="h4 fw-bold mb-3">Your Privacy Is Important To Us!</h3>
+        </div>
+        
+        <div class="text-muted mb-4">
+          <p class="mb-3">We believe in meaningful connections, not data collection.</p>
+          <p class="mb-3">If you're curious about conscious design, climate innovations, or how we're making a difference, we'd love to share our journey with you.</p>
+          <p class="mb-0"><strong>No spam, no tracking, no nonsense.</strong> Just thoughtful insights delivered with care.</p>
+        </div>
+
+        <div class="text-center">
+          <a href="https://forms.typeform.com/to/your-form-id" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 me-3">
+            I'm Interested
+            <i class="bi bi-arrow-up-right ms-2"></i>
+          </a>
+          <p class="small text-muted mt-3 mb-0">
+            You'll be redirected to a secure third-party form. We'll send you a confirmation email to verify your subscription.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+    </footer>
+
+  </body>
+
+</html>

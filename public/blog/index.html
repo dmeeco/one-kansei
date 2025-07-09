@@ -1,0 +1,686 @@
+<!doctype html>
+<html class="h-100" lang="en" data-bs-theme="light">
+
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Combination of static site generator eleventy and CSS framework Bootstrap 5 into one solid boilerplate">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.1">
+  <meta name="HandheldFriendly" content="true"/>
+  <title>Xpressions&#39;</title>
+  <!-- build:css -->
+  <link rel="stylesheet" href="/css/theme.css">
+   <!-- endbuild -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <style>
+   /* inter-300 - latin */
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 300;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+
+   /* inter-400 - latin */
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 500;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 700;
+     font-display: swap;
+     src: local(''),
+          url('/fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   }
+   
+   /* Title line-height */
+   title {
+     line-height: 1.5;
+   }
+   
+   /* Display-6 line-height for page titles */
+   .display-6 {
+     line-height: 1.5 !important;
+   }
+   </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light pt-0">
+  <div class="container">
+    <a class="navbar-brand mb-0 py-4 px-3 pt-5 text-center text-white bg-primary" href="/">Kansei</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/services">Services</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/projects">Projects</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/way-of-life">Way of Life</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/blog">Xpressions'</a>
+        </li>
+        <li class="nav-item me-1">
+          <a class="nav-link" href="/contact">Get in Touch</a>
+         </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <main>
+      
+<!-- Page Title Section -->
+<div class="container my-vh-6">
+  <div class="row">
+    <div class="col-12 col-lg-10 my-4">
+      <h1 class="display-6 fw-bolder">
+        Xpressions&#39;
+        <small class="text-body-secondary">is a curious minds digital hub to share design insights, climate innovations, and the reimagining of technology for sustainability</small>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Post Section -->
+<div class="container my-vh-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+        <div class="row g-0">
+          <!-- Image Section with 16:9 aspect ratio -->
+          <div class="col-12 col-md-7 position-relative">
+            <div class="ratio ratio-16x9" style="max-height: 640px;">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="The Future of Sustainable Design in 2025" style="object-fit: cover;">
+            </div>
+          </div>
+          <!-- Content Section (40%) -->
+          <div class="col-12 col-md-5">
+            <div class="card-body p-4 d-flex flex-column h-100">
+              <small class="text-uppercase fw-bold text-muted mb-4">DESIGN</small>
+              <h3 class="card-title fw-bold mb-4">The Future of Sustainable Design in 2025</h3>
+              <p class="card-text text-muted mb-4">Exploring how sustainable design principles are reshaping industries and creating positive environmental impact through innovative approaches and conscious decision-making. This approach reduces environmental impact while creating new opportunities for innovation.</p>
+              <a href="/blog/The-future-of-sustainable-design/" class="text-decoration-none text-primary small mt-auto">
+                Read more &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content and Sidebar Section -->
+<div class="container my-vh-6">
+  <div class="row g-5">
+    <!-- Main Content -->
+    <div class="col-12 col-lg-9">
+      <!-- Tabbed Filters -->
+      <div class="mb-5">
+        <ul class="nav nav-tabs border-0" id="blogTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active border-0 text-uppercase fw-bold" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">
+              All
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="new-tab" data-bs-toggle="tab" data-bs-target="#new" type="button" role="tab">
+              New
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="latest-tab" data-bs-toggle="tab" data-bs-target="#latest" type="button" role="tab">
+              Latest
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="guides-tab" data-bs-toggle="tab" data-bs-target="#guides" type="button" role="tab">
+              Guides
+            </button>
+          </li>
+          <li class="nav-item d-lg-none" role="presentation">
+            <button class="nav-link border-0 text-uppercase fw-bold" id="popular-tab" data-bs-toggle="tab" data-bs-target="#popular" type="button" role="tab">
+              Popular
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="blogTabContent">
+        <div class="tab-pane fade show active" id="all" role="tabpanel">
+          <div class="row g-4">
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">GUIDE</small>
+                  <h5 class="card-title fw-bold mb-3">Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025</h5>
+                  <a href="/blog/building-sustainable-business/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Where Technology Meets Sustainability: The Perfect Intersection" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">TECHNOLOGY</small>
+                  <h5 class="card-title fw-bold mb-3">Where Technology Meets Sustainability: The Perfect Intersection</h5>
+                  <a href="/blog/where-technology-meets-sustainability/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Conscious Design: Creating Products That Matter" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">DESIGN</small>
+                  <h5 class="card-title fw-bold mb-3">Conscious Design: Creating Products That Matter</h5>
+                  <a href="/blog/conscious-design-that-matter/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Revolutionary Climate Technologies That Are Changing the World" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">INNOVATION</small>
+                  <h5 class="card-title fw-bold mb-3">Revolutionary Climate Technologies That Are Changing the World</h5>
+                  <a href="/blog/revolutionary-climate-technologies/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="The Future of Sustainable Design in 2025" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">DESIGN</small>
+                  <h5 class="card-title fw-bold mb-3">The Future of Sustainable Design in 2025</h5>
+                  <a href="/blog/The-future-of-sustainable-design/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="new" role="tabpanel">
+          <div class="row g-4">
+            
+            
+            
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Conscious Design: Creating Products That Matter" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">DESIGN</small>
+                  <h5 class="card-title fw-bold mb-3">Conscious Design: Creating Products That Matter</h5>
+                  <a href="/blog/conscious-design-that-matter/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="The Future of Sustainable Design in 2025" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">DESIGN</small>
+                  <h5 class="card-title fw-bold mb-3">The Future of Sustainable Design in 2025</h5>
+                  <a href="/blog/The-future-of-sustainable-design/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="latest" role="tabpanel">
+          <div class="row g-4">
+            
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Where Technology Meets Sustainability: The Perfect Intersection" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">TECHNOLOGY</small>
+                  <h5 class="card-title fw-bold mb-3">Where Technology Meets Sustainability: The Perfect Intersection</h5>
+                  <a href="/blog/where-technology-meets-sustainability/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Revolutionary Climate Technologies That Are Changing the World" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">INNOVATION</small>
+                  <h5 class="card-title fw-bold mb-3">Revolutionary Climate Technologies That Are Changing the World</h5>
+                  <a href="/blog/revolutionary-climate-technologies/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="guides" role="tabpanel">
+          <div class="row g-4">
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">GUIDE</small>
+                  <h5 class="card-title fw-bold mb-3">Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025</h5>
+                  <a href="/blog/building-sustainable-business/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Where Technology Meets Sustainability: The Perfect Intersection" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">TECHNOLOGY</small>
+                  <h5 class="card-title fw-bold mb-3">Where Technology Meets Sustainability: The Perfect Intersection</h5>
+                  <a href="/blog/where-technology-meets-sustainability/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Conscious Design: Creating Products That Matter" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">DESIGN</small>
+                  <h5 class="card-title fw-bold mb-3">Conscious Design: Creating Products That Matter</h5>
+                  <a href="/blog/conscious-design-that-matter/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        <!-- Popular Tab (Mobile Only) -->
+        <div class="tab-pane fade" id="popular" role="tabpanel">
+          <div class="row g-4">
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="The Future of Sustainable Design in 2025" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">DESIGN</small>
+                  <h5 class="card-title fw-bold mb-3">The Future of Sustainable Design in 2025</h5>
+                  <a href="/blog/The-future-of-sustainable-design/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Revolutionary Climate Technologies That Are Changing the World" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">INNOVATION</small>
+                  <h5 class="card-title fw-bold mb-3">Revolutionary Climate Technologies That Are Changing the World</h5>
+                  <a href="/blog/revolutionary-climate-technologies/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 h-100">
+                
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&amp;h=400&amp;fit=crop" class="w-100 h-100" alt="Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025" style="object-fit: cover;">
+                </div>
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <small class="text-uppercase fw-bold text-muted mb-2">GUIDE</small>
+                  <h5 class="card-title fw-bold mb-3">Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025</h5>
+                  <a href="/blog/building-sustainable-business/" class="text-decoration-none text-primary small mt-auto">
+                    Read more &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar (Desktop Only) -->
+    <div class="col-12 col-lg-3 d-none d-lg-block">
+      <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-body p-4">
+          <h4 class="h5 fw-bold mb-4">Most Popular</h4>
+          <div class="d-flex flex-column">
+            
+            
+            <div class="mb-4 pb-3 border-bottom">
+              <small class="text-uppercase fw-bold text-muted d-block mb-2">DESIGN</small>
+              <h6 class="fw-bold mb-3">The Future of Sustainable Design in 2025</h6>
+              <a href="/blog/The-future-of-sustainable-design/" class="text-decoration-none text-primary small">
+                Read more &rarr;
+              </a>
+            </div>
+            
+            
+            
+            <div class="mb-4 pb-3 border-bottom">
+              <small class="text-uppercase fw-bold text-muted d-block mb-2">INNOVATION</small>
+              <h6 class="fw-bold mb-3">Revolutionary Climate Technologies That Are Changing the World</h6>
+              <a href="/blog/revolutionary-climate-technologies/" class="text-decoration-none text-primary small">
+                Read more &rarr;
+              </a>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            <div class="mb-0">
+              <small class="text-uppercase fw-bold text-muted d-block mb-2">GUIDE</small>
+              <h6 class="fw-bold mb-3">Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025</h6>
+              <a href="/blog/building-sustainable-business/" class="text-decoration-none text-primary small">
+                Read more &rarr;
+              </a>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.nav-tabs .nav-link {
+  color: #6c757d;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000;
+  background: none;
+  border-bottom: 2px solid #000;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #000;
+  border: none;
+}
+</style>
+
+    </main>
+
+    <footer class="container">
+      <footer class="border-top py-5" style="margin-top:4rem; margin-bottom:4rem;">
+  <div class="container">
+    <div class="row">
+      <!-- Reach Us Column -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <div class="mb-3">
+          <p class="mb-2 fw-medium text-dark">REACH US</p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <span class="text-body-secondary">Design</span>
+              <a href="mailto:projects@kansei.com" class="fs-6 link-fancy">projects@kansei.com</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <span class="text-body-secondary">Office</span>
+              <a href="mailto:desk@kansei.com" class="fs-6 link-fancy">desk@kansei.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Follow Us Column -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <div class="mb-3">
+          <p class="mb-2 fw-medium text-dark">FOLLOW US</p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <i class="bi bi-linkedin fs-5"></i>
+              <span class="text-body-secondary">LinkedIn</span>
+              <a href="https://linkedin.com/company/design4kansei" class="fs-6 link-fancy" target="_blank" rel="noopener">/design4kansei</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex flex-row align-items-center gap-2">
+              <i class="bi bi-instagram fs-5"></i>
+              <span class="text-body-secondary">Instagram</span>
+              <a href="https://instagram.com/design4kansei" class="fs-6 link-fancy" target="_blank" rel="noopener">/design4kansei</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Divider -->
+    <div class="border-bottom my-4"></div>
+    <!-- Bottom Row -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
+      <div class="mb-3 mb-md-0">
+        <span class="small">© 2025 KANSEI DESIGN</span>
+      </div>
+      <div>
+        <a href="/special-thanks" class="mx-2 footer-link small">SPECIAL THANKS</a>
+        <a href="/privacy-policy" class="mx-2 footer-link small">PRIVACY POLICY</a>
+        <a href="#" class="mx-2 footer-link small" data-bs-toggle="modal" data-bs-target="#newsletterModal">JOIN NEWSLETTER</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Newsletter Modal -->
+<div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4 pb-4">
+        <div class="text-center mb-4">
+          <div class="mb-3">
+            <i class="bi bi-envelope text-dark" style="font-size: 2rem;"></i>
+          </div>
+          <h3 class="h4 fw-bold mb-3">Your Privacy Is Important To Us!</h3>
+        </div>
+        
+        <div class="text-muted mb-4">
+          <p class="mb-3">We believe in meaningful connections, not data collection.</p>
+          <p class="mb-3">If you're curious about conscious design, climate innovations, or how we're making a difference, we'd love to share our journey with you.</p>
+          <p class="mb-0"><strong>No spam, no tracking, no nonsense.</strong> Just thoughtful insights delivered with care.</p>
+        </div>
+
+        <div class="text-center">
+          <a href="https://forms.typeform.com/to/your-form-id" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 me-3">
+            I'm Interested
+            <i class="bi bi-arrow-up-right ms-2"></i>
+          </a>
+          <p class="small text-muted mt-3 mb-0">
+            You'll be redirected to a secure third-party form. We'll send you a confirmation email to verify your subscription.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+    </footer>
+
+  </body>
+
+</html>

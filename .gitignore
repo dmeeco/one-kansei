@@ -5,8 +5,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build outputs
-public/
-dev/
+# public/
+# dev/
 .tmp/
 
 # Environment variables
