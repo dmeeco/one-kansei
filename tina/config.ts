@@ -78,6 +78,24 @@ export default defineConfig({
             name: "coverImg",
             label: "Cover Image",
             description: "The main image for this post",
+            // Fix: Add parse function to handle external URLs
+            parse: (filename) => {
+              // If it's an external URL (starts with http/https), return as-is
+              if (filename && (filename.startsWith('http://') || filename.startsWith('https://'))) {
+                return filename;
+              }
+              // Otherwise, treat as local file
+              return filename;
+            },
+            // Fix: Add previewSrc to properly display external images in editor
+            previewSrc: (src) => {
+              // If it's an external URL, return as-is for preview
+              if (src && (src.startsWith('http://') || src.startsWith('https://'))) {
+                return src;
+              }
+              // Otherwise, use default TinaCMS preview logic
+              return src;
+            }
           },
           {
             type: "string",
@@ -155,6 +173,24 @@ export default defineConfig({
             name: "coverImg",
             label: "Cover Image",
             description: "The main image for this project",
+            // Fix: Add same parse function for projects
+            parse: (filename) => {
+              // If it's an external URL (starts with http/https), return as-is
+              if (filename && (filename.startsWith('http://') || filename.startsWith('https://'))) {
+                return filename;
+              }
+              // Otherwise, treat as local file
+              return filename;
+            },
+            // Fix: Add previewSrc to properly display external images in editor
+            previewSrc: (src) => {
+              // If it's an external URL, return as-is for preview
+              if (src && (src.startsWith('http://') || src.startsWith('https://'))) {
+                return src;
+              }
+              // Otherwise, use default TinaCMS preview logic
+              return src;
+            }
           },
           {
             type: "string",
