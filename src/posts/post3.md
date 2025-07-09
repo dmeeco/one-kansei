@@ -2,7 +2,7 @@
 title: "Conscious Design: Creating Products That Matter"
 slug: conscious-design-that-matter
 date: 2024-01-25
-coverImg: https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=400&fit=crop
+coverImg: public/dev/img/23554e31985da2a8.jpg
 summary: How conscious design principles are transforming the way we create products, focusing on user well-being, environmental impact, and meaningful experiences.
 category: DESIGN
 tags:
