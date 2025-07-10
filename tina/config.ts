@@ -5,8 +5,7 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master"
 
 // Dynamic base URL handling - supports local, GitHub Pages, and custom domain
 const isProduction = process.env.NODE_ENV === 'production';
-const baseUrl = process.env.TINA_PUBLIC_BASE_URL || 
-  (isProduction ? 'https://kansei.one' : 'http://localhost:3000');
+const baseUrl = 'https://kansei.one';
 
 export default defineConfig({
   branch,
@@ -16,7 +15,7 @@ export default defineConfig({
   token: process.env.TINA_TOKEN, // Get this from tina.io (content read-only token)
   
   build: {
-    basePath: 'one-kansei', // Set this to your sub-path for Github pages or Sub-domains
+    basePath: '', // Set this to your sub-path for Github pages or Sub-domains
     outputFolder: "admin",
     publicFolder: "public", // Your 11ty output folder
   },

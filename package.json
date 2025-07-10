@@ -14,7 +14,6 @@
     "build:eleventy": "eleventy",
     "build:assets": "gulp dist-assets && gulp sass",
     "build:tina": "tinacms build",
-    "build:github": "npm run clean-prod && PATH_PREFIX=/one-kansei/ npm run build:assets && PATH_PREFIX=/one-kansei/ npm run build:eleventy && npm run build:tina",
     "build-dev": "eleventy && gulp dist-assets && gulp sass",
     "11ty": "eleventy && gulp inject-css",
     "sync": "gulp browser-sync",
@@ -68,5 +67,5 @@
   "bugs": {
     "url": ""
   },
-  "homepage": "https://github.com/dmeeco/one-kansei"
+  "homepage": "https://kansei.one"
 }

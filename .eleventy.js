@@ -71,7 +71,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add(".tina/**");
 
   // Get path prefix from environment
-  const pathPrefix = process.env.PATH_PREFIX || "/";
+  const pathPrefix = "/";
   
   // Return configuration object at the END
   return {
