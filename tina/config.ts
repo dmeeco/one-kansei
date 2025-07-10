@@ -6,7 +6,7 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master"
 // Dynamic base URL handling - supports local, GitHub Pages, and custom domain
 const isProduction = process.env.NODE_ENV === 'production';
 const baseUrl = process.env.TINA_PUBLIC_BASE_URL || 
-  (isProduction ? 'https://dmeeco.github.io/one-kansei' : 'http://localhost:3000');
+  (isProduction ? 'https://kansei.one' : 'http://localhost:3000');
 
 export default defineConfig({
   branch,
