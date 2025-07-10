@@ -4,8 +4,6 @@ const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function(eleventyConfig) {
-  // Add this for GitHub Pages
-  eleventyConfig.addGlobalData("baseUrl", process.env.NODE_ENV === "production" ? "/one-kansei" : "");
   // Add plugins
   eleventyConfig.addPlugin(navigationPlugin);
   eleventyConfig.addPlugin(rssPlugin);
@@ -64,7 +62,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"dev/css": "css"});
   eleventyConfig.addPassthroughCopy({"dev/js": "js"});
   eleventyConfig.addPassthroughCopy({"dev/fonts": "fonts"});
-  eleventyConfig.addPassthroughCopy({"dev/img": "img"});
   eleventyConfig.addPassthroughCopy({"src/assets": "assets"});
 
   // Add TinaCMS admin route - IMPORTANT: This must come AFTER eleventy build
