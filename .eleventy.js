@@ -4,6 +4,8 @@ const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function(eleventyConfig) {
+  // Add this for GitHub Pages
+  eleventyConfig.addGlobalData("baseUrl", process.env.NODE_ENV === "production" ? "/one-kansei" : "");
   // Add plugins
   eleventyConfig.addPlugin(navigationPlugin);
   eleventyConfig.addPlugin(rssPlugin);
