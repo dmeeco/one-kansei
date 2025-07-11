@@ -154,3 +154,37 @@ body {
 
 // External Quotes
 .quote-bg-color { color: $cyan-100; }
+
+/* Navbar logo styles */
+.navbar-logo {
+  height: 40px;
+  max-height: 40px;
+  width: auto;
+  max-width: 150px;
+  display: block;
+  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+/* Remove all old logo styles */
+.navbar-brand {
+  background: none !important;
+  color: inherit !important;
+  text-align: left !important;
+  font-weight: normal !important;
+  font-size: inherit !important;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure proper vertical alignment */
+.navbar-brand,
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+}
