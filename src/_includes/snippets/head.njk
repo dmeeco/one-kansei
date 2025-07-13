@@ -2,6 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="{{ metadata.description }}">
   <link rel="icon" type="image/png" sizes="96x96" href="{{ '/img/favicon.png' | url }}">
+  <link rel="preload" href="{{ '/fonts/andika-v23-latin-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <meta name="author" content="{{ metadata.author }}">
   <meta name="generator" content="{{ eleventy.generator }}">
   <meta name="HandheldFriendly" content="true"/>
@@ -72,7 +73,7 @@
       font-family: 'Andika';
       font-style: normal;
       font-weight: 400;
-      font-display: swap;
+      font-display: fallback; /* Changed from swap */
       src: url('{{ '/fonts/andika-v26-latin-regular.woff2' | url }}') format('woff2');
 }
 
@@ -91,6 +92,6 @@
    }
 
    h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-  font-family: 'Andika', sans-serif !important;
-    }
+  font-family: 'Andika', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+   }
    </style>
