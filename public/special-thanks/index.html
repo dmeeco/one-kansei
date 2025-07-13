@@ -55,7 +55,35 @@
           url('/fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
           url('/fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
    }
+
+    /* inder-400 - latin */
+    @font-face {
+      font-family: 'Inder';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local(''),
+          url('/fonts/inder-v14-latin-regular.woff2') format('woff2'),
+}
+
+    /* Add this CSS class at the end */
+    .inder-font {
+      font-family: 'Inder', sans-serif;
+}
    
+    /* andika-400 - latin */
+    @font-face {
+      font-family: 'Andika';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('/fonts/andika-v26-latin-regular.woff2') format('woff2');
+}
+
+    .andika-font {
+      font-family: 'Andika', sans-serif;
+}
+
    /* Title line-height */
    title {
      line-height: 1.5;
@@ -65,15 +93,19 @@
    .display-6 {
      line-height: 1.5 !important;
    }
+
+   h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Andika', sans-serif !important;
+    }
    </style>
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light mt-4 pt-0">
+    <nav class="navbar navbar-expand-lg navbar-light pt-0">
   <div class="container">
-    <a class="navbar-brand mb-0 px-3" href="/">
-      <img src="/img/kansei-logo.svg" alt="Kansei" class="navbar-logo" height="40" style="width:auto;max-height:40px;" aria-label="Kansei logo">
+    <a class="navbar-brand mb-0 py-4 px-3 pt-5 text-center text-white bg-dark bg-gradient" href="/">
+      <img src="/img/kansei-logo-w.svg" alt="Kansei">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -102,7 +134,7 @@
 
     <main>
       
-<div class="container my-vh-6">
+<div class="container my-vh-4">
   <div class="row">
     <div class="col-12 col-lg-10 my-4">
       <h1 class="display-6 fw-bolder">
@@ -124,7 +156,7 @@
           <table class="table mb-0" style="border-collapse:collapse;">
                 <tbody>
               <tr style="border-top:1px solid #f1f3f4; border-bottom:1px solid #f1f3f4;">
-                <th scope="row" class="w-25" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Theme Developer</th>
+                <th scope="row" class="w-25" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Website Template</th>
                 <td style="padding: 1.1rem 1rem;">A tiny sideproject by <a href="https://github.com/holger1411" class="link-fancy" target="_blank" rel="noopener">Holger Koenemann</a>. Made in lovely Hannover, Germany.</td>
               </tr>
               <tr style="border-bottom:1px solid #f1f3f4;">

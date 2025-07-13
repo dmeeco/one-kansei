@@ -51,7 +51,35 @@
           url('{{ '/fonts/inter-v12-latin-700.woff2' | url }}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
           url('{{ '/fonts/inter-v12-latin-700.woff' | url }}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
    }
+
+    /* inder-400 - latin */
+    @font-face {
+      font-family: 'Inder';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local(''),
+          url('{{ '/fonts/inder-v14-latin-regular.woff2' | url }}') format('woff2'),
+}
+
+    /* Add this CSS class at the end */
+    .inder-font {
+      font-family: 'Inder', sans-serif;
+}
    
+    /* andika-400 - latin */
+    @font-face {
+      font-family: 'Andika';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('{{ '/fonts/andika-v26-latin-regular.woff2' | url }}') format('woff2');
+}
+
+    .andika-font {
+      font-family: 'Andika', sans-serif;
+}
+
    /* Title line-height */
    title {
      line-height: 1.5;
@@ -61,4 +89,8 @@
    .display-6 {
      line-height: 1.5 !important;
    }
+
+   h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Andika', sans-serif !important;
+    }
    </style>
