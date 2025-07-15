@@ -11,28 +11,29 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="One Kansei" />
 <link rel="manifest" href="/img/site.webmanifest" />
-<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- PRELOAD CRITICAL FONTS -->
+<link rel="preload" href="/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/andika-v26-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- DEFER NON-CRITICAL CSS -->
+<link rel="preload" href="/css/theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- FALLBACK FOR NO-JS -->
+<noscript>
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</noscript>
+
 <meta name="author" content="Kansei Design Team">
 <meta name="generator" content="Eleventy v2.0.1">
 <meta name="HandheldFriendly" content="true"/>
 <title>We believe</title>
-<!-- build:css -->
-<link rel="stylesheet" href="/css/theme.css">
-<!-- endbuild -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-<style>
-/* inter-300 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('/fonts/inter-v12-latin-300.woff2') format('woff2'),
-       url('/fonts/inter-v12-latin-300.woff') format('woff');
-}
 
-/* inter-400 - latin */
+<style>
+/* CRITICAL FONTS - Load immediately */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -43,18 +44,6 @@
        url('/fonts/inter-v12-latin-regular.woff') format('woff');
 }
 
-/* inter-500 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-       url('/fonts/inter-v12-latin-500.woff2') format('woff2'),
-       url('/fonts/inter-v12-latin-500.woff') format('woff');
-}
-
-/* inter-700 - latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -65,34 +54,74 @@
        url('/fonts/inter-v12-latin-700.woff') format('woff');
 }
 
-/* inder-400 - latin */
+/* ANDIKA FONT - Using your actual filename */
 @font-face {
-  font-family: 'Inder';
+  font-family: 'Andika';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''),
-       url('/fonts/inder-v14-latin-regular.woff2') format('woff2');
+  src: url('/fonts/andika-v26-latin-regular.woff2') format('woff2');
 }
 
-.inder-font {
-  font-family: 'Inder', sans-serif;
+@font-face {
+  font-family: 'Andika';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/andika-v26-latin-regular.woff2') format('woff2');
 }
 
-/* Title line-height */
-title {
-  line-height: 1.5;
+/* CRITICAL STYLES - Only what's needed for above-the-fold */
+h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Andika', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-/* Display-6 line-height for page titles */
 .display-6 {
   line-height: 1.5 !important;
 }
 
-h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-  font-family: 'Andika', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-}
+/* Add other critical above-the-fold styles here */
 </style>
+
+<!-- LOAD REMAINING FONTS ASYNCHRONOUSLY -->
+<script>
+  // Load non-critical fonts after page load
+  window.addEventListener('load', function() {
+    var fontStyles = document.createElement('style');
+    fontStyles.innerHTML = `
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: local(''),
+             url('/fonts/inter-v12-latin-300.woff2') format('woff2'),
+             url('/fonts/inter-v12-latin-300.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: local(''),
+             url('/fonts/inter-v12-latin-500.woff2') format('woff2'),
+             url('/fonts/inter-v12-latin-500.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'Inder';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local(''),
+             url('/fonts/inder-v14-latin-regular.woff2') format('woff2');
+      }
+      .inder-font {
+        font-family: 'Inder', sans-serif;
+      }
+    `;
+    document.head.appendChild(fontStyles);
+  });
+</script>
   </head>
 
   <body>
@@ -156,32 +185,24 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
       
       <!-- Our Purpose Section -->
       <section class="mb-5 pb-4">
-        <h2 class="fw-bold mb-4">Our Purpose</h2>
+        <h2 class="fw-bold mb-4">Our Hearts</h2>
         <div class="fs-5 text-muted lh-base">
           <p class="mb-4">
-            At Kansei Design, we bridge intuitive intelligence with sustainable innovation. We believe climate solutions succeed when they resonate with both human nature and environmental needs, creating change people naturally embrace through mindful design and purposeful technology.
-          </p>
-          <p class="mb-4">
-            We help organizations understand their impact better, to bring genuine value to communities and to keep their solutions both competitive and regenerative. Our human-centered methods create impact that benefits business while fostering a better everyday for people and planet.
-          </p>
-          <p class="mb-0">
-            Our purpose is to enable sustainable transformation through creative collaboration and innovation guided by principles of honesty, transparency, and mindful action.
+            At Kansei, we believe sustainable innovation succeeds when it resonates with human nature. The community we nurture is built on the profound understanding that climate solutions must connect with people emotionally, not just logically.
           </p>
     </div>
     </section>
 
       <!-- Our Story Section -->
       <section class="mb-5 pb-4">
-        <h2 class="fw-bold mb-4">Our Story</h2>
+        <h2 class="fw-bold mb-4">We the People & Work</h2>
         
         <!-- Story content -->
         <div class="fs-5 text-muted lh-base">
           <p class="mb-4">
-            Since our founding, Kansei Design has been dedicated to driving positive change by empowering clients to make better decisions for a sustainable world. Through careful research, mindful design philosophy, and the collective expertise of our growing team, we excel at illuminating new pathways for organizations to succeed while creating meaningful impact.
-          </p>
+            We are perpetual beginners, united by foundational curiosity and the courage to start as fools rather than fake being geniuses. People here trust collective intuitive intelligence to guide breakthrough solutions.          </p>
           <p class="mb-4">
-            We nurture a perpetual beginner mindset and foundational curiosity, guiding our methods toward genuine solutions through open exploration, collaboration, and a commitment to regenerative progress in a connected world.
-          </p>
+            This beginner's mindset creates psychological safety where vulnerability becomes strength, enabling us to approach complex climate challenges with fresh perspectives alongside communities and ecosystems.          </p>
         </div>
         
         <!-- Combined Story Highlights and Quote Card -->
@@ -202,9 +223,21 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
         </div>
       </section>
 
+      <!--Emotion Story Section -->
+      <section class="mb-5 pb-4">
+        <h2 class="fw-bold mb-4">Emotional Intelligence in Action</h2>
+
+      <!-- Story content 2-->
+        <div class="fs-5 text-muted lh-base">
+          <p class="mb-4">
+            The environment we share celebrates the ability to sense not just what is, but what could be. We integrate emotion, intuition, and creativity as essential tools for addressing climate challenges alongside other living beings.</p>
+          <p class="mb-4">
+            When people bring forward new ideas, we evaluate not just feasibility but emotional alignment with creating change that communities naturally embrace.</p>
+        </div>
+
       <!-- Our Values Section -->
       <section class="mb-5 pb-4">
-        <h2 class="fw-bold mb-4">Our Values</h2>
+        <h2 class="fw-bold mb-4">Living Values</h2>
         <div class="row g-4">
           <div class="col-12 col-md-6">
             <div class="card border-0 shadow-sm h-100 p-4 hover-shadow">
