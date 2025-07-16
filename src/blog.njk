@@ -22,6 +22,8 @@ pagination:
 </div>
 
 <!-- Featured Post Section -->
+{% set featuredPost = collections.post | getFeaturedPost %}
+{% if featuredPost %}
 <div class="container my-vh-4">
   <div class="row">
     <div class="col-12">
@@ -30,16 +32,16 @@ pagination:
           <!-- Image Section with 16:9 aspect ratio -->
           <div class="col-12 col-md-7 position-relative">
             <div class="ratio ratio-16x9" style="max-height: 640px;">
-              <img src="{{ collections.post[0].data.coverImg }}" class="w-100 h-100" alt="{{ collections.post[0].data.title }}" style="object-fit: cover;">
+              <img src="{{ featuredPost.data.coverImg }}" class="w-100 h-100" alt="{{ featuredPost.data.title }}" style="object-fit: cover;">
             </div>
           </div>
           <!-- Content Section (40%) -->
           <div class="col-12 col-md-5">
             <div class="card-body p-4 d-flex flex-column h-100">
-              <small class="text-uppercase fw-bold text-muted mb-4">{{ collections.post[0].data.category or 'ARTICLE' }}</small>
-              <h3 class="card-title fw-bold mb-4">{{ collections.post[0].data.title }}</h3>
-              <p class="card-text text-muted mb-4">{{ collections.post[0].data.summary }} This approach reduces environmental impact while creating new opportunities for innovation.</p>
-              <a href="{{ collections.post[0].url | url }}" class="text-decoration-none text-primary small mt-auto">
+              <small class="text-uppercase fw-bold text-muted mb-4">{{ featuredPost.data.category or 'ARTICLE' }}</small>
+              <h3 class="card-title fw-bold mb-4">{{ featuredPost.data.title }}</h3>
+              <p class="card-text text-muted mb-4">{{ featuredPost.data.summary }}</p>
+              <a href="{{ featuredPost.url | url }}" class="text-decoration-none text-primary small mt-auto">
                 Read more &rarr;
               </a>
             </div>
@@ -49,6 +51,7 @@ pagination:
     </div>
   </div>
 </div>
+{% endif %}
 
 <!-- Main Content and Sidebar Section -->
 <div class="container my-vh-6">

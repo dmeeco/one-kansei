@@ -138,7 +138,53 @@ export default defineConfig({
             isBody: true,
           },
         ],
-      },
+                // Add this to your blog collection configuration
+        beforeSubmit: async ({
+          form,
+          cms,
+          values,
+        }) => {
+          // If this post is being marked as featured
+          if (values.featured === true) {
+            // Get all posts
+            const posts = await cms.api.tina.request(`
+              query {
+                postConnection {
+                  edges {
+                    node {
+                      id
+                      _sys {
+                        filename
+                        relativePath
+                      }
+                      featured
+                    }
+                  }
+                }
+              }
+            `);
+            
+            // Find and update any other featured posts to false
+            const currentFilename = form.values._sys.filename;
+            const otherFeaturedPosts = posts.data.postConnection.edges.filter(
+              edge => edge.node.featured === true && edge.node._sys.filename !== currentFilename
+            );
+            
+            // Update other featured posts to false
+            for (const post of otherFeaturedPosts) {
+              await cms.api.tina.request(`
+                mutation {
+                  updatePost(relativePath: "${post.node._sys.relativePath}") {
+                    featured: false
+                  }
+                }
+              `);
+            }
+          }
+          
+          return values;
+        }
+              },
       {
         name: "projects",
         label: "Projects",

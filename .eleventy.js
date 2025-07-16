@@ -44,6 +44,11 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  // Add getFeaturedPost filter
+  eleventyConfig.addFilter("getFeaturedPost", function(posts) {
+    return posts.find(post => post.data.featured === true);
+  });
+
   // Add watch target
   eleventyConfig.addWatchTarget("./src/scss/");
   

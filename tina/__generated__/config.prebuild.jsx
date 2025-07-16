@@ -128,7 +128,46 @@ var config_default = defineConfig({
             label: "Body",
             isBody: true
           }
-        ]
+        ],
+        // Add this to your blog collection configuration
+        beforeSubmit: async ({
+          form,
+          cms,
+          values
+        }) => {
+          if (values.featured === true) {
+            const posts = await cms.api.tina.request(`
+              query {
+                postConnection {
+                  edges {
+                    node {
+                      id
+                      _sys {
+                        filename
+                        relativePath
+                      }
+                      featured
+                    }
+                  }
+                }
+              }
+            `);
+            const currentFilename = form.values._sys.filename;
+            const otherFeaturedPosts = posts.data.postConnection.edges.filter(
+              (edge) => edge.node.featured === true && edge.node._sys.filename !== currentFilename
+            );
+            for (const post of otherFeaturedPosts) {
+              await cms.api.tina.request(`
+                mutation {
+                  updatePost(relativePath: "${post.node._sys.relativePath}") {
+                    featured: false
+                  }
+                }
+              `);
+            }
+          }
+          return values;
+        }
       },
       {
         name: "projects",
