@@ -48,11 +48,11 @@ pagination:
           <!-- Content Section - Only show side content when multiple posts -->
           {% if postCount > 1 %}
           <div class="col-12 col-md-5">
-            <div class="card-body p-4 d-flex flex-column h-100">
+            <div class="card-body p-4 d-flex flex-column h-100 text-start">
               <small class="text-uppercase fw-bold text-muted mb-4">{{ featuredPost.data.category or 'ARTICLE' }}</small>
               <h3 class="card-title fw-bold mb-4">{{ featuredPost.data.title }}</h3>
               <p class="card-text text-muted mb-4">{{ featuredPost.data.summary }}</p>
-              <a href="{{ featuredPost.url | url }}" class="text-decoration-none text-primary small mt-auto">
+              <a href="{{ featuredPost.url | url }}" class="link-fancy small mt-auto">
                 Read more &rarr;
               </a>
             </div>
@@ -60,11 +60,11 @@ pagination:
           {% else %}
           <!-- Full width content when only one post -->
           <div class="col-12">
-            <div class="card-body p-4 text-center">
+            <div class="card-body p-4 text-start">
               <small class="text-uppercase fw-bold text-muted mb-4 d-block">{{ featuredPost.data.category or 'ARTICLE' }}</small>
               <h2 class="card-title fw-bold mb-4">{{ featuredPost.data.title }}</h2>
-              <p class="card-text text-muted mb-4 lead">{{ featuredPost.data.summary }}</p>
-              <a href="{{ featuredPost.url | url }}" class="btn btn-primary">
+              <p class="card-text text-muted mb-4">{{ featuredPost.data.summary }}</p>
+              <a href="{{ featuredPost.url | url }}" class="link-fancy">
                 Read Article
               </a>
             </div>
