@@ -94,6 +94,7 @@ type Posts implements Node & Document {
   slug: String
   title: String!
   date: String!
+  featured: Boolean
   coverImg: String
   summary: String
   category: String
@@ -119,6 +120,11 @@ input DatetimeFilter {
   in: [String]
 }
 
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
+}
+
 input ImageFilter {
   startsWith: String
   eq: String
@@ -136,6 +142,7 @@ input PostsFilter {
   slug: StringFilter
   title: StringFilter
   date: DatetimeFilter
+  featured: BooleanFilter
   coverImg: ImageFilter
   summary: StringFilter
   category: StringFilter
@@ -217,6 +224,7 @@ input PostsMutation {
   slug: String
   title: String
   date: String
+  featured: Boolean
   coverImg: String
   summary: String
   category: String

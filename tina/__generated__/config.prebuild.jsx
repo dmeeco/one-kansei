@@ -1,8 +1,6 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
 var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master";
-var isProduction = false;
-var baseUrl = process.env.TINA_PUBLIC_BASE_URL || (isProduction ? "https://dmeeco.github.io/one-kansei" : "http://localhost:3000");
 var config_default = defineConfig({
   branch,
   // Use environment variables for tokens
@@ -11,7 +9,7 @@ var config_default = defineConfig({
   token: process.env.TINA_TOKEN,
   // Get this from tina.io (content read-only token)
   build: {
-    basePath: "one-kansei",
+    basePath: "",
     // Set this to your sub-path for Github pages or Sub-domains
     outputFolder: "admin",
     publicFolder: "public"
@@ -68,6 +66,12 @@ var config_default = defineConfig({
             name: "date",
             label: "Date",
             required: true
+          },
+          {
+            type: "boolean",
+            name: "featured",
+            label: "Featured on Homepage",
+            description: "Check this to show this post on the homepage"
           },
           {
             type: "image",

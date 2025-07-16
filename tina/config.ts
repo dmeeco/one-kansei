@@ -73,6 +73,12 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "boolean",
+            name: "featured",
+            label: "Featured on Homepage",
+            description: "Check this to show this post on the homepage",
+          },
+          {
             type: "image",
             name: "coverImg",
             label: "Cover Image",

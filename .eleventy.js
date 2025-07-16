@@ -37,6 +37,13 @@ module.exports = function(eleventyConfig) {
     return tagList.sort((a, b) => b.tagCount - a.tagCount)
   });
 
+  // Add featured posts collection
+  eleventyConfig.addCollection("featuredPosts", collection => {
+    return collection.getFilteredByTag("post")
+      .filter(post => post.data.featured === true)
+      .sort((a, b) => b.date - a.date);
+  });
+
   // Add watch target
   eleventyConfig.addWatchTarget("./src/scss/");
   

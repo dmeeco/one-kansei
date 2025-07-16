@@ -188,6 +188,7 @@ export type Posts = Node & Document & {
   slug?: Maybe<Scalars['String']['output']>;
   title: Scalars['String']['output'];
   date: Scalars['String']['output'];
+  featured?: Maybe<Scalars['Boolean']['output']>;
   coverImg?: Maybe<Scalars['String']['output']>;
   summary?: Maybe<Scalars['String']['output']>;
   category?: Maybe<Scalars['String']['output']>;
@@ -213,6 +214,11 @@ export type DatetimeFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type BooleanFilter = {
+  eq?: InputMaybe<Scalars['Boolean']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type ImageFilter = {
   startsWith?: InputMaybe<Scalars['String']['input']>;
   eq?: InputMaybe<Scalars['String']['input']>;
@@ -230,6 +236,7 @@ export type PostsFilter = {
   slug?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
+  featured?: InputMaybe<BooleanFilter>;
   coverImg?: InputMaybe<ImageFilter>;
   summary?: InputMaybe<StringFilter>;
   category?: InputMaybe<StringFilter>;
@@ -374,6 +381,7 @@ export type PostsMutation = {
   slug?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
+  featured?: InputMaybe<Scalars['Boolean']['input']>;
   coverImg?: InputMaybe<Scalars['String']['input']>;
   summary?: InputMaybe<Scalars['String']['input']>;
   category?: InputMaybe<Scalars['String']['input']>;
@@ -392,7 +400,7 @@ export type ProjectsMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type PostsPartsFragment = { __typename: 'Posts', slug?: string | null, title: string, date: string, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null };
+export type PostsPartsFragment = { __typename: 'Posts', slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
 export type ProjectsPartsFragment = { __typename: 'Projects', title: string, shortTitle: string, date: string, coverImg?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
@@ -401,7 +409,7 @@ export type PostsQueryVariables = Exact<{
 }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostsQuery = { __typename?: 'Query', posts: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -413,7 +421,7 @@ export type PostsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostsConnectionQuery = { __typename?: 'Query', postsConnection: { __typename?: 'PostsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostsConnectionEdges', cursor: string, node?: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PostsConnectionQuery = { __typename?: 'Query', postsConnection: { __typename?: 'PostsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostsConnectionEdges', cursor: string, node?: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type ProjectsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -440,6 +448,7 @@ export const PostsPartsFragmentDoc = gql`
   slug
   title
   date
+  featured
   coverImg
   summary
   category
@@ -636,7 +645,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "http://localhost:4001/graphql",
+        url: "https://content.tinajs.io/1.6/content/your_client_ID_here/github/master",
         queries,
       })
     )
