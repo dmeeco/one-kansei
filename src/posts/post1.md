@@ -2,7 +2,10 @@
 slug: the-future-of-sustainable-design
 title: The Future of Sustainable Design in 2025
 date: 2024-01-15T00:00:00.000Z
+<<<<<<< HEAD
 featured: true
+=======
+>>>>>>> 4e75544c93dd185ffdcab3c01fae675d2303f2c3
 coverImg: /img/21-3008x2008.jpg
 summary: >-
   Exploring how sustainable design principles are reshaping industries and
