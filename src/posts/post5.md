@@ -2,7 +2,9 @@
 slug: building-sustainable-business-2025
 title: 'Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025'
 date: 2024-02-05T00:00:00.000Z
-coverImg: https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop
+featured: true
+coverImg: >-
+  /imghttps://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop
 summary: >-
   A comprehensive guide to creating and scaling businesses that prioritize
   environmental responsibility, social impact, and long-term sustainability.
