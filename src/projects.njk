@@ -15,34 +15,74 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
   </div>
 </div>
 
-<div class="container my-vh-4">
-  <div class="row g-5">
-    {% for project in collections.project %}
-    <div class="col-12 col-md-6 col-lg-4 project-card">
-      <div class="card border-0 shadow-sm rounded-3 h-100 project-card-hover">
-        <!-- Top 50%: Image -->
-        <div class="card-img-top" style="height: 50%; overflow: hidden;">
-          <img src="{{ project.data.coverImg }}" class="w-100 h-100" alt="{{ project.data.title }}" style="object-fit: cover;">
-        </div>
-        
-        <!-- Bottom 50%: Content -->
-        <div class="card-body d-flex flex-column p-4">
-          <!-- Industry Type -->
-          <small class="text-light-emphasis fw-bold mb-2">{{ project.data.industry }}</small>
-          
-          <!-- Title -->
-          <h5 class="card-title fw-bold mb-3 fs-4" style="line-height: 1.5;">{{ project.data.shortTitle }}</h5>
-          
-          <!-- Read More Link -->
-          <a href="{{ project.url | url }}" class="text-decoration-none text-primary small mt-auto">
-            Read the case study &rarr;
-          </a>
+{% set projectsArray = collections.project %}
+{% set projectCount = projectsArray.length %}
+
+{% if projectCount > 0 %}
+  <!-- Featured Project Section (always show first project) -->
+  {% set featuredProject = projectsArray[0] %}
+  <div class="container my-vh-6">
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+          <div class="row g-0">
+            <!-- Image Section with 16:9 aspect ratio -->
+            <div class="col-12 col-md-7 position-relative">
+              <div class="ratio ratio-16x9" style="max-height: 640px;">
+                <img src="{{ featuredProject.data.coverImg }}" class="w-100 h-100" alt="{{ featuredProject.data.title }}" style="object-fit: cover;">
+              </div>
+            </div>
+            <!-- Content Section -->
+            <div class="col-12 col-md-5">
+              <div class="card-body p-4 d-flex flex-column h-100">
+                <small class="text-uppercase fw-bold text-muted mb-4">{{ featuredProject.data.industry }}</small>
+                <h3 class="card-title fw-bold mb-4">{{ featuredProject.data.title }}</h3>
+                <p class="card-text text-muted mb-4">{{ featuredProject.data.summary }}</p>
+                <a href="{{ featuredProject.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                  Read the case study &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
-</div>
+
+  <!-- Grid Projects Section (show remaining projects if more than 1) -->
+  {% if projectCount > 1 %}
+    <div class="container my-vh-4">
+      <div class="row g-5">
+        {% for project in projectsArray %}
+          {% if loop.index > 1 %}
+            <div class="col-12 col-md-6 col-lg-4 project-card">
+              <div class="card border-0 shadow-sm rounded-3 h-100 project-card-hover">
+                <!-- Top 50%: Image -->
+                <div class="card-img-top" style="height: 50%; overflow: hidden;">
+                  <img src="{{ project.data.coverImg }}" class="w-100 h-100" alt="{{ project.data.title }}" style="object-fit: cover;">
+                </div>
+                
+                <!-- Bottom 50%: Content -->
+                <div class="card-body d-flex flex-column p-4">
+                  <!-- Industry Type -->
+                  <small class="text-light-emphasis fw-bold mb-2">{{ project.data.industry }}</small>
+                  
+                  <!-- Title -->
+                  <h5 class="card-title fw-bold mb-3 fs-4" style="line-height: 1.5;">{{ project.data.shortTitle }}</h5>
+                  
+                  <!-- Read More Link -->
+                  <a href="{{ project.url | url }}" class="text-decoration-none text-primary small mt-auto">
+                    Read the case study &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
 
 <style>
 .project-card-hover {
@@ -53,4 +93,4 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
 .project-card-hover:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
-</style> 
+</style>
