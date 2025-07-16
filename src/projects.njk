@@ -24,7 +24,7 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
   <div class="container my-vh-6">
     <div class="row">
       <div class="col-12">
-        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+        <div class="card border border-1 border-secondary-subtle rounded-3 overflow-hidden">
           <div class="row g-0">
             <!-- Image Section with 16:9 aspect ratio -->
             <div class="col-12 col-md-7 position-relative">
@@ -56,7 +56,7 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
         {% for project in projectsArray %}
           {% if loop.index > 1 %}
             <div class="col-12 col-md-6 col-lg-4 project-card">
-              <div class="card border-0 shadow-sm rounded-3 h-100 project-card-hover">
+              <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 <!-- Top 50%: Image -->
                 <div class="card-img-top" style="height: 50%; overflow: hidden;">
                   <img src="{{ project.data.coverImg }}" class="w-100 h-100" alt="{{ project.data.title }}" style="object-fit: cover;">
@@ -85,12 +85,4 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
 {% endif %}
 
 <style>
-.project-card-hover {
-  transition: box-shadow 0.3s ease;
-  box-shadow: none !important;
-}
-
-.project-card-hover:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-}
 </style>
