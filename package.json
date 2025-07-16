@@ -10,10 +10,11 @@
   "main": "index.html",
   "scripts": {
     "dev": "tinacms dev -c \"npm run serve\"",
-    "build": "npm run clean-prod && npm run build:assets && npm run build:eleventy && npm run build:tina",
+    "build": "npm run clean-prod && npm run build:assets && npm run build:eleventy && npm run build:tina && npm run build:optimize",
     "build:eleventy": "eleventy",
-    "build:assets": "gulp dist-assets && gulp sass",
+    "build:assets": "gulp dist-assets && gulp sass && gulp minify-css",
     "build:tina": "tinacms build",
+    "build:optimize": "gulp prod-copy && gulp inject-min-css && gulp purgecss",
     "build-dev": "eleventy && gulp dist-assets && gulp sass",
     "11ty": "eleventy && gulp inject-css",
     "sync": "gulp browser-sync",
