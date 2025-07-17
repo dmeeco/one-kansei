@@ -37,42 +37,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Bootstrap handles tab switching automatically
   // The CSS will provide visual feedback for active states
-
-  // Newsletter form handler
-  if (document.getElementById('newsletter-form')) {
-    document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const email = document.getElementById('email').value;
-      const name = document.getElementById('name').value;
-      const button = e.target.querySelector('button');
-      const message = document.getElementById('message');
-      
-      button.disabled = true;
-      button.textContent = 'Subscribing...';
-      
-      try {
-        // Trigger GitHub Action via repository dispatch
-        await fetch('https://api.github.com/repos/yourusername/yourrepo/dispatches', {
-          method: 'POST',
-          headers: {
-            'Authorization': 'token YOUR_GITHUB_TOKEN',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            event_type: 'newsletter-signup',
-            client_payload: { email, name }
-          })
-        });
-        
-        message.innerHTML = '<div class="alert alert-success">Welcome email sent! Please check your inbox.</div>';
-        e.target.reset();
-      } catch (error) {
-        message.innerHTML = '<div class="alert alert-danger">Something went wrong. Please try again.</div>';
-      } finally {
-        button.disabled = false;
-        button.textContent = 'Subscribe';
-      }
-    });
-  }
 }); 

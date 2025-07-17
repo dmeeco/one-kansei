@@ -27,15 +27,147 @@ var config_default = defineConfig({
     collections: [
       {
         name: "posts",
-        label: "Posts",
-        path: "content/posts",
+        label: "Blog Posts",
+        path: "src/posts",
+        format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              const generated = values?.title?.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+              return values?.slug || generated;
+            }
+          }
+        },
         fields: [
-          { name: "title", type: "string" },
-          { name: "excerpt", type: "string" },
-          { name: "content", type: "rich-text" },
-          { name: "status", type: "string", options: ["draft", "pending", "approved"] },
-          { name: "notify_subscribers", type: "boolean", label: "Send to Newsletter" }
-        ]
+          {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            description: "URL slug (auto-generated from title, but you can edit it)",
+            required: false,
+            ui: {
+              validate: (value) => {
+                if (value && !/^[a-z0-9-]+$/.test(value)) {
+                  return "Slug can only contain lowercase letters, numbers, and hyphens";
+                }
+              }
+            }
+          },
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Date",
+            required: true
+          },
+          {
+            type: "boolean",
+            name: "featured",
+            label: "Featured on Homepage",
+            description: "Check this to show this post on the homepage"
+          },
+          {
+            type: "image",
+            name: "coverImg",
+            label: "Cover Image",
+            description: "The main image for this post",
+            // Fix: Add parse function to handle external URLs
+            parse: (filename) => {
+              if (filename && (filename.startsWith("http://") || filename.startsWith("https://"))) {
+                return filename;
+              }
+              return filename;
+            },
+            // Fix: Add previewSrc to properly display external images in editor
+            previewSrc: (src) => {
+              if (src && (src.startsWith("http://") || src.startsWith("https://"))) {
+                return src;
+              }
+              return src;
+            }
+          },
+          {
+            type: "string",
+            name: "summary",
+            label: "Summary",
+            description: "Brief description of the post",
+            ui: {
+              component: "textarea"
+            }
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: [
+              { value: "DESIGN", label: "Design" },
+              { value: "TECHNOLOGY", label: "Technology" },
+              { value: "BUSINESS", label: "Business" },
+              { value: "LIFESTYLE", label: "Lifestyle" }
+            ]
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+            ui: {
+              component: "tags"
+            }
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true
+          }
+        ],
+        // Add this to your blog collection configuration
+        beforeSubmit: async ({
+          form,
+          cms,
+          values
+        }) => {
+          if (values.featured === true) {
+            const posts = await cms.api.tina.request(`
+              query {
+                postConnection {
+                  edges {
+                    node {
+                      id
+                      _sys {
+                        filename
+                        relativePath
+                      }
+                      featured
+                    }
+                  }
+                }
+              }
+            `);
+            const currentFilename = form.values._sys.filename;
+            const otherFeaturedPosts = posts.data.postConnection.edges.filter(
+              (edge) => edge.node.featured === true && edge.node._sys.filename !== currentFilename
+            );
+            for (const post of otherFeaturedPosts) {
+              await cms.api.tina.request(`
+                mutation {
+                  updatePost(relativePath: "${post.node._sys.relativePath}") {
+                    featured: false
+                  }
+                }
+              `);
+            }
+          }
+          return values;
+        }
       },
       {
         name: "projects",

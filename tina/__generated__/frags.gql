@@ -1,10 +1,14 @@
 fragment PostsParts on Posts {
   __typename
+  slug
   title
-  excerpt
-  content
-  status
-  notify_subscribers
+  date
+  featured
+  coverImg
+  summary
+  category
+  tags
+  body
 }
 
 fragment ProjectsParts on Projects {

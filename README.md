@@ -44,11 +44,3 @@ If you are done with your dev work and happy with it its time to deploy your sta
 npm run build
 ```
 That will output the full site, with purged and minified CSS and minified html. The output will be stored in the `/public` folder.
-
-## Plunk Newsletter Integration
-
-- Newsletter modal and form in footer (Bootstrap only, no extra CSS)
-- Form submits to GitHub Actions workflow via repository dispatch
-- JS handler in src/js/services.js and dev/js/services.js
-- Backend scripts and email templates in /scripts and /emails
-- Update API keys and repo info in JS and workflow as needed

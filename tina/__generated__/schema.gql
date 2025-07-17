@@ -91,11 +91,15 @@ type Collection {
 union DocumentNode = Posts | Projects | Folder
 
 type Posts implements Node & Document {
-  title: String
-  excerpt: String
-  content: JSON
-  status: String
-  notify_subscribers: Boolean
+  slug: String
+  title: String!
+  date: String!
+  featured: Boolean
+  coverImg: String
+  summary: String
+  category: String
+  tags: [String]
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -108,10 +112,12 @@ input StringFilter {
   in: [String]
 }
 
-input RichTextFilter {
-  startsWith: String
+input DatetimeFilter {
+  after: String
+  before: String
   eq: String
   exists: Boolean
+  in: [String]
 }
 
 input BooleanFilter {
@@ -119,12 +125,29 @@ input BooleanFilter {
   exists: Boolean
 }
 
+input ImageFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input PostsFilter {
+  slug: StringFilter
   title: StringFilter
-  excerpt: StringFilter
-  content: RichTextFilter
-  status: StringFilter
-  notify_subscribers: BooleanFilter
+  date: DatetimeFilter
+  featured: BooleanFilter
+  coverImg: ImageFilter
+  summary: StringFilter
+  category: StringFilter
+  tags: StringFilter
+  body: RichTextFilter
 }
 
 type PostsConnectionEdges {
@@ -150,21 +173,6 @@ type Projects implements Node & Document {
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
-}
-
-input DatetimeFilter {
-  after: String
-  before: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
-input ImageFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
 }
 
 input ProjectsFilter {
@@ -213,11 +221,15 @@ input DocumentMutation {
 }
 
 input PostsMutation {
+  slug: String
   title: String
-  excerpt: String
-  content: JSON
-  status: String
-  notify_subscribers: Boolean
+  date: String
+  featured: Boolean
+  coverImg: String
+  summary: String
+  category: String
+  tags: [String]
+  body: JSON
 }
 
 input ProjectsMutation {
