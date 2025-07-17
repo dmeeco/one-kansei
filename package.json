@@ -45,9 +45,9 @@
     "gulp-rename": "^2.0.0",
     "npm-watch": "^0.11.0",
     "watch": "^0.13.0",
-    "@plunk/node": "^latest",
-    "@react-email/render": "^latest",
-    "@react-email/components": "^latest"
+    "@plunk/node": "^0.4.2",
+    "@react-email/render": "^0.5.10",
+    "@react-email/components": "^0.5.10"
   },
   "author": "kansei",
   "devDependencies": {
