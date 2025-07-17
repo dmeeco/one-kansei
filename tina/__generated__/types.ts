@@ -185,15 +185,11 @@ export type DocumentNode = Posts | Projects | Folder;
 
 export type Posts = Node & Document & {
   __typename?: 'Posts';
-  slug?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
-  date: Scalars['String']['output'];
-  featured?: Maybe<Scalars['Boolean']['output']>;
-  coverImg?: Maybe<Scalars['String']['output']>;
-  summary?: Maybe<Scalars['String']['output']>;
-  category?: Maybe<Scalars['String']['output']>;
-  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  excerpt?: Maybe<Scalars['String']['output']>;
+  content?: Maybe<Scalars['JSON']['output']>;
+  status?: Maybe<Scalars['String']['output']>;
+  notify_subscribers?: Maybe<Scalars['Boolean']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -206,12 +202,10 @@ export type StringFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type DatetimeFilter = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
+export type RichTextFilter = {
+  startsWith?: InputMaybe<Scalars['String']['input']>;
   eq?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type BooleanFilter = {
@@ -219,29 +213,12 @@ export type BooleanFilter = {
   exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type ImageFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export type PostsFilter = {
-  slug?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  date?: InputMaybe<DatetimeFilter>;
-  featured?: InputMaybe<BooleanFilter>;
-  coverImg?: InputMaybe<ImageFilter>;
-  summary?: InputMaybe<StringFilter>;
-  category?: InputMaybe<StringFilter>;
-  tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  excerpt?: InputMaybe<StringFilter>;
+  content?: InputMaybe<RichTextFilter>;
+  status?: InputMaybe<StringFilter>;
+  notify_subscribers?: InputMaybe<BooleanFilter>;
 };
 
 export type PostsConnectionEdges = {
@@ -270,6 +247,21 @@ export type Projects = Node & Document & {
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
+};
+
+export type DatetimeFilter = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ImageFilter = {
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ProjectsFilter = {
@@ -378,15 +370,11 @@ export type DocumentMutation = {
 };
 
 export type PostsMutation = {
-  slug?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  date?: InputMaybe<Scalars['String']['input']>;
-  featured?: InputMaybe<Scalars['Boolean']['input']>;
-  coverImg?: InputMaybe<Scalars['String']['input']>;
-  summary?: InputMaybe<Scalars['String']['input']>;
-  category?: InputMaybe<Scalars['String']['input']>;
-  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  content?: InputMaybe<Scalars['JSON']['input']>;
+  status?: InputMaybe<Scalars['String']['input']>;
+  notify_subscribers?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type ProjectsMutation = {
@@ -400,7 +388,7 @@ export type ProjectsMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type PostsPartsFragment = { __typename: 'Posts', slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null };
+export type PostsPartsFragment = { __typename: 'Posts', title?: string | null, excerpt?: string | null, content?: any | null, status?: string | null, notify_subscribers?: boolean | null };
 
 export type ProjectsPartsFragment = { __typename: 'Projects', title: string, shortTitle: string, date: string, coverImg?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
@@ -409,7 +397,7 @@ export type PostsQueryVariables = Exact<{
 }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostsQuery = { __typename?: 'Query', posts: { __typename: 'Posts', id: string, title?: string | null, excerpt?: string | null, content?: any | null, status?: string | null, notify_subscribers?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -421,7 +409,7 @@ export type PostsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostsConnectionQuery = { __typename?: 'Query', postsConnection: { __typename?: 'PostsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostsConnectionEdges', cursor: string, node?: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PostsConnectionQuery = { __typename?: 'Query', postsConnection: { __typename?: 'PostsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostsConnectionEdges', cursor: string, node?: { __typename: 'Posts', id: string, title?: string | null, excerpt?: string | null, content?: any | null, status?: string | null, notify_subscribers?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type ProjectsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -445,15 +433,11 @@ export type ProjectsConnectionQuery = { __typename?: 'Query', projectsConnection
 export const PostsPartsFragmentDoc = gql`
     fragment PostsParts on Posts {
   __typename
-  slug
   title
-  date
-  featured
-  coverImg
-  summary
-  category
-  tags
-  body
+  excerpt
+  content
+  status
+  notify_subscribers
 }
     `;
 export const ProjectsPartsFragmentDoc = gql`

@@ -26,7 +26,9 @@
     "clean": "gulp clean-dev",
     "clean-prod": "gulp clean-public",
     "dev:tina": "tinacms dev",
-    "dev:11ty": "eleventy --serve"
+    "dev:11ty": "eleventy --serve",
+    "process-signup": "node scripts/process-signup.js",
+    "process-replies": "node scripts/process-replies.js"
   },
   "dependencies": {
     "@11ty/eleventy": "2.0.1",
@@ -42,7 +44,10 @@
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "npm-watch": "^0.11.0",
-    "watch": "^0.13.0"
+    "watch": "^0.13.0",
+    "@plunk/node": "^latest",
+    "@react-email/render": "^latest",
+    "@react-email/components": "^latest"
   },
   "author": "kansei",
   "devDependencies": {
