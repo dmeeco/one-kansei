@@ -231,19 +231,115 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
           <p class="mb-0"><strong>No spam, no tracking, no nonsense.</strong> Just thoughtful insights delivered with care.</p>
         </div>
 
+        <!-- Newsletter Signup Form -->
+        <form id="newsletter-form" class="mb-4">
+          <div class="mb-3">
+            <label for="email" class="form-label fw-medium">Email Address</label>
+            <input 
+              type="email" 
+              class="form-control form-control-lg" 
+              id="email" 
+              name="email" 
+              placeholder="your@email.com"
+              required
+            >
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary px-4 py-2" id="submit-btn">
+              <span class="btn-text">Subscribe</span>
+              <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+              <i class="bi bi-arrow-up-right ms-2"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Success/Error Messages -->
+        <div id="form-messages" class="text-center" style="display: none;">
+          <div id="success-message" class="alert alert-success d-none" role="alert">
+            <i class="bi bi-check-circle me-2"></i>
+            <span id="success-text">Thank you! Please check your email to confirm your subscription.</span>
+          </div>
+          <div id="error-message" class="alert alert-danger d-none" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            <span id="error-text">Something went wrong. Please try again.</span>
+          </div>
+        </div>
+
         <div class="text-center">
-          <a href="https://forms.typeform.com/to/your-form-id" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 me-3">
-            I'm Interested
-            <i class="bi bi-arrow-up-right ms-2"></i>
-          </a>
           <p class="small text-muted mt-3 mb-0">
-            You'll be redirected to a secure third-party form. We'll send you a confirmation email to verify your subscription.
+            We respect your privacy. You can unsubscribe at any time.
           </p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+// Newsletter form handler
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('newsletter-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnSpinner = submitBtn.querySelector('.spinner-border');
+  const messagesDiv = document.getElementById('form-messages');
+  const successDiv = document.getElementById('success-message');
+  const errorDiv = document.getElementById('error-message');
+  const successText = document.getElementById('success-text');
+  const errorText = document.getElementById('error-text');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.textContent = 'Subscribing...';
+    btnSpinner.classList.remove('d-none');
+    messagesDiv.style.display = 'none';
+    successDiv.classList.add('d-none');
+    errorDiv.classList.add('d-none');
+    
+    try {
+      const formData = new FormData(form);
+      formData.append('source', 'website_footer');
+      
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        successText.textContent = data.message;
+        successDiv.classList.remove('d-none');
+        form.reset();
+        
+        // If already subscribed, show different message
+        if (data.already_subscribed) {
+          successText.textContent = 'You are already subscribed to our newsletter!';
+        }
+      } else {
+        errorText.textContent = data.error || 'Something went wrong. Please try again.';
+        errorDiv.classList.remove('d-none');
+      }
+      
+      messagesDiv.style.display = 'block';
+      
+    } catch (error) {
+      console.error('Newsletter signup error:', error);
+      errorText.textContent = 'Network error. Please check your connection and try again.';
+      errorDiv.classList.remove('d-none');
+      messagesDiv.style.display = 'block';
+    } finally {
+      // Reset button state
+      submitBtn.disabled = false;
+      btnText.textContent = 'Subscribe';
+      btnSpinner.classList.add('d-none');
+    }
+  });
+});
+</script>
 
 <script src="/js/bootstrap.bundle.min.js"></script>
     </footer>

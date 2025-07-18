@@ -1,0 +1,8 @@
+# _redirects
+# Cloudflare Pages redirects configuration
+
+# Redirect old URLs if needed
+# /old-path/* /new-path/:splat 301
+
+# SPA fallback (if needed)
+# /* /index.html 200

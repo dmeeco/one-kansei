@@ -26,7 +26,10 @@
     "clean": "gulp clean-dev",
     "clean-prod": "gulp clean-public",
     "dev:tina": "tinacms dev",
-    "dev:11ty": "eleventy --serve"
+    "dev:11ty": "eleventy --serve",
+    "build:cf": "npm run build",
+    "deploy:preview": "wrangler pages deploy public --project-name kansei-one",
+    "deploy:production": "wrangler pages deploy public --project-name kansei-one --env production"
   },
   "dependencies": {
     "@11ty/eleventy": "2.0.1",
@@ -58,7 +61,8 @@
     "onchange": "^7.0.2",
     "react-is": "^18.1.0",
     "sass": "^1.89.2",
-    "tinacms": "^2.8.0"
+    "tinacms": "^2.8.0",
+    "wrangler": "^3.22.0"
   },
   "repository": {
     "type": "git",
