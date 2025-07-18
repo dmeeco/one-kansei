@@ -5,16 +5,31 @@ var sass = require('gulp-dart-sass');
 var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
-let purgecss;
+var reload      = browserSync.reload;
+// Conditional imports for devDependencies
+let purgecss, htmlmin, htmlreplace;
+
 try {
   purgecss = require('gulp-purgecss');
 } catch (e) {
-  console.warn('Skipping purgecss - not available');
+  console.warn('gulp-purgecss not available');
   purgecss = null;
 }
-const htmlmin = require('gulp-htmlmin');
-var htmlreplace = require('gulp-html-replace');
-var reload      = browserSync.reload;
+
+try {
+  htmlmin = require('gulp-htmlmin');
+} catch (e) {
+  console.warn('gulp-htmlmin not available');
+  htmlmin = null;
+}
+
+try {
+  htmlreplace = require('gulp-html-replace');
+} catch (e) {
+  console.warn('gulp-html-replace not available');
+  htmlreplace = null;
+}
+
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
 var paths = cfg.paths;
@@ -48,6 +63,12 @@ gulp.task('minify-css', () => {
 
 // minifies HTML
 gulp.task('minify-html', () => {
+  if (!htmlmin) {
+    console.warn('Skipping HTML minification - htmlmin not available');
+    return gulp.src('public/*.html')
+      .pipe(gulp.dest('public'));
+  }
+  
   return gulp.src('public/*.html')
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(gulp.dest('public'));
@@ -139,12 +160,18 @@ gulp.task('sass', function () {
 });
 
 gulp.task('inject-min-css', function(done) {
+  if (!htmlreplace) {
+    console.warn('Skipping CSS injection - htmlreplace not available');
+    done();
+    return;
+  }
+  
   gulp.src('./public/**/*.html')
     .pipe(htmlreplace({
         'css': '/css/theme.min.css'
     }))
     .pipe(gulp.dest('./public'));
-         done();
+  done();
 });
 
 ////////////////// All Bootstrap SASS  Assets /////////////////////////
