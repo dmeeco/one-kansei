@@ -5,7 +5,13 @@ var sass = require('gulp-dart-sass');
 var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
-const purgecss = require('gulp-purgecss');
+let purgecss;
+try {
+  purgecss = require('gulp-purgecss');
+} catch (e) {
+  console.warn('Skipping purgecss - not available');
+  purgecss = null;
+}
 const htmlmin = require('gulp-htmlmin');
 var htmlreplace = require('gulp-html-replace');
 var reload      = browserSync.reload;
@@ -50,13 +56,19 @@ gulp.task('minify-html', () => {
 
 // Purging unused CSS
 gulp.task('purgecss', () => {
-    return gulp.src('public/css/theme.min.css')
-        .pipe(purgecss({
-            content: ['public/**/*.html'],
-            safelist: ['collapsed', 'collapse', 'active', 'show', 'collapsing' ]
-        }))
-        .pipe(gulp.dest('public/css'))
-})
+  if (!purgecss) {
+      console.warn('Skipping purgecss - module not available');
+      return gulp.src('public/css/theme.min.css')
+          .pipe(gulp.dest('public/css'));
+  }
+  
+  return gulp.src('public/css/theme.min.css')
+      .pipe(purgecss({
+          content: ['public/**/*.html'],
+          safelist: ['collapsed', 'collapse', 'active', 'show', 'collapsing' ]
+      }))
+      .pipe(gulp.dest('public/css'))
+});
 
 gulp.task('clean-public', function() {
   return gulp.src('public', {
