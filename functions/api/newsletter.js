@@ -57,27 +57,15 @@ export async function onRequestPost(context) {
 
     if (plunkResponse.ok) {
       // New contact added, send confirmation email
-      try {
-        await sendConfirmationEmail(email, env.PLUNK_API_KEY, env.PLUNK_CONFIRMATION_TEMPLATE_ID);
-        
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: 'Please check your email and click the confirmation link to complete your subscription!' 
-          }),
-          { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
-        );
-      } catch (emailError) {
-        console.error('Failed to send confirmation email:', emailError);
-        // Still return success since contact was added, but mention email issue
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: 'Subscription started! If you don\'t receive a confirmation email, please contact support.' 
-          }),
-          { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
-        );
-      }
+      await sendConfirmationEmail(email, env.PLUNK_API_KEY, env.PLUNK_CONFIRMATION_TEMPLATE_ID);
+      
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          message: 'Please check your email and click the confirmation link to complete your subscription!' 
+        }),
+        { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
+      );
 
     } else if (plunkResponse.status === 409 || plunkResponse.status === 400) {
       // Contact exists - check if they're already confirmed
@@ -94,29 +82,15 @@ export async function onRequestPost(context) {
         );
       } else {
         // Exists but not confirmed - resend confirmation
-        try {
-          await sendConfirmationEmail(email, env.PLUNK_API_KEY, env.PLUNK_CONFIRMATION_TEMPLATE_ID);
-          
-          return new Response(
-            JSON.stringify({ 
-              success: true, 
-              message: 'Confirmation email sent! Please check your email and click the link to confirm.' 
-            }),
-            { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
-          );
-        } catch (emailError) {
-          console.error('Failed to resend confirmation:', emailError);
-          return new Response(
-            JSON.stringify({ 
-              success: false, 
-              error: 'Unable to send confirmation email. Please try again.' 
-            }),
-            { 
-              status: 500,
-              headers: { 'Content-Type': 'application/json', ...corsHeaders }
-            }
-          );
-        }
+        await sendConfirmationEmail(email, env.PLUNK_API_KEY, env.PLUNK_CONFIRMATION_TEMPLATE_ID);
+        
+        return new Response(
+          JSON.stringify({ 
+            success: true, 
+            message: 'Confirmation email sent! Please check your email and click the link to confirm.' 
+          }),
+          { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
+        );
       }
     } else {
       console.error('Plunk API error:', plunkData);
@@ -178,36 +152,23 @@ async function getContact(email, apiKey) {
 // Helper function to send confirmation email using Plunk template
 async function sendConfirmationEmail(email, apiKey, templateId) {
   try {
-    // Generate confirmation token (you can make this more secure)
+    console.log('Sending confirmation email to:', email, 'with template:', templateId);
+    
+    // Generate confirmation token
     const confirmationToken = generateConfirmationToken(email);
     const confirmationUrl = `https://kansei.one/api/confirm?token=${confirmationToken}&email=${encodeURIComponent(email)}`;
 
     const payload = {
       to: email,
-      subject: "Please confirm your KANSEI subscription",
-      body: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h1>Confirm Your Subscription</h1>
-          <p>Please click the button below to confirm your subscription to KANSEI updates:</p>
-          <a href="${confirmationUrl}" style="display: inline-block; background-color: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 20px 0;">Confirm Subscription</a>
-          <p>Or copy and paste this link: ${confirmationUrl}</p>
-          <p>This link will expire in 24 hours.</p>
-        </div>
-      `
-    };
-
-    // If you have a template ID, use it instead
-    if (templateId) {
-      payload.template = templateId;
-      payload.data = {
+      templateId: templateId,
+      data: {
         confirmation_url: confirmationUrl,
         email: email
-      };
-      delete payload.subject;
-      delete payload.body;
-    }
+      }
+    };
 
-    console.log('Sending confirmation email to:', email);
+    console.log('Email payload:', JSON.stringify(payload));
+
     const response = await fetch('https://api.useplunk.com/v1/send', {
       method: 'POST',
       headers: {
@@ -217,19 +178,16 @@ async function sendConfirmationEmail(email, apiKey, templateId) {
       body: JSON.stringify(payload),
     });
 
-    const responseData = await response.text();
-    console.log('Plunk send response:', response.status, responseData);
+    const responseText = await response.text();
+    console.log('Plunk email response:', response.status, responseText);
 
     if (!response.ok) {
-      console.error('Failed to send confirmation email:', response.status, responseData);
-      throw new Error(`Email send failed: ${response.status}`);
+      console.error('Failed to send confirmation email:', response.status, responseText);
+    } else {
+      console.log('Confirmation email sent successfully');
     }
-
-    console.log('Confirmation email sent successfully');
-    return true;
   } catch (error) {
     console.error('Error sending confirmation email:', error);
-    throw error;
   }
 }
 
