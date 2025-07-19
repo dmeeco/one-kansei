@@ -148,54 +148,274 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
         <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg" alt="People expressing gratitude" class="img-fluid w-100 rounded-top-2" style="object-fit:cover; max-height:260px;">
         <div class="card-body p-5">
           <h3 class="h4 mb-4 text-center">Heartfelt Appreciation! <span aria-label="heart" role="img">❤️</span></h3>
-          <table class="table mb-0" style="border-collapse:collapse;">
-                <tbody>
-              <tr style="border-top:1px solid #f1f3f4; border-bottom:1px solid #f1f3f4;">
-                <th scope="row" class="w-25" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Website Template</th>
-                <td style="padding: 1.1rem 1rem;">A tiny sideproject by <a href="https://github.com/holger1411" class="link-fancy" target="_blank" rel="noopener">Holger Koenemann</a>. Made in lovely Hannover, Germany.</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f3f4;">
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Static Site Generator</th>
-                <td style="padding: 1.1rem 1rem;"><a href="https://www.11ty.dev/" class="link-fancy" target="_blank" rel="noopener">Eleventy</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid #f1f3f4;">
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">CSS Framework</th>
-                <td style="padding: 1.1rem 1rem;"><a href="https://www.getbootstrap.com" class="link-fancy" target="_blank" rel="noopener">Bootstrap</a></td>
-                  </tr>
-              <tr style="border-bottom:1px solid #f1f3f4;">
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Typeface</th>
-                <td style="padding: 1.1rem 1rem;">Special thanks to Rasmus Anderson for the great <a href="https://rsms.me/inter/" class="link-fancy" target="_blank" rel="noopener">Inter UI</a> typeface family.</td>
-                  </tr>
-                  <tr>
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Icons</th>
-                <td style="padding: 1.1rem 1rem;">Big shoutout to <a href="https://www.dennissnellenberg.nl/en/" class="link-fancy" target="_blank" rel="noopener">Dennis Snellenberg</a> for his awesome Angular Icon set.</td>
-                  </tr>
-              <tr style="border-bottom:1px solid #f1f3f4;">
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Photo Credits</th>
-                <td style="padding: 1.1rem 1rem;">
-                  Photo by <a href="https://unsplash.com/@camp_paradise" class="link-fancy" target="_blank" rel="noopener">Camp Paradise</a> on <a href="https://unsplash.com/photos/3-men-and-2-women-standing-beside-green-metal-gate-NP4MBfTHt6M" class="link-fancy" target="_blank" rel="noopener">Unsplash</a> <span class="text-muted small">(Way of Life page)</span><br><br>
-                  Photo by <a href="https://unsplash.com/@bartros" class="link-fancy" target="_blank" rel="noopener">Bart Ros</a> on <a href="https://unsplash.com/photos/a-group-of-people-walking-down-a-street-next-to-tall-buildings-xgFKtRcf-Bk" class="link-fancy" target="_blank" rel="noopener">Unsplash</a> <span class="text-muted small">(Services page)</span>
-                </td>
-                  </tr>
-              <tr style="border-bottom:1px solid #f1f3f4;">
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Logo mark</th>
-                <td style="padding: 1.1rem 1rem;">
-                  wave by Danil Polshin from <a href="https://thenounproject.com/browse/icons/term/wave/" target="_blank" title="wave Icons">Noun Project</a> (CC BY 3.0)
-                </td>
-                  </tr>
-              <tr style="border-bottom:1px solid #f1f3f4;">
-                <th scope="row" style="border-right:1px solid #f1f3f4; padding: 1.1rem 1rem;">Favicon Generator</th>
-                <td style="padding: 1.1rem 1rem;">
-                  Favicons generated with <a href="https://realfavicongenerator.net/" class="link-fancy" target="_blank" rel="noopener">RealFaviconGenerator</a>
-                </td>
-              </tr>
-                </tbody>
-              </table>
+          
+          <!-- Tabs Navigation -->
+          <ul class="nav nav-tabs border-0 mb-4" id="gratitudeTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-muted border-0 border-bottom border-2 border-transparent px-0 me-4 pb-2" id="website-tab" data-bs-toggle="tab" data-bs-target="#website" type="button" role="tab" aria-controls="website" aria-selected="true">Website & Tools</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-muted border-0 border-bottom border-2 border-transparent px-0 me-4 pb-2" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button" role="tab" aria-controls="design" aria-selected="false">Design & Assets</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link text-muted border-0 border-bottom border-2 border-transparent px-0 me-4 pb-2" id="inspiration-tab" data-bs-toggle="tab" data-bs-target="#inspiration" type="button" role="tab" aria-controls="inspiration" aria-selected="false">Inspiration</button>
+            </li>
+          </ul>
+
+          <!-- Tab Content -->
+          <div class="tab-content" id="gratitudeTabsContent">
+            
+            <!-- Website & Tools Tab -->
+            <div class="tab-pane fade show active" id="website" role="tabpanel" aria-labelledby="website-tab">
+              <div class="row g-3">
+                
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#6c757d" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="#6c757d" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="#6c757d" stroke-width="2" stroke-linejoin="round"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Website</span>
+                          <h5 class="card-title mb-2">Website Template</h5>
+                          <p class="card-text text-muted small mb-3">A tiny sideproject by Holger Koenemann. Made in lovely Hannover, Germany.</p>
+                          <a href="https://github.com/holger1411" class="link-secondary text-decoration-none" target="_blank" rel="noopener">View Project →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H21V21H3V3Z" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M9 9L15 15" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M15 9L9 15" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Generator</span>
+                          <h5 class="card-title mb-2">Eleventy</h5>
+                          <p class="card-text text-muted small mb-3">Static site generator powering our fast and efficient website architecture.</p>
+                          <a href="https://www.11ty.dev/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">Visit Site →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="6" width="20" height="12" rx="2" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M2 8H22" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Framework</span>
+                          <h5 class="card-title mb-2">Bootstrap</h5>
+                          <p class="card-text text-muted small mb-3">CSS framework providing responsive design and utility classes for rapid development.</p>
+                          <a href="https://www.getbootstrap.com" class="link-secondary text-decoration-none" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M8 12L12 16L16 12" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Tool</span>
+                          <h5 class="card-title mb-2">RealFaviconGenerator</h5>
+                          <p class="card-text text-muted small mb-3">Professional favicon generation tool ensuring perfect icons across all devices.</p>
+                          <a href="https://realfavicongenerator.net/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">Generate →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Design & Assets Tab -->
+            <div class="tab-pane fade" id="design" role="tabpanel" aria-labelledby="design-tab">
+              <div class="row g-3">
+                
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 7V4C4 3.44772 4.44772 3 5 3H19C19.5523 3 20 3.44772 20 4V7" stroke="#6c757d" stroke-width="2"/>
+                            <rect x="4" y="7" width="16" height="13" rx="1" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Typeface</span>
+                          <h5 class="card-title mb-2">Inter UI</h5>
+                          <p class="card-text text-muted small mb-3">Special thanks to Rasmus Anderson for the great Inter UI typeface family.</p>
+                          <a href="https://rsms.me/inter/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">Download →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Icons</span>
+                          <h5 class="card-title mb-2">Angular Icon Set</h5>
+                          <p class="card-text text-muted small mb-3">Big shoutout to Dennis Snellenberg for his awesome Angular Icon set.</p>
+                          <a href="https://www.dennissnellenberg.nl/en/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">View Work →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke="#6c757d" stroke-width="2"/>
+                            <circle cx="7.5" cy="10.5" r="1.5" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Photography</span>
+                          <h5 class="card-title mb-2">Unsplash Photos</h5>
+                          <p class="card-text text-muted small mb-3">Beautiful photography from Camp Paradise and Bart Ros via Unsplash platform.</p>
+                          <a href="https://unsplash.com/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">Browse Photos →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L9 7V9C9 10.1 9.9 11 11 11V22H13V11C14.1 11 15 10.1 15 9Z" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Logo</span>
+                          <h5 class="card-title mb-2">Wave Icon</h5>
+                          <p class="card-text text-muted small mb-3">Wave icon by Danil Polshin from Noun Project (CC BY 3.0 license).</p>
+                          <a href="https://thenounproject.com/browse/icons/term/wave/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">View Icon →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Inspiration Tab -->
+            <div class="tab-pane fade" id="inspiration" role="tabpanel" aria-labelledby="inspiration-tab">
+              <div class="row g-3">
+                
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11H15L13 13.5L15 16H9L11 13.5L9 11Z" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M2 3H22C22 3 22 9 12 9C2 9 2 3 2 3Z" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M2 21H22C22 21 22 15 12 15C2 15 2 21 2 21Z" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Philosophy</span>
+                          <h5 class="card-title mb-2">Japanese Aesthetics</h5>
+                          <p class="card-text text-muted small mb-3">Kansei philosophy inspiring minimal design and thoughtful user experiences.</p>
+                          <a href="#" class="link-secondary text-decoration-none">Learn More →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card border-0 bg-light rounded-3 h-100">
+                    <div class="card-body p-4">
+                      <div class="d-flex align-items-start">
+                        <div class="bg-white rounded-2 p-2 me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#6c757d" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="#6c757d" stroke-width="2"/>
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="badge bg-secondary text-light mb-2">Industry</span>
+                          <h5 class="card-title mb-2">Modern Web Standards</h5>
+                          <p class="card-text text-muted small mb-3">Following contemporary web development practices and accessibility guidelines.</p>
+                          <a href="#" class="link-secondary text-decoration-none">Explore →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+.nav-tabs .nav-link.active {
+  border-bottom-color: #6c757d !important;
+  background-color: transparent;
+  color: #495057 !important;
+}
+
+.nav-tabs .nav-link:hover {
+  border-bottom-color: #adb5bd !important;
+  color: #495057;
+}
+</style>
     </main>
 
     <footer class="container">
