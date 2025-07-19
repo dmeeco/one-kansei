@@ -1,11 +1,10 @@
 // functions/api/newsletter.js
-// Cloudflare Worker function with Plunk templates and double opt-in
+// Cloudflare Worker function for handling newsletter subscriptions with proper double opt-in
 
 export async function onRequestPost(context) {
   const { request, env } = context;
   
   try {
-    // Handle CORS
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -16,12 +15,10 @@ export async function onRequestPost(context) {
       return new Response(null, { headers: corsHeaders });
     }
 
-    // Get form data
     const formData = await request.formData();
     const email = formData.get('email');
     const source = formData.get('source') || 'website';
 
-    // Validate email
     if (!email || !isValidEmail(email)) {
       return new Response(
         JSON.stringify({ 
@@ -30,78 +27,60 @@ export async function onRequestPost(context) {
         }),
         { 
           status: 400,
-          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+          headers: { 
+            'Content-Type': 'application/json',
+            ...corsHeaders 
+          }
         }
       );
     }
 
-    // Step 1: Add contact as UNCONFIRMED (subscribed: false)
-    const plunkResponse = await fetch('https://api.useplunk.com/v1/contacts', {
+    // Step 1: Track the signup event (this creates contact as unsubscribed)
+    // This will trigger the double opt-in automation in Plunk
+    const trackResponse = await fetch('https://api.useplunk.com/v1/track', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${env.PLUNK_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        event: 'newsletter-signup', // This event should trigger your double opt-in action
         email: email,
-        subscribed: false, // Key change: start unsubscribed
         data: {
           source: source,
           signup_date: new Date().toISOString(),
-          confirmation_pending: true
         }
       })
     });
 
-    const plunkData = await plunkResponse.json();
-
-    if (plunkResponse.ok) {
-      // New contact added, send confirmation email
-      await sendConfirmationEmail(email, env.PLUNK_API_KEY, env.PLUNK_CONFIRMATION_TEMPLATE_ID);
-      
+    if (trackResponse.ok) {
       return new Response(
         JSON.stringify({ 
           success: true, 
-          message: 'Please check your email and click the confirmation link to complete your subscription!' 
+          message: 'Please check your email to confirm your subscription!' 
         }),
-        { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
+        { 
+          headers: { 
+            'Content-Type': 'application/json',
+            ...corsHeaders 
+          }
+        }
       );
-
-    } else if (plunkResponse.status === 409 || plunkResponse.status === 400) {
-      // Contact exists - check if they're already confirmed
-      const existingContact = await getContact(email, env.PLUNK_API_KEY);
-      
-      if (existingContact && existingContact.subscribed) {
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: 'You are already subscribed to our newsletter!',
-            already_subscribed: true 
-          }),
-          { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
-        );
-      } else {
-        // Exists but not confirmed - resend confirmation
-        await sendConfirmationEmail(email, env.PLUNK_API_KEY, env.PLUNK_CONFIRMATION_TEMPLATE_ID);
-        
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: 'Confirmation email sent! Please check your email and click the link to confirm.' 
-          }),
-          { headers: { 'Content-Type': 'application/json', ...corsHeaders }}
-        );
-      }
     } else {
-      console.error('Plunk API error:', plunkData);
+      const errorData = await trackResponse.json();
+      console.error('Plunk track event error:', errorData);
+      
       return new Response(
         JSON.stringify({ 
           success: false, 
-          error: 'Failed to subscribe. Please try again.' 
+          error: 'Failed to process subscription. Please try again.' 
         }),
         { 
           status: 500,
-          headers: { 'Content-Type': 'application/json', ...corsHeaders }
+          headers: { 
+            'Content-Type': 'application/json',
+            ...corsHeaders 
+          }
         }
       );
     }
@@ -130,71 +109,37 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-// Helper function to get existing contact
-async function getContact(email, apiKey) {
-  try {
-    const response = await fetch(`https://api.useplunk.com/v1/contacts/${email}`, {
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-      },
-    });
-
-    if (response.ok) {
-      return await response.json();
-    }
-    return null;
-  } catch (error) {
-    console.error('Error getting contact:', error);
-    return null;
-  }
-}
-
-// Helper function to send confirmation email using Plunk template
-async function sendConfirmationEmail(email, apiKey, templateId) {
-  try {
-    console.log('Sending confirmation email to:', email, 'with template:', templateId);
+// Optional: Confirmation endpoint for handling the double opt-in callback
+export async function onRequestGet(context) {
+  const { request, env } = context;
+  const url = new URL(request.url);
+  
+  // Handle confirmation link clicks (if you want to track confirmations)
+  if (url.pathname.includes('/confirm')) {
+    const token = url.searchParams.get('token');
+    const email = url.searchParams.get('email');
     
-    // Generate confirmation token
-    const confirmationToken = generateConfirmationToken(email);
-    const confirmationUrl = `https://kansei.one/api/confirm?token=${confirmationToken}&email=${encodeURIComponent(email)}`;
-
-    const payload = {
-      to: email,
-      templateId: templateId,
-      data: {
-        confirmation_url: confirmationUrl,
-        email: email
-      }
-    };
-
-    console.log('Email payload:', JSON.stringify(payload));
-
-    const response = await fetch('https://api.useplunk.com/v1/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const responseText = await response.text();
-    console.log('Plunk email response:', response.status, responseText);
-
-    if (!response.ok) {
-      console.error('Failed to send confirmation email:', response.status, responseText);
-    } else {
-      console.log('Confirmation email sent successfully');
+    if (token && email) {
+      // Track the confirmation event
+      await fetch('https://api.useplunk.com/v1/track', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${env.PLUNK_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          event: 'newsletter-confirmed',
+          email: email,
+          data: {
+            confirmed_at: new Date().toISOString(),
+          }
+        })
+      });
+      
+      // Redirect to thank you page
+      return Response.redirect('https://kansei.one/newsletter-confirmed', 302);
     }
-  } catch (error) {
-    console.error('Error sending confirmation email:', error);
   }
-}
-
-// Simple token generation (enhance with crypto for production)
-function generateConfirmationToken(email) {
-  const timestamp = Date.now();
-  const data = `${email}:${timestamp}`;
-  // In production, use proper HMAC signing with a secret
-  return btoa(data).replace(/[^a-zA-Z0-9]/g, '').substring(0, 32);
+  
+  return new Response('Invalid request', { status: 400 });
 }
