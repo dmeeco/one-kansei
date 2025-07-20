@@ -148,19 +148,19 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
   <div class="offcanvas-body p-0">
     <ul class="nav nav-pills flex-column mobile-nav-menu">
       <li class="nav-item">
-        <a class="nav-link mobile-nav-link" href="/services/" data-bs-dismiss="offcanvas">Services</a>
+        <a class="nav-link mobile-nav-link" href="/services/">Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobile-nav-link" href="/projects/" data-bs-dismiss="offcanvas">Projects</a>
+        <a class="nav-link mobile-nav-link" href="/projects/" >Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobile-nav-link" href="/way-of-life/" data-bs-dismiss="offcanvas">Way of Life</a>
+        <a class="nav-link mobile-nav-link" href="/way-of-life/" >Way of Life</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobile-nav-link" href="/blog/" data-bs-dismiss="offcanvas">Xpressions'</a>
+        <a class="nav-link mobile-nav-link" href="/blog/" >Xpressions'</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobile-nav-link" href="/contact/" data-bs-dismiss="offcanvas">Get in Touch</a>
+        <a class="nav-link mobile-nav-link" href="/contact/" >Get in Touch</a>
       </li>
     </ul>
     
@@ -1000,7 +1000,34 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Bootstrap JS not loaded! Offcanvas and other components may not work.');
       }
     </script>
-
+    <script>
+// Mobile navigation handler
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all mobile nav links
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  mobileNavLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      
+      // Get the URL from href attribute
+      const targetUrl = this.getAttribute('href');
+      
+      // Close the offcanvas first
+      const offcanvasElement = document.getElementById('mobileNavOffcanvas');
+      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || 
+                       new bootstrap.Offcanvas(offcanvasElement);
+      
+      offcanvas.hide();
+      
+      // Navigate after offcanvas closes
+      offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
+        window.location.href = targetUrl;
+      }, { once: true });
+    });
+  });
+});
+    </script>
   </body>
 
 </html>

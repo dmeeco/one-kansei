@@ -21,6 +21,37 @@
       {% include 'snippets/footer.njk' %}
     </footer>
 
+        <script src="{{ '/js/bootstrap.bundle.min.js' | url }}"></script>
+
+<script>
+  if (typeof bootstrap === 'undefined') {
+    console.warn('Bootstrap JS not loaded! Offcanvas and other components may not work.');
+  }
+</script>
+
+<script>
+// Mobile navigation handler
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetUrl = this.getAttribute('href');
+      const offcanvasElement = document.getElementById('mobileNavOffcanvas');
+      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || 
+                       new bootstrap.Offcanvas(offcanvasElement);
+      
+      offcanvas.hide();
+      
+      offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
+        window.location.href = targetUrl;
+      }, { once: true });
+    });
+  });
+});
+</script>
   </body>
 
 </html>
