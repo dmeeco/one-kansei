@@ -11983,13 +11983,31 @@ body {
   justify-content: center;
 }
 
-.services-custom-popover {
-  --bs-popover-max-width: 260px;
-  --bs-popover-border-color: #000;
-  --bs-popover-header-bg: #000;
-  --bs-popover-header-color: #fff;
-  --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: .5rem;
+.services-custom-popover.popover {
+  border-radius: 1rem !important;
+  border: 1px solid #000 !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  max-width: 260px;
+}
+
+.services-custom-popover .popover-header {
+  background: #000 !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 600;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.services-custom-popover .popover-body {
+  background: #fff !important;
+  color: #212529 !important;
+  font-size: 0.95rem !important;
+  border-bottom-left-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
+  padding: 0.75rem 1rem !important;
 }
 
 .card-lift {
@@ -12006,4 +12024,57 @@ body {
 
 .quote-bg-color {
   color: rgb(206.6, 244.4, 252);
+}
+
+.mobile-nav-menu {
+  margin-left: 3rem;
+  margin-right: 0;
+}
+.mobile-nav-menu .mobile-nav-link {
+  color: #212529 !important;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0 !important;
+  border: none !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-right: 0 !important;
+  width: 100% !important;
+  display: block !important;
+}
+.mobile-nav-menu .mobile-nav-link:hover {
+  background-color: rgba(23, 23, 229, 0.12) !important;
+  color: #212529 !important;
+}
+.mobile-nav-menu .mobile-nav-link.active, .mobile-nav-menu .mobile-nav-link:focus {
+  background-color: rgba(23, 23, 229, 0.18) !important;
+  color: #212529 !important;
+}
+
+#mobileNavOffcanvas {
+  max-width: 100vw !important;
+}
+@media (max-width: 425px) {
+  #mobileNavOffcanvas {
+    width: 100vw !important;
+  }
+}
+#mobileNavOffcanvas .offcanvas-header {
+  padding: 1rem 1.5rem;
+  min-height: auto;
+}
+#mobileNavOffcanvas .offcanvas-header .offcanvas-title img {
+  filter: brightness(0);
+}
+#mobileNavOffcanvas .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  overflow-x: hidden;
+}
+@media (max-width: 425px) {
+  #mobileNavOffcanvas .offcanvas-body {
+    padding: 0.5rem 0;
+  }
 }
