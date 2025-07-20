@@ -1,3 +1,6 @@
+// PurgeCSS Whitelist: Add these to your safelist in purgecss.config.js or your build tool
+// ['my-vh-1','my-vh-2','my-vh-3','my-vh-4','my-vh-5','my-vh-6','py-vh-1','py-vh-2','py-vh-3','py-vh-4','py-vh-5','py-vh-6','tab-content','tab-pane','offcanvas','offcanvas-body','offcanvas-header','offcanvas-title','mobile-nav-menu','mobile-nav-link','services-nav-pills','services-icon-shape','card-lift','quote-bg-color','services-custom-popover']
+// This prevents PurgeCSS from stripping out dynamic or JS-injected classes.
 body {
   letter-spacing:-.02rem;
 }
@@ -161,30 +164,30 @@ body {
 .mobile-nav-menu {
   margin-left: 3rem; // Logo width margin
   margin-right: 0;
-}
-
-.mobile-nav-link {
-  color: #212529 !important;
-  font-weight: 500; // Same as desktop nav
-  font-size: 1rem; // Same as desktop
-  padding: 0.75rem 1rem !important;
-  border-radius: 0 !important;
-  border: none !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-right: 0 !important;
-  width: 100% !important;
-  display: block !important;
   
-  &:hover {
-    background-color: rgba($blue, 0.12) !important;
+  .mobile-nav-link {
     color: #212529 !important;
-  }
-  
-  &.active,
-  &:focus {
-    background-color: rgba($blue, 0.18) !important;
-    color: #212529 !important;
+    font-weight: 500; // Same as desktop nav
+    font-size: 1rem; // Same as desktop
+    padding: 0.75rem 1rem !important;
+    border-radius: 0 !important;
+    border: none !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-right: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    
+    &:hover {
+      background-color: rgba($blue, 0.12) !important;
+      color: #212529 !important;
+    }
+    
+    &.active,
+    &:focus {
+      background-color: rgba($blue, 0.18) !important;
+      color: #212529 !important;
+    }
   }
 }
 

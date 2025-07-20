@@ -17,6 +17,13 @@
       {% include 'snippets/footer.njk' %}
     </footer>
 
+    <script src="{{ '/js/bootstrap.bundle.min.js' | url }}"></script>
+    <script>
+      if (typeof bootstrap === 'undefined') {
+        console.warn('Bootstrap JS not loaded! Offcanvas and other components may not work.');
+      }
+    </script>
+
   </body>
 
 </html>

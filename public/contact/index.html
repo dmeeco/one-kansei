@@ -500,6 +500,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="/js/bootstrap.bundle.min.js"></script>
     </footer>
 
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script>
+      if (typeof bootstrap === 'undefined') {
+        console.warn('Bootstrap JS not loaded! Offcanvas and other components may not work.');
+      }
+    </script>
+
   </body>
 
 </html>
