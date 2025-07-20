@@ -11,7 +11,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="One Kansei" />
 <link rel="manifest" href="/img/site.webmanifest" />
-<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
 <meta name="author" content="One Kansei Tribe">
 <meta name="generator" content="Eleventy v2.0.1">
 <meta name="HandheldFriendly" content="true"/>
@@ -19,7 +18,6 @@
 <!-- build:css -->
 <link rel="stylesheet" href="/css/theme.css">
 <!-- endbuild -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <style>
 /* inter-300 - latin */
 @font-face {
@@ -27,8 +25,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local(''),
-       url('/fonts/inter-v12-latin-300.woff2') format('woff2'),
+  src: url('/fonts/inter-v12-latin-300.woff2') format('woff2'),
        url('/fonts/inter-v12-latin-300.woff') format('woff');
 }
 
@@ -38,8 +35,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''),
-       url('/fonts/inter-v12-latin-regular.woff2') format('woff2'),
+  src: url('/fonts/inter-v12-latin-regular.woff2') format('woff2'),
        url('/fonts/inter-v12-latin-regular.woff') format('woff');
 }
 
@@ -49,8 +45,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local(''),
-       url('/fonts/inter-v12-latin-500.woff2') format('woff2'),
+  src: url('/fonts/inter-v12-latin-500.woff2') format('woff2'),
        url('/fonts/inter-v12-latin-500.woff') format('woff');
 }
 
@@ -60,8 +55,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local(''),
-       url('/fonts/inter-v12-latin-700.woff2') format('woff2'),
+  src: url('/fonts/inter-v12-latin-700.woff2') format('woff2'),
        url('/fonts/inter-v12-latin-700.woff') format('woff');
 }
 
@@ -71,8 +65,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''),
-       url('/fonts/inder-v14-latin-regular.woff2') format('woff2');
+  src: url('/fonts/inder-v14-latin-regular.woff2') format('woff2');
 }
 
 .inder-font {
@@ -92,6 +85,19 @@ title {
 h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   font-family: 'Andika', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
+
+/* SVG Icon Styles */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.icon-sm { width: 0.875em; height: 0.875em; }
+.icon-lg { width: 1.25em; height: 1.25em; }
+.icon-xl { width: 1.5em; height: 1.5em; }
 </style>
   </head>
 
@@ -129,6 +135,8 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
 
     <main>
       
+
+
 <div class="container my-vh-6">
   <div class="row">
     <div class="col-12 col-lg-10 my-4">
@@ -178,8 +186,26 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
          <div class="col-lg-3 col-md-6">
             <div class="card bg-primary bg-opacity-10 p-4 border-0 h-100 card-lift">
                <div class="mb-4">
-                  <!-- Research: bi-puzzle-fill -->
-                  <i class="bi bi-puzzle-fill" style="font-size: 2.5rem; color: #8B3DFF;"></i>
+                  
+<svg class="" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <line x1="12" y1="18" x2="12" y2="21"/>
+    <line x1="12" y1="9" x2="12" y2="15"/>
+    <line x1="12" y1="3" x2="12" y2="6"/>
+    <line x1="15" y1="21" x2="9" y2="21"/>
+    <polyline points="21 18 21 21 18 21"/>
+    <line x1="21" y1="9" x2="21" y2="15"/>
+    <polyline points="18 3 21 3 21 6"/>
+    <line x1="9" y1="3" x2="15" y2="3"/>
+    <polyline points="3 6 3 3 6 3"/>
+    <line x1="3" y1="15" x2="3" y2="9"/>
+    <polyline points="6 21 3 21 3 18"/>
+    <line x1="6" y1="12" x2="3" y2="12"/>
+    <line x1="15" y1="12" x2="9" y2="12"/>
+    <line x1="21" y1="12" x2="18" y2="12"/>
+  
+</svg>
+
                </div>
                <div>
                   <h3>Research</h3>
@@ -190,8 +216,16 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
          <div class="col-lg-3 col-md-6">
             <div class="card bg-success bg-opacity-10 p-4 border-0 h-100 card-lift">
                <div class="mb-4">
-                                     <!-- Sustainability: bi-leaf-fill -->
-                   <i class="bi bi-leaf-fill" style="font-size: 2.5rem; color: #198754;"></i>
+                  
+<svg class="" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <line x1="7" y1="16.5" x2="7" y2="20"/>
+    <polygon points="12 17 2 17 4.5 13 3 13 5.5 9 4 9 7 4 10 9 8.5 9 11 13 9.5 13 12 17"/>
+    <circle cx="18" cy="10" r="4"/>
+    <line x1="18" y1="10" x2="18" y2="20"/>
+  
+</svg>
+
                </div>
                <div>
                   <h3>Sustainability</h3>
@@ -202,25 +236,38 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
             </div>
          </div>
          <div class="col-lg-3 col-md-6">
-            <div class="card bg-info bg-opacity-10 p-4 border-0 h-100 card-lift">
-               <div class="mb-4">
-                  <!-- Solution: bi-fingerprint -->
-                  <i class="bi bi-fingerprint" style="font-size: 2.5rem; color: #0677AC;"></i>
-               </div>
-               <div>
-                  <h3>Solution</h3>
+                          <div class="card bg-info bg-opacity-10 p-4 border-0 h-100 card-lift">
+                 <div class="mb-4">
+                   
+<svg class="" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <polygon points="12 2 3 7 12 12 21 7 12 2"/>
+    <polyline points="7.5 9.5 3 12 12 17 21 12 16.5 9.5"/>
+    <polyline points="7.5 14.5 3 17 12 22 21 17 16.5 14.5"/>
+  
+</svg>
+
+                 </div>
+                 <div>
+                   <h3>Solution</h3>
                   <p class="mb-0 text-info-emphasis">We prototype and test solutions iteratively, validating assumptions through user feedback and performance metrics before full implementation to ensure effectiveness.</p>
                </div>
             </div>
          </div>
          <div class="col-lg-3 col-md-6">
-            <div class="card bg-warning bg-opacity-10 p-4 border-0 h-100 card-lift">
-               <div class="mb-4">
-                  <!-- Implementation: bi-rocket-fill -->
-                  <i class="bi bi-send-check-fill" style="font-size: 2.5rem; color: #FFC107;"></i>
-               </div>
-               <div>
-                  <h3>Partnership</h3>
+                          <div class="card bg-warning bg-opacity-10 p-4 border-0 h-100 card-lift">
+                 <div class="mb-4">
+                   
+<svg class="" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <rect x="3" y="3" width="12.5" height="12.5"/>
+    <rect x="8.5" y="8.5" width="12.5" height="12.5"/>
+  
+</svg>
+
+                 </div>
+                 <div>
+                   <h3>Partnership</h3>
                   <p class="mb-0 text-warning-emphasis">While we focus on research and design, we partner with trusted developers in your location for implementation. You get strategic innovation with local expertise.</p>
                </div>
             </div>
@@ -253,7 +300,19 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
            id="systems-tab" data-bs-toggle="pill" data-bs-target="#systems" role="tab" 
            aria-controls="systems" aria-selected="true">
           <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-diagram-3" style="font-size: 1.25rem; color: currentColor;"></i>
+            
+<svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <rect x="19" y="15" width="4" height="4"/>
+    <rect x="3" y="15" width="4" height="4"/>
+    <circle cx="13" cy="7" r="2"/>
+    <circle cx="3" cy="7" r="2"/>
+    <path d="M15,7.25A8,8,0,0,1,21,15"/>
+    <path d="M5,15a8,8,0,0,1,6-7.75"/>
+    <line x1="11" y1="7" x2="5" y2="7"/>
+  
+</svg>
+
           </div>
           <h4 class="mb-0 fw-medium">Systems Design</h4>
         </a>
@@ -263,7 +322,18 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
            id="behavioral-tab" data-bs-toggle="pill" data-bs-target="#behavioral" role="tab" 
            aria-controls="behavioral" aria-selected="false">
                     <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-person-bounding-box" style="font-size: 1.25rem; color: currentColor;"></i>
+            
+<svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <polyline points="22 6 22 2 18 2"/>
+    <polyline points="2 18 2 22 6 22"/>
+    <polyline points="18 22 22 22 22 18"/>
+    <circle cx="12" cy="8.5" r="3"/>
+    <polygon points="6 17.5 6 16 9 13.5 12 14.5 15 13.5 18 16 18 17.5 6 17.5"/>
+    <polyline points="6 2 2 2 2 6"/>
+  
+</svg>
+
         </div>
           <h4 class="mb-0 fw-medium">Behavioral Design</h4>
         </a>
@@ -273,7 +343,20 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
            id="circular-tab" data-bs-toggle="pill" data-bs-target="#circular" role="tab" 
            aria-controls="circular" aria-selected="false">
           <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-arrow-repeat" style="font-size: 1.25rem; color: currentColor;"></i>
+            
+<svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <rect x="19" y="10" width="4" height="4"/>
+    <rect x="1" y="10" width="4" height="4"/>
+    <rect x="10" y="19" width="4" height="4" transform="translate(33 9) rotate(90)"/>
+    <rect x="10" y="1" width="4" height="4" transform="translate(15 -9) rotate(90)"/>
+    <path d="M10,20.78A9.05,9.05,0,0,1,3.22,14"/>
+    <path d="M20.78,14A9.05,9.05,0,0,1,14,20.78"/>
+    <path d="M14,3.22A9.05,9.05,0,0,1,20.78,10"/>
+    <path d="M3.22,10A9.05,9.05,0,0,1,10,3.22"/>
+  
+</svg>
+
           </div>
           <h4 class="mb-0 fw-medium">Circular Design</h4>
         </a>
@@ -283,7 +366,16 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
            id="service-tab" data-bs-toggle="pill" data-bs-target="#service" role="tab" 
            aria-controls="service" aria-selected="false">
           <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-people" style="font-size: 1.25rem; color: currentColor;"></i>
+            
+<svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="8.5" cy="7" r="4"/>
+    <polyline points="1 20.5 1 16.5 4 13.5 8.5 15 13 13.5 16 16.5 16 20.5"/>
+    <path d="M13.9,3.3A4.1,4.1,0,0,1,15.5,3,4,4,0,1,1,14,10.7"/>
+    <polyline points="17 14.5 20 13.5 23 16.5 23 20.5"/>
+  
+</svg>
+
           </div>
           <h4 class="mb-0 fw-medium">Service Design</h4>
         </a>
@@ -301,46 +393,71 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
               </p>
               <div class="row g-3">
                 <div class="col-12">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
+                      </div>
+                      <span class="small fw-semibold">Architectural Orchestration</span>
                     </div>
-                    <span class="small fw-semibold">Architectural Orchestration</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
+                      </div>
+                      <span class="small fw-semibold">Stakeholder Alignment and Requirements Synthesis</span>
                     </div>
-                    <span class="small fw-semibold">Stakeholder Alignment and Requirements Synthesis</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
+                      </div>
+                      <span class="small fw-semibold">Technology Stack Evaluation and Selection</span>
                     </div>
-                    <span class="small fw-semibold">Technology Stack Evaluation and Selection</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
+                      </div>
+                      <span class="small fw-semibold">Risk Assessment and Mitigation Planning</span>
                     </div>
-                    <span class="small fw-semibold">Risk Assessment and Mitigation Planning</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
+                      </div>
+                      <span class="small fw-semibold">Interface and Integration Strategy</span>
                     </div>
-                    <span class="small fw-semibold">Interface and Integration Strategy</span>
-                  </div>
         </div>
       </div>
     </div>
@@ -358,41 +475,66 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
                 <div class="col-12">
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Cognitive Architecture and Decision Framework Design</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Motivation Mapping and Incentive Alignment</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Friction Analysis and Path Optimization</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Social Proof and Norm Cultivation</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Habit Formation and Behavioral Persistence Strategy</span>
                   </div>
@@ -413,41 +555,66 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
                 <div class="col-12">
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Closed-Loop System Architecture</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Lifecycle Impact Assessment and Optimization</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Stakeholder Ecosystem Integration</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Regenerative Business Model Innovation</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Material Flow Strategy and Sourcing</span>
                   </div>
@@ -468,41 +635,66 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
                 <div class="col-12">
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">End-to-End Experience Architecture</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Stakeholder Ecosystem Orchestration</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Service Blueprint Development</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Emotional Journey Design</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      
+<svg class="text-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="8 12 11 15 16 10"/>
+  
+</svg>
+
                     </div>
                     <span class="small fw-semibold">Feedback Loop Integration and Continuous Improvement</span>
                   </div>
@@ -542,28 +734,37 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
                         <p class="text-white mb-5 fs-6 lh-base">
                             Ready to discuss how our four design disciplines can create lasting impact for your organization?
                         </p>
-                        <a href="/contact/" class="btn btn-primary btn-sm px-4 py-2">Start Your Project →</a>
-                    </div>
-                </div>
-            </div>
+                        <a href="/contact/" class="btn btn-primary btn-sm px-4 py-2">Start Your Project 
+<svg class="ms-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <polyline points="9 5 19 5 19 15"/>
+    <line x1="19" y1="5" x2="6" y2="18"/>
+  
+</svg>
+</a>
         </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div> 
 
 <script src="/js/services.js"></script> 
     </main>
 
     <footer class="container">
-      <footer class="border-top py-5">
+      
+
+<footer class="border-top py-5">
   <div class="container">
     <!-- Main Content -->
     <div class="row text-start align-items-end">
       <!-- Contact -->
       <div class="col-12 col-md-3 mb-4 mb-md-0 h-100 d-flex flex-column">
         <div class="mt-auto">
-          <P class="text-uppercase fw-medium text-dark mb-3">Contact</P>
-          <div>
-            <a href="mailto:explore@kansei.one" class="link-fancy">explore@kansei.one</a>
+        <P class="text-uppercase fw-medium text-dark mb-3">Contact</P>
+        <div>
+          <a href="mailto:explore@kansei.one" class="link-fancy">explore@kansei.one</a>
           </div>
         </div>
       </div>
@@ -571,10 +772,10 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
       <!-- Social -->
       <div class="col-12 col-md-3 mb-4 mb-md-0 h-100 d-flex flex-column">
         <div class="mt-auto">
-          <p class="text-uppercase fw-medium text-dark mb-3">Follow</p>
-          <div class="d-flex gap-3">
-            <a href="https://linkedin.com/company/onekansei" class="link-fancy" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://instagram.com/onekansei" class="link-fancy" target="_blank" rel="noopener">Instagram</a>
+        <p class="text-uppercase fw-medium text-dark mb-3">Follow</p>
+        <div class="d-flex gap-3">
+          <a href="https://linkedin.com/company/onekansei" class="link-fancy" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com/onekansei" class="link-fancy" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
       </div>
@@ -582,10 +783,10 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
       <!-- Newsletter -->
       <div class="col-12 col-md-3 mb-4 mb-md-0 h-100 d-flex flex-column">
         <div class="mt-auto">
-          <p class="text-uppercase fw-medium text-dark mb-3">Newsletter</p>
-          <a href="#" class="link-fancy" data-bs-toggle="modal" data-bs-target="#newsletterModal">
-            Join Newsletter ↗
-          </a>
+        <p class="text-uppercase fw-medium text-dark mb-3">Newsletter</p>
+        <a href="#" class="link-fancy" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+          Join Newsletter ↗
+        </a>
         </div>
       </div>
       
@@ -649,7 +850,14 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
             <button type="submit" class="btn btn-primary px-4 py-2" id="submit-btn">
               <span class="btn-text">Subscribe</span>
               <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-              <i class="bi bi-arrow-up-right ms-2"></i>
+              
+<svg class="ms-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+    <polyline points="9 5 19 5 19 15"/>
+    <line x1="19" y1="5" x2="6" y2="18"/>
+  
+</svg>
+
             </button>
           </div>
         </form>

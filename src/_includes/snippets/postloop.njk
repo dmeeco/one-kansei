@@ -1,3 +1,5 @@
+{% from 'snippets/icons.njk' import icon %}
+
 <div class="row d-flex justify-content-center">
   <div class="col-12">
     {%- for post in posts %}
@@ -13,7 +15,7 @@
         {% endfor %}
       </p>
         <p>{{ post.data.summary }}</p>
-        <a href="{{ post.url | url }}" class="link-fancy">Read more...</a>
+        <a href="{{ post.url | url }}" class="link-fancy">{{ icon("corner-down-right", "me-1", "16") }}Read more...</a>
       </div>
     {% endfor %}
   </div>

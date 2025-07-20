@@ -4,6 +4,8 @@ title: Between sea and sky
 subtitle: we reach across continents, working with changemakers that ripple far beyond borders.
 ---
 
+{% from 'snippets/icons.njk' import icon %}
+
 <div class="container my-vh-6">
   <div class="row">
     <div class="col-12 col-lg-10 my-4">
@@ -47,8 +49,12 @@ subtitle: we reach across continents, working with changemakers that ripple far 
               <hr class="my-4">
               <div>
                 <span class="fw-bold d-block mb-4" style="font-size:1.2rem;">Socials</span>
-                <a href="https://linkedin.com/company/onekansei" class="link-fancy me-4"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                <a href="https://instagram.com/onekansei" class="link-fancy ms-2"><i class="bi bi-instagram"></i> Instagram</a>
+                <a href="https://linkedin.com/company/onekansei" class="link-fancy me-4">
+                  {{ icon("linkedin", "me-1", "16") }} LinkedIn
+                </a>
+                <a href="https://instagram.com/onekansei" class="link-fancy ms-2">
+                  {{ icon("instagram", "me-1", "16") }} Instagram
+                </a>
               </div>
             </div>
           </div>
@@ -118,4 +124,4 @@ subtitle: we reach across continents, working with changemakers that ripple far 
       </div>
     </div>
   </div>
-</section> 
+</section>

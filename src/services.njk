@@ -4,6 +4,8 @@ title: We transform
 subtitle: climate challenges into sustainable breakthroughs using four design disciplines, helping to create lasting impact.
 ---
 
+{% from 'snippets/icons.njk' import icon %}
+
 <div class="container my-vh-6">
   <div class="row">
     <div class="col-12 col-lg-10 my-4">
@@ -53,8 +55,7 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
          <div class="col-lg-3 col-md-6">
             <div class="card bg-primary bg-opacity-10 p-4 border-0 h-100 card-lift">
                <div class="mb-4">
-                  <!-- Research: bi-puzzle-fill -->
-                  <i class="bi bi-puzzle-fill" style="font-size: 2.5rem; color: #8B3DFF;"></i>
+                  {{ icon("frame", "", "40") }}
                </div>
                <div>
                   <h3>Research</h3>
@@ -65,8 +66,7 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
          <div class="col-lg-3 col-md-6">
             <div class="card bg-success bg-opacity-10 p-4 border-0 h-100 card-lift">
                <div class="mb-4">
-                                     <!-- Sustainability: bi-leaf-fill -->
-                   <i class="bi bi-leaf-fill" style="font-size: 2.5rem; color: #198754;"></i>
+                  {{ icon("forest", "", "40") }}
                </div>
                <div>
                   <h3>Sustainability</h3>
@@ -77,25 +77,23 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
             </div>
          </div>
          <div class="col-lg-3 col-md-6">
-            <div class="card bg-info bg-opacity-10 p-4 border-0 h-100 card-lift">
-               <div class="mb-4">
-                  <!-- Solution: bi-fingerprint -->
-                  <i class="bi bi-fingerprint" style="font-size: 2.5rem; color: #0677AC;"></i>
-               </div>
-               <div>
-                  <h3>Solution</h3>
+                          <div class="card bg-info bg-opacity-10 p-4 border-0 h-100 card-lift">
+                 <div class="mb-4">
+                   {{ icon("layers-2", "", "40") }}
+                 </div>
+                 <div>
+                   <h3>Solution</h3>
                   <p class="mb-0 text-info-emphasis">We prototype and test solutions iteratively, validating assumptions through user feedback and performance metrics before full implementation to ensure effectiveness.</p>
                </div>
             </div>
          </div>
          <div class="col-lg-3 col-md-6">
-            <div class="card bg-warning bg-opacity-10 p-4 border-0 h-100 card-lift">
-               <div class="mb-4">
-                  <!-- Implementation: bi-rocket-fill -->
-                  <i class="bi bi-send-check-fill" style="font-size: 2.5rem; color: #FFC107;"></i>
-               </div>
-               <div>
-                  <h3>Partnership</h3>
+                          <div class="card bg-warning bg-opacity-10 p-4 border-0 h-100 card-lift">
+                 <div class="mb-4">
+                   {{ icon("intersect", "", "40") }}
+                 </div>
+                 <div>
+                   <h3>Partnership</h3>
                   <p class="mb-0 text-warning-emphasis">While we focus on research and design, we partner with trusted developers in your location for implementation. You get strategic innovation with local expertise.</p>
                </div>
             </div>
@@ -128,7 +126,7 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
            id="systems-tab" data-bs-toggle="pill" data-bs-target="#systems" role="tab" 
            aria-controls="systems" aria-selected="true">
           <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-diagram-3" style="font-size: 1.25rem; color: currentColor;"></i>
+            {{ icon("vector", "", "20") }}
           </div>
           <h4 class="mb-0 fw-medium">Systems Design</h4>
         </a>
@@ -138,7 +136,7 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
            id="behavioral-tab" data-bs-toggle="pill" data-bs-target="#behavioral" role="tab" 
            aria-controls="behavioral" aria-selected="false">
                     <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-person-bounding-box" style="font-size: 1.25rem; color: currentColor;"></i>
+            {{ icon("user-focus", "", "20") }}
         </div>
           <h4 class="mb-0 fw-medium">Behavioral Design</h4>
         </a>
@@ -148,7 +146,7 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
            id="circular-tab" data-bs-toggle="pill" data-bs-target="#circular" role="tab" 
            aria-controls="circular" aria-selected="false">
           <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-arrow-repeat" style="font-size: 1.25rem; color: currentColor;"></i>
+            {{ icon("selection-3", "", "20") }}
           </div>
           <h4 class="mb-0 fw-medium">Circular Design</h4>
         </a>
@@ -158,7 +156,7 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
            id="service-tab" data-bs-toggle="pill" data-bs-target="#service" role="tab" 
            aria-controls="service" aria-selected="false">
           <div class="services-icon-shape rounded-circle bg-white shadow-sm border me-3">
-            <i class="bi bi-people" style="font-size: 1.25rem; color: currentColor;"></i>
+            {{ icon("users", "", "20") }}
           </div>
           <h4 class="mb-0 fw-medium">Service Design</h4>
         </a>
@@ -176,46 +174,36 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
               </p>
               <div class="row g-3">
                 <div class="col-12">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        {{ icon("check-circle", "text-success", "16") }}
+                      </div>
+                      <span class="small fw-semibold">Architectural Orchestration</span>
                     </div>
-                    <span class="small fw-semibold">Architectural Orchestration</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        {{ icon("check-circle", "text-success", "16") }}
+                      </div>
+                      <span class="small fw-semibold">Stakeholder Alignment and Requirements Synthesis</span>
                     </div>
-                    <span class="small fw-semibold">Stakeholder Alignment and Requirements Synthesis</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        {{ icon("check-circle", "text-success", "16") }}
+                      </div>
+                      <span class="small fw-semibold">Technology Stack Evaluation and Selection</span>
                     </div>
-                    <span class="small fw-semibold">Technology Stack Evaluation and Selection</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        {{ icon("check-circle", "text-success", "16") }}
+                      </div>
+                      <span class="small fw-semibold">Risk Assessment and Mitigation Planning</span>
                     </div>
-                    <span class="small fw-semibold">Risk Assessment and Mitigation Planning</span>
-                  </div>
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                                      <div class="d-flex align-items-center mb-3">
+                      <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                        {{ icon("check-circle", "text-success", "16") }}
+                      </div>
+                      <span class="small fw-semibold">Interface and Integration Strategy</span>
                     </div>
-                    <span class="small fw-semibold">Interface and Integration Strategy</span>
-                  </div>
         </div>
       </div>
     </div>
@@ -233,41 +221,31 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
                 <div class="col-12">
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Cognitive Architecture and Decision Framework Design</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Motivation Mapping and Incentive Alignment</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Friction Analysis and Path Optimization</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Social Proof and Norm Cultivation</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Habit Formation and Behavioral Persistence Strategy</span>
                   </div>
@@ -288,41 +266,31 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
                 <div class="col-12">
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Closed-Loop System Architecture</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Lifecycle Impact Assessment and Optimization</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Stakeholder Ecosystem Integration</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Regenerative Business Model Innovation</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Material Flow Strategy and Sourcing</span>
                   </div>
@@ -343,41 +311,31 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
                 <div class="col-12">
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">End-to-End Experience Architecture</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Stakeholder Ecosystem Orchestration</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Service Blueprint Development</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Emotional Journey Design</span>
                   </div>
                   <div class="d-flex align-items-center mb-3">
                     <div class="bg-white rounded-circle p-2 me-3" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.061L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                      </svg>
+                      {{ icon("check-circle", "text-success", "16") }}
                     </div>
                     <span class="small fw-semibold">Feedback Loop Integration and Continuous Improvement</span>
                   </div>
@@ -417,12 +375,12 @@ subtitle: climate challenges into sustainable breakthroughs using four design di
                         <p class="text-white mb-5 fs-6 lh-base">
                             Ready to discuss how our four design disciplines can create lasting impact for your organization?
                         </p>
-                        <a href="{{ '/contact/' | url }}" class="btn btn-primary btn-sm px-4 py-2">Start Your Project →</a>
-                    </div>
-                </div>
-            </div>
+                        <a href="{{ '/contact/' | url }}" class="btn btn-primary btn-sm px-4 py-2">Start Your Project {{ icon("arrow-up-right", "ms-1", "16") }}</a>
         </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div> 
 
 <script src="{{ '/js/services.js' | url }}"></script> 

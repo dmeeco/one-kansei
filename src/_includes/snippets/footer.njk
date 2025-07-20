@@ -1,3 +1,5 @@
+{% from 'snippets/icons.njk' import icon %}
+
 <footer class="border-top py-5">
   <div class="container">
     <!-- Main Content -->
@@ -5,9 +7,9 @@
       <!-- Contact -->
       <div class="col-12 col-md-3 mb-4 mb-md-0 h-100 d-flex flex-column">
         <div class="mt-auto">
-          <P class="text-uppercase fw-medium text-dark mb-3">Contact</P>
-          <div>
-            <a href="mailto:explore@kansei.one" class="link-fancy">explore@kansei.one</a>
+        <P class="text-uppercase fw-medium text-dark mb-3">Contact</P>
+        <div>
+          <a href="mailto:explore@kansei.one" class="link-fancy">explore@kansei.one</a>
           </div>
         </div>
       </div>
@@ -15,10 +17,10 @@
       <!-- Social -->
       <div class="col-12 col-md-3 mb-4 mb-md-0 h-100 d-flex flex-column">
         <div class="mt-auto">
-          <p class="text-uppercase fw-medium text-dark mb-3">Follow</p>
-          <div class="d-flex gap-3">
-            <a href="https://linkedin.com/company/onekansei" class="link-fancy" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://instagram.com/onekansei" class="link-fancy" target="_blank" rel="noopener">Instagram</a>
+        <p class="text-uppercase fw-medium text-dark mb-3">Follow</p>
+        <div class="d-flex gap-3">
+          <a href="https://linkedin.com/company/onekansei" class="link-fancy" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com/onekansei" class="link-fancy" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
       </div>
@@ -26,10 +28,10 @@
       <!-- Newsletter -->
       <div class="col-12 col-md-3 mb-4 mb-md-0 h-100 d-flex flex-column">
         <div class="mt-auto">
-          <p class="text-uppercase fw-medium text-dark mb-3">Newsletter</p>
-          <a href="#" class="link-fancy" data-bs-toggle="modal" data-bs-target="#newsletterModal">
-            Join Newsletter ↗
-          </a>
+        <p class="text-uppercase fw-medium text-dark mb-3">Newsletter</p>
+        <a href="#" class="link-fancy" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+          Join Newsletter ↗
+        </a>
         </div>
       </div>
       
@@ -93,7 +95,7 @@
             <button type="submit" class="btn btn-primary px-4 py-2" id="submit-btn">
               <span class="btn-text">Subscribe</span>
               <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-              <i class="bi bi-arrow-up-right ms-2"></i>
+              {{ icon("arrow-up-right", "ms-2", "16") }}
             </button>
           </div>
         </form>

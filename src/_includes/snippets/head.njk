@@ -7,7 +7,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="One Kansei" />
 <link rel="manifest" href="/img/site.webmanifest" />
-<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
 <meta name="author" content="{{ metadata.author }}">
 <meta name="generator" content="{{ eleventy.generator }}">
 <meta name="HandheldFriendly" content="true"/>
@@ -15,7 +14,6 @@
 <!-- build:css -->
 <link rel="stylesheet" href="{{ '/css/theme.css' | url }}">
 <!-- endbuild -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <style>
 /* inter-300 - latin */
 @font-face {
@@ -23,8 +21,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local(''),
-       url('{{ '/fonts/inter-v12-latin-300.woff2' | url }}') format('woff2'),
+  src: url('{{ '/fonts/inter-v12-latin-300.woff2' | url }}') format('woff2'),
        url('{{ '/fonts/inter-v12-latin-300.woff' | url }}') format('woff');
 }
 
@@ -34,8 +31,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''),
-       url('{{ '/fonts/inter-v12-latin-regular.woff2' | url }}') format('woff2'),
+  src: url('{{ '/fonts/inter-v12-latin-regular.woff2' | url }}') format('woff2'),
        url('{{ '/fonts/inter-v12-latin-regular.woff' | url }}') format('woff');
 }
 
@@ -45,8 +41,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local(''),
-       url('{{ '/fonts/inter-v12-latin-500.woff2' | url }}') format('woff2'),
+  src: url('{{ '/fonts/inter-v12-latin-500.woff2' | url }}') format('woff2'),
        url('{{ '/fonts/inter-v12-latin-500.woff' | url }}') format('woff');
 }
 
@@ -56,8 +51,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local(''),
-       url('{{ '/fonts/inter-v12-latin-700.woff2' | url }}') format('woff2'),
+  src: url('{{ '/fonts/inter-v12-latin-700.woff2' | url }}') format('woff2'),
        url('{{ '/fonts/inter-v12-latin-700.woff' | url }}') format('woff');
 }
 
@@ -67,8 +61,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''),
-       url('{{ '/fonts/inder-v14-latin-regular.woff2' | url }}') format('woff2');
+  src: url('{{ '/fonts/inder-v14-latin-regular.woff2' | url }}') format('woff2');
 }
 
 .inder-font {
@@ -88,4 +81,17 @@ title {
 h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   font-family: 'Andika', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
+
+/* SVG Icon Styles */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.icon-sm { width: 0.875em; height: 0.875em; }
+.icon-lg { width: 1.25em; height: 1.25em; }
+.icon-xl { width: 1.5em; height: 1.5em; }
 </style>

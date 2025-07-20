@@ -4,6 +4,8 @@ title: Discover how
 subtitle: we apply conscious design principles to create impactful, planet-centered solutions that address real-world challenges
 ---
 
+{% from 'snippets/icons.njk' import icon %}
+
 <div class="container my-vh-6">
   <div class="row">
     <div class="col-12 col-lg-10 my-4">
@@ -39,7 +41,7 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
                 <h3 class="card-title fw-bold mb-4 lh-base">{{ featuredProject.data.title }}</h3>
                 <p class="card-text text-muted mb-4">{{ featuredProject.data.summary }}</p>
                 <a href="{{ featuredProject.url | url }}" class="text-decoration-none text-primary small mt-auto">
-                  Read More &rarr;
+                  {{ icon("corner-down-right", "me-1", "16") }}Read More
                 </a>
               </div>
             </div>
@@ -72,7 +74,7 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
                   
                   <!-- Read More Link -->
                   <a href="{{ project.url | url }}" class="text-decoration-none text-primary small mt-auto">
-                    Read the case study &rarr;
+                    {{ icon("corner-down-right", "me-1", "16") }}Read the case study
                   </a>
                 </div>
               </div>
