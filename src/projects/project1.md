@@ -2,7 +2,8 @@
 title: 'Transforming European Agriculture: The Community-First Revolution'
 shortTitle: 'Transforming European Agriculture: The Community-First Revolution'
 date: 2024-01-15T00:00:00.000Z
-coverImg: /img/pexels-zvika-shmaya-1391475-3119599.jpg
+coverImg: >- 
+  https://images.pexels.com/photos/3119599/pexels-photo-3119599.jpeg
 summary: >-
   Transforming European agriculture through interconnected CSA networks using
   community-controlled technology. Building resilient food systems owned by
