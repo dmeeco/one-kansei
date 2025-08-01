@@ -2,18 +2,18 @@
 title: 'Transforming European Agriculture: The Community-First Revolution'
 shortTitle: 'Transforming European Agriculture: The Community-First Revolution'
 date: 2024-01-15T00:00:00.000Z
-coverImg: >-
-  /imghttps://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop
+coverImg: /img/pexels-zvika-shmaya-1391475-3119599.jpg
 summary: >-
   Transforming European agriculture through interconnected CSA networks using
   community-controlled technology. Building resilient food systems owned by
   communities, not corporations.
 industry: PUBLIC SECTOR
 tags:
-  - Smart Cities
-  - IoT
-  - Sustainability
-  - AI
+  - ' Sustainable Communities'
+  - Agricultural Innovation
+  - ' Food Systems Design'
+  - Community-Supported Agriculture
+  - Regenerative Agriculture
 ---
 
 ### The Vision
