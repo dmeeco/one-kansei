@@ -5,14 +5,12 @@ date: 2024-01-15T00:00:00.000Z
 coverImg: >- 
   https://images.pexels.com/photos/3119599/pexels-photo-3119599.jpeg
 summary: >-
-  Transforming European agriculture through interconnected CSA networks using
-  community-controlled technology. Building resilient food systems owned by
-  communities, not corporations.
-industry: PUBLIC SECTOR
+  Building interconnected farm networks with community-controlled technology. Transforming European agriculture through transparent systems that strengthen local food security.
+industry: FOOD & AGRICULTURE
 tags:
-  - ' Sustainable Communities'
+  - Sustainable Communities
   - Agricultural Innovation
-  - ' Food Systems Design'
+  - Food Systems Design
   - Community-Supported Agriculture
   - Regenerative Agriculture
 ---
@@ -51,6 +49,6 @@ We're building the trusted alternative.
 
 Ready to help redesign our most essential system? We're seeking farmers, innovators, communities, and forward-thinkers who understand that food security is the foundation of thriving societies.
 
-[\[Reach Us\]](https://google.com)
+[\[Reach Us\]](/contact)
 
 Building resilient communities, one trusted network at a time.
