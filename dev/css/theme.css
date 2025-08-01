@@ -11983,31 +11983,13 @@ body {
   justify-content: center;
 }
 
-.services-custom-popover.popover {
-  border-radius: 1rem !important;
-  border: 1px solid #000 !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  max-width: 260px;
-}
-
-.services-custom-popover .popover-header {
-  background: #000 !important;
-  color: #fff !important;
-  font-size: 1rem !important;
-  font-weight: 600;
-  border-top-left-radius: 1rem !important;
-  border-top-right-radius: 1rem !important;
-  padding: 0.75rem 1rem !important;
-}
-
-.services-custom-popover .popover-body {
-  background: #fff !important;
-  color: #212529 !important;
-  font-size: 0.95rem !important;
-  border-bottom-left-radius: 1rem !important;
-  border-bottom-right-radius: 1rem !important;
-  padding: 0.75rem 1rem !important;
+.services-custom-popover {
+  --bs-popover-max-width: 260px;
+  --bs-popover-border-color: #000;
+  --bs-popover-header-bg: #000;
+  --bs-popover-header-color: #fff;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: .5rem;
 }
 
 .card-lift {
