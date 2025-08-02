@@ -30,9 +30,17 @@ Regenerative agriculture transcends simply sustaining what we already have. It s
 **What does this look like?**
 
 - **Policy Realignment:** Agricultural and subsidy policies must reward regenerative outcomes—healthy soils, clean water, thriving farm finances—instead of favoring scale and extraction.
+<br/>
+
 - **Circular Value Chains:** Linear supply chains must be redesigned for circularity, minimizing waste and returning nutrients to the land rather than exporting fertility.
+<br/>
+
 - **Empowering Farmers:** Farmers need access to knowledge, finance, and networks to redesign their systems. Peer-to-peer learning and cooperative models can accelerate the transition.
+<br/>
+
 - **Integrated Rural Economies:** Regeneration should be part of a broader rural development agenda, creating good jobs, diversifying incomes, and revitalizing local economies.
+<br/>
+
 - **Measuring What Matters:** Redefining success in food systems—in terms of ecological health, food security, and community wellbeing, not just tonnage or profit margins.
 
 
@@ -45,14 +53,15 @@ For example, increased fertilizer use may boost yields in the short run, but ove
 ### Recommendations: Cultivating Regenerative Futures
 
 1. **Policymakers:** Elevate regenerative targets in the EU’s Common Agricultural Policy. Direct payments and support toward those delivering measurable ecosystem and social benefits.
-2. **Research and Education:** Invest in farmer-led innovation, demonstration farms, and transition support. Prioritize locally adapted regenerative methods.
-3. **Food Industry:** Redesign procurement and value chains for transparency, fairer farmer remuneration, and mutual prosperity.
-4. **Communities and Citizens:** Support local food networks, agroecology, and conservation initiatives. Advocate for healthy soil and vibrant rural livelihoods.
+<br/>
 
-**Image suggestion:**
-A patchwork of diverse, regenerative farms across a European landscape
-*Caption:* Regenerative fields support biodiversity and rural vitality.
-*Credit:* Image by [photographer name], CC BY-SA 4.0
+2. **Research and Education:** Invest in farmer-led innovation, demonstration farms, and transition support. Prioritize locally adapted regenerative methods.
+<br/>
+
+3. **Food Industry:** Redesign procurement and value chains for transparency, fairer farmer remuneration, and mutual prosperity.
+<br/>
+
+4. **Communities and Citizens:** Support local food networks, agroecology, and conservation initiatives. Advocate for healthy soil and vibrant rural livelihoods.
 
 ### Conclusion
 
