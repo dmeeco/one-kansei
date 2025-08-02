@@ -23,6 +23,8 @@ For decades, Europe’s food production has relied on an extractive paradigm—o
 
 True resilience cannot be built atop exhausted foundations. We must move urgently toward holistic systems change—rooted in regeneration, diversity, and reciprocity with nature. Regenerative agriculture represents not just a technical fix, but a fundamental shift in values and structures.
 
+<br/>
+
 ### Regenerative Agriculture: A Systems Change Strategy
 
 Regenerative agriculture transcends simply sustaining what we already have. It seeks to restore soils, enhance ecosystem services, and enrich rural communities. But these benefits won’t be realized with piecemeal adoption or surface-level tweaks. Systems change is needed.
@@ -43,12 +45,15 @@ Regenerative agriculture transcends simply sustaining what we already have. It s
 
 - **Measuring What Matters:** Redefining success in food systems—in terms of ecological health, food security, and community wellbeing, not just tonnage or profit margins.
 
+<br/>
 
 ### Why Systems Change, Not Simple Solutions
 
 Tackling Europe’s looming hunger and rural poverty can no longer be left to isolated technical fixes or market trends. The legacy of extractive agriculture lingers precisely because it is embedded in systemic incentives, regulations, and mindsets. Without transformative change, stop-gap solutions risk perpetuating the underlying vulnerabilities.
 
 For example, increased fertilizer use may boost yields in the short run, but over time, it depletes soil life and resilience, requiring ever more inputs. Similarly, flooding global markets with cheap imports destabilizes local producers, hollowing out rural economies. True systems change is about rewiring these structures—so that regenerative, community-rooted farming becomes the logical choice for all stakeholders.
+
+<br/>
 
 ### Recommendations: Cultivating Regenerative Futures
 
@@ -62,6 +67,8 @@ For example, increased fertilizer use may boost yields in the short run, but ove
 <br/>
 
 4. **Communities and Citizens:** Support local food networks, agroecology, and conservation initiatives. Advocate for healthy soil and vibrant rural livelihoods.
+
+<br/>
 
 ### Conclusion
 
