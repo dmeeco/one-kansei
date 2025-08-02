@@ -96,6 +96,8 @@ type Posts implements Node & Document {
   date: String!
   featured: Boolean
   coverImg: String
+  coverImgAttribution: String
+  coverImgAttributionUrl: String
   summary: String
   category: String
   tags: [String]
@@ -132,10 +134,15 @@ input ImageFilter {
   in: [String]
 }
 
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
+input PostsBodyImageWithAttributionFilter {
+  src: StringFilter
+  alt: StringFilter
+  attribution: StringFilter
+  attributionUrl: StringFilter
+}
+
+input PostsBodyFilter {
+  imageWithAttribution: PostsBodyImageWithAttributionFilter
 }
 
 input PostsFilter {
@@ -144,10 +151,12 @@ input PostsFilter {
   date: DatetimeFilter
   featured: BooleanFilter
   coverImg: ImageFilter
+  coverImgAttribution: StringFilter
+  coverImgAttributionUrl: StringFilter
   summary: StringFilter
   category: StringFilter
   tags: StringFilter
-  body: RichTextFilter
+  body: PostsBodyFilter
 }
 
 type PostsConnectionEdges {
@@ -166,6 +175,8 @@ type Projects implements Node & Document {
   shortTitle: String!
   date: String!
   coverImg: String
+  coverImgAttribution: String
+  coverImgAttributionUrl: String
   summary: String
   industry: String
   tags: [String]
@@ -175,15 +186,28 @@ type Projects implements Node & Document {
   _values: JSON!
 }
 
+input ProjectsBodyImageWithAttributionFilter {
+  src: StringFilter
+  alt: StringFilter
+  attribution: StringFilter
+  attributionUrl: StringFilter
+}
+
+input ProjectsBodyFilter {
+  imageWithAttribution: ProjectsBodyImageWithAttributionFilter
+}
+
 input ProjectsFilter {
   title: StringFilter
   shortTitle: StringFilter
   date: DatetimeFilter
   coverImg: ImageFilter
+  coverImgAttribution: StringFilter
+  coverImgAttributionUrl: StringFilter
   summary: StringFilter
   industry: StringFilter
   tags: StringFilter
-  body: RichTextFilter
+  body: ProjectsBodyFilter
 }
 
 type ProjectsConnectionEdges {
@@ -226,6 +250,8 @@ input PostsMutation {
   date: String
   featured: Boolean
   coverImg: String
+  coverImgAttribution: String
+  coverImgAttributionUrl: String
   summary: String
   category: String
   tags: [String]
@@ -237,6 +263,8 @@ input ProjectsMutation {
   shortTitle: String
   date: String
   coverImg: String
+  coverImgAttribution: String
+  coverImgAttributionUrl: String
   summary: String
   industry: String
   tags: [String]

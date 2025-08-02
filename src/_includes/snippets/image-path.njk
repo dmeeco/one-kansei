@@ -1,0 +1,11 @@
+{% macro getImagePath(imagePath) %}
+  {% if imagePath %}
+    {% if imagePath | slice(0, 7) == "http://" or imagePath | slice(0, 8) == "https://" %}
+      {{ imagePath }}
+    {% elif imagePath | slice(0, 5) == "/img/" %}
+      {{ imagePath }}
+    {% else %}
+      {{ imagePath | url }}
+    {% endif %}
+  {% endif %}
+{% endmacro %} 

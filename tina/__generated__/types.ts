@@ -190,6 +190,8 @@ export type Posts = Node & Document & {
   date: Scalars['String']['output'];
   featured?: Maybe<Scalars['Boolean']['output']>;
   coverImg?: Maybe<Scalars['String']['output']>;
+  coverImgAttribution?: Maybe<Scalars['String']['output']>;
+  coverImgAttributionUrl?: Maybe<Scalars['String']['output']>;
   summary?: Maybe<Scalars['String']['output']>;
   category?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
@@ -226,10 +228,15 @@ export type ImageFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
+export type PostsBodyImageWithAttributionFilter = {
+  src?: InputMaybe<StringFilter>;
+  alt?: InputMaybe<StringFilter>;
+  attribution?: InputMaybe<StringFilter>;
+  attributionUrl?: InputMaybe<StringFilter>;
+};
+
+export type PostsBodyFilter = {
+  imageWithAttribution?: InputMaybe<PostsBodyImageWithAttributionFilter>;
 };
 
 export type PostsFilter = {
@@ -238,10 +245,12 @@ export type PostsFilter = {
   date?: InputMaybe<DatetimeFilter>;
   featured?: InputMaybe<BooleanFilter>;
   coverImg?: InputMaybe<ImageFilter>;
+  coverImgAttribution?: InputMaybe<StringFilter>;
+  coverImgAttributionUrl?: InputMaybe<StringFilter>;
   summary?: InputMaybe<StringFilter>;
   category?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<PostsBodyFilter>;
 };
 
 export type PostsConnectionEdges = {
@@ -263,6 +272,8 @@ export type Projects = Node & Document & {
   shortTitle: Scalars['String']['output'];
   date: Scalars['String']['output'];
   coverImg?: Maybe<Scalars['String']['output']>;
+  coverImgAttribution?: Maybe<Scalars['String']['output']>;
+  coverImgAttributionUrl?: Maybe<Scalars['String']['output']>;
   summary?: Maybe<Scalars['String']['output']>;
   industry?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
@@ -272,15 +283,28 @@ export type Projects = Node & Document & {
   _values: Scalars['JSON']['output'];
 };
 
+export type ProjectsBodyImageWithAttributionFilter = {
+  src?: InputMaybe<StringFilter>;
+  alt?: InputMaybe<StringFilter>;
+  attribution?: InputMaybe<StringFilter>;
+  attributionUrl?: InputMaybe<StringFilter>;
+};
+
+export type ProjectsBodyFilter = {
+  imageWithAttribution?: InputMaybe<ProjectsBodyImageWithAttributionFilter>;
+};
+
 export type ProjectsFilter = {
   title?: InputMaybe<StringFilter>;
   shortTitle?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
   coverImg?: InputMaybe<ImageFilter>;
+  coverImgAttribution?: InputMaybe<StringFilter>;
+  coverImgAttributionUrl?: InputMaybe<StringFilter>;
   summary?: InputMaybe<StringFilter>;
   industry?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<ProjectsBodyFilter>;
 };
 
 export type ProjectsConnectionEdges = {
@@ -383,6 +407,8 @@ export type PostsMutation = {
   date?: InputMaybe<Scalars['String']['input']>;
   featured?: InputMaybe<Scalars['Boolean']['input']>;
   coverImg?: InputMaybe<Scalars['String']['input']>;
+  coverImgAttribution?: InputMaybe<Scalars['String']['input']>;
+  coverImgAttributionUrl?: InputMaybe<Scalars['String']['input']>;
   summary?: InputMaybe<Scalars['String']['input']>;
   category?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -394,22 +420,24 @@ export type ProjectsMutation = {
   shortTitle?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
   coverImg?: InputMaybe<Scalars['String']['input']>;
+  coverImgAttribution?: InputMaybe<Scalars['String']['input']>;
+  coverImgAttributionUrl?: InputMaybe<Scalars['String']['input']>;
   summary?: InputMaybe<Scalars['String']['input']>;
   industry?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type PostsPartsFragment = { __typename: 'Posts', slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null };
+export type PostsPartsFragment = { __typename: 'Posts', slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, coverImgAttribution?: string | null, coverImgAttributionUrl?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
-export type ProjectsPartsFragment = { __typename: 'Projects', title: string, shortTitle: string, date: string, coverImg?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null };
+export type ProjectsPartsFragment = { __typename: 'Projects', title: string, shortTitle: string, date: string, coverImg?: string | null, coverImgAttribution?: string | null, coverImgAttributionUrl?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
 export type PostsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostsQuery = { __typename?: 'Query', posts: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, coverImgAttribution?: string | null, coverImgAttributionUrl?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -421,14 +449,14 @@ export type PostsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostsConnectionQuery = { __typename?: 'Query', postsConnection: { __typename?: 'PostsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostsConnectionEdges', cursor: string, node?: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PostsConnectionQuery = { __typename?: 'Query', postsConnection: { __typename?: 'PostsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostsConnectionEdges', cursor: string, node?: { __typename: 'Posts', id: string, slug?: string | null, title: string, date: string, featured?: boolean | null, coverImg?: string | null, coverImgAttribution?: string | null, coverImgAttributionUrl?: string | null, summary?: string | null, category?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type ProjectsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ProjectsQuery = { __typename?: 'Query', projects: { __typename: 'Projects', id: string, title: string, shortTitle: string, date: string, coverImg?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type ProjectsQuery = { __typename?: 'Query', projects: { __typename: 'Projects', id: string, title: string, shortTitle: string, date: string, coverImg?: string | null, coverImgAttribution?: string | null, coverImgAttributionUrl?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type ProjectsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -440,7 +468,7 @@ export type ProjectsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ProjectsConnectionQuery = { __typename?: 'Query', projectsConnection: { __typename?: 'ProjectsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ProjectsConnectionEdges', cursor: string, node?: { __typename: 'Projects', id: string, title: string, shortTitle: string, date: string, coverImg?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type ProjectsConnectionQuery = { __typename?: 'Query', projectsConnection: { __typename?: 'ProjectsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ProjectsConnectionEdges', cursor: string, node?: { __typename: 'Projects', id: string, title: string, shortTitle: string, date: string, coverImg?: string | null, coverImgAttribution?: string | null, coverImgAttributionUrl?: string | null, summary?: string | null, industry?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PostsPartsFragmentDoc = gql`
     fragment PostsParts on Posts {
@@ -450,6 +478,8 @@ export const PostsPartsFragmentDoc = gql`
   date
   featured
   coverImg
+  coverImgAttribution
+  coverImgAttributionUrl
   summary
   category
   tags
@@ -463,6 +493,8 @@ export const ProjectsPartsFragmentDoc = gql`
   shortTitle
   date
   coverImg
+  coverImgAttribution
+  coverImgAttributionUrl
   summary
   industry
   tags
@@ -645,7 +677,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "http://localhost:4001/graphql",
+        url: "https://content.tinajs.io/1.6/content/your_client_ID_here/github/master",
         queries,
       })
     )

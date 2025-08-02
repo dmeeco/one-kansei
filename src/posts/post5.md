@@ -1,13 +1,14 @@
 ---
-slug: building-sustainable-business-2025
-title: 'Building a Sustainable Business: A Complete Guide for Entrepreneurs 2025'
+slug: systems-change-cultivating-resilient-food-futures
+title: 'Systems Change: Cultivating Resilient Food Futures'
 date: 2024-02-05T00:00:00.000Z
 featured: true
 coverImg: >-
-  https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop
+  https://img.freepik.com/free-photo/beautiful-horizontal-shot-green-field-with-bushes-trees-small-houses-countryside_181624-30046.jpg
+coverImgAttribution: 'Designed by Freepik'
+coverImgAttributionUrl: 'https://www.freepik.com'
 summary: >-
-  A comprehensive guide to creating and scaling businesses that prioritize
-  environmental responsibility, social impact, and long-term sustainability.
+  Europe’s food and agriculture system stands at a precarious crossroads. Unless we shift from extractive practices to regenerative ones, rising food insecurity and poverty will threaten communities across the continent.
 category: VIEWPOINT
 tags:
   - business

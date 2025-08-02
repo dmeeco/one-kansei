@@ -1,11 +1,15 @@
 ---
+layout: layouts/project.njk
 title: 'Transforming European Agriculture: The Community-First Revolution'
 shortTitle: 'Transforming European Agriculture: The Community-First Revolution'
 date: 2024-01-15T00:00:00.000Z
-coverImg: >- 
-  https://images.pexels.com/photos/3119599/pexels-photo-3119599.jpeg
+coverImg: 'https://images.pexels.com/photos/3119599/pexels-photo-3119599.jpeg'
+coverImgAttribution: Photo by Pexels
+coverImgAttributionUrl: 'https://www.pexels.com'
 summary: >-
-  Building interconnected farm networks with community-controlled technology. Transforming European agriculture through transparent systems that strengthen local food security.
+  Building interconnected farm networks with community-controlled technology.
+  Transforming European agriculture through transparent systems that strengthen
+  local food security.
 industry: FOOD & AGRICULTURE
 tags:
   - Sustainable Communities
@@ -49,6 +53,6 @@ We're building the trusted alternative.
 
 Ready to help redesign our most essential system? We're seeking farmers, innovators, communities, and forward-thinkers who understand that food security is the foundation of thriving societies.
 
-[\[Reach Us\]](/contact)
+[\[Reach us\]](/contact)
 
 Building resilient communities, one trusted network at a time.

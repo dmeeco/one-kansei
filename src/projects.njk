@@ -31,7 +31,7 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
             <!-- Image Section with 16:9 aspect ratio -->
             <div class="col-12 col-md-7 position-relative">
               <div class="ratio ratio-16x9" style="max-height: 640px;">
-                <img src="{{ featuredProject.data.coverImg }}" class="w-100 h-100" alt="{{ featuredProject.data.title }}" style="object-fit: cover;">
+                <img src="{% if featuredProject.data.coverImg %}{% if featuredProject.data.coverImg | slice(0, 7) == 'http://' or featuredProject.data.coverImg | slice(0, 8) == 'https://' %}{{ featuredProject.data.coverImg }}{% elif featuredProject.data.coverImg | slice(0, 5) == '/img/' %}{{ featuredProject.data.coverImg }}{% else %}{{ featuredProject.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ featuredProject.data.title }}" style="object-fit: cover;">
               </div>
             </div>
             <!-- Content Section -->
@@ -61,7 +61,7 @@ subtitle: we apply conscious design principles to create impactful, planet-cente
               <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 <!-- Top 50%: Image -->
                 <div class="card-img-top" style="height: 50%; overflow: hidden;">
-                  <img src="{{ project.data.coverImg }}" class="w-100 h-100" alt="{{ project.data.title }}" style="object-fit: cover;">
+                  <img src="{% if project.data.coverImg %}{% if project.data.coverImg | slice(0, 7) == 'http://' or project.data.coverImg | slice(0, 8) == 'https://' %}{{ project.data.coverImg }}{% elif project.data.coverImg | slice(0, 5) == '/img/' %}{{ project.data.coverImg }}{% else %}{{ project.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ project.data.title }}" style="object-fit: cover;">
                 </div>
                 
                 <!-- Bottom 50%: Content -->

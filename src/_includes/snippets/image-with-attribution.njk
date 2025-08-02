@@ -1,0 +1,16 @@
+{% macro imageWithAttribution(src, alt, attribution, attributionUrl) %}
+<div class="image-with-attribution-container position-relative mb-4">
+  <img src="{{ src }}" alt="{{ alt }}" class="img-fluid rounded shadow-sm" style="width: 100%; max-height: 400px; object-fit: cover;">
+  {% if attribution %}
+    <div class="image-attribution position-absolute" style="bottom: 8px; left: 12px; background: rgba(0, 0, 0, 0.7); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; line-height: 1;">
+      {% if attributionUrl %}
+        <a href="{{ attributionUrl }}" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none">
+          {{ attribution }}
+        </a>
+      {% else %}
+        {{ attribution }}
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endmacro %} 

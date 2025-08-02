@@ -54,7 +54,7 @@ layout: layouts/blank.njk
             <!-- Image Section with 16:9 aspect ratio -->
             <div class="col-12 col-md-7 position-relative">
               <div class="ratio ratio-16x9" style="max-height: 640px;">
-                <img src="{{ featuredPost.data.coverImg | url }}" class="w-100 h-100" alt="{{ featuredPost.data.title }}" style="object-fit: cover;">
+                <img src="{% if featuredPost.data.coverImg %}{% if featuredPost.data.coverImg | slice(0, 7) == 'http://' or featuredPost.data.coverImg | slice(0, 8) == 'https://' %}{{ featuredPost.data.coverImg }}{% elif featuredPost.data.coverImg | slice(0, 5) == '/img/' %}{{ featuredPost.data.coverImg }}{% else %}{{ featuredPost.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ featuredPost.data.title }}" style="object-fit: cover;">
               </div>
             </div>
             <!-- Content Section (40%) -->

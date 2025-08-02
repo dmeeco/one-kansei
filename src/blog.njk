@@ -44,7 +44,7 @@ pagination:
           <!-- Image Section - Full width when only one post -->
           <div class="col-12 {% if postCount > 1 %}col-md-7{% endif %} position-relative">
             <div class="ratio ratio-16x9" style="max-height: 640px;">
-              <img src="{{ featuredPost.data.coverImg }}" class="w-100 h-100" alt="{{ featuredPost.data.title }}" style="object-fit: cover;">
+              <img src="{% if featuredPost.data.coverImg %}{% if featuredPost.data.coverImg | slice(0, 7) == 'http://' or featuredPost.data.coverImg | slice(0, 8) == 'https://' %}{{ featuredPost.data.coverImg }}{% elif featuredPost.data.coverImg | slice(0, 5) == '/img/' %}{{ featuredPost.data.coverImg }}{% else %}{{ featuredPost.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ featuredPost.data.title }}" style="object-fit: cover;">
             </div>
           </div>
           <!-- Content Section - Only show side content when multiple posts -->
@@ -133,7 +133,7 @@ pagination:
               <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 {% if post.data.coverImg %}
                 <div class="ratio ratio-4x3">
-                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                  <img src="{% if post.data.coverImg %}{% if post.data.coverImg | slice(0, 7) == 'http://' or post.data.coverImg | slice(0, 8) == 'https://' %}{{ post.data.coverImg }}{% elif post.data.coverImg | slice(0, 5) == '/img/' %}{{ post.data.coverImg }}{% else %}{{ post.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
                 </div>
                 {% endif %}
                 <div class="card-body p-4 d-flex flex-column">
@@ -157,7 +157,7 @@ pagination:
               <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 {% if post.data.coverImg %}
                 <div class="ratio ratio-4x3">
-                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                  <img src="{% if post.data.coverImg %}{% if post.data.coverImg | slice(0, 7) == 'http://' or post.data.coverImg | slice(0, 8) == 'https://' %}{{ post.data.coverImg }}{% elif post.data.coverImg | slice(0, 5) == '/img/' %}{{ post.data.coverImg }}{% else %}{{ post.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
                 </div>
                 {% endif %}
                 <div class="card-body p-4 d-flex flex-column">
@@ -182,7 +182,7 @@ pagination:
               <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 {% if post.data.coverImg %}
                 <div class="ratio ratio-4x3">
-                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                  <img src="{% if post.data.coverImg %}{% if post.data.coverImg | slice(0, 7) == 'http://' or post.data.coverImg | slice(0, 8) == 'https://' %}{{ post.data.coverImg }}{% elif post.data.coverImg | slice(0, 5) == '/img/' %}{{ post.data.coverImg }}{% else %}{{ post.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
                 </div>
                 {% endif %}
                 <div class="card-body p-4 d-flex flex-column">
@@ -207,7 +207,7 @@ pagination:
               <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 {% if post.data.coverImg %}
                 <div class="ratio ratio-4x3">
-                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                  <img src="{% if post.data.coverImg %}{% if post.data.coverImg | slice(0, 7) == 'http://' or post.data.coverImg | slice(0, 8) == 'https://' %}{{ post.data.coverImg }}{% elif post.data.coverImg | slice(0, 5) == '/img/' %}{{ post.data.coverImg }}{% else %}{{ post.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
                 </div>
                 {% endif %}
                 <div class="card-body p-4 d-flex flex-column">
@@ -233,7 +233,7 @@ pagination:
               <div class="card border border-1 border-secondary-subtle rounded-3 h-100">
                 {% if post.data.coverImg %}
                 <div class="ratio ratio-4x3">
-                  <img src="{{ post.data.coverImg }}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
+                  <img src="{% if post.data.coverImg %}{% if post.data.coverImg | slice(0, 7) == 'http://' or post.data.coverImg | slice(0, 8) == 'https://' %}{{ post.data.coverImg }}{% elif post.data.coverImg | slice(0, 5) == '/img/' %}{{ post.data.coverImg }}{% else %}{{ post.data.coverImg | url }}{% endif %}{% endif %}" class="w-100 h-100" alt="{{ post.data.title }}" style="object-fit: cover;">
                 </div>
                 {% endif %}
                 <div class="card-body p-4 d-flex flex-column">

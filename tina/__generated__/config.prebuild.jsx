@@ -77,21 +77,45 @@ var config_default = defineConfig({
             type: "image",
             name: "coverImg",
             label: "Cover Image",
-            description: "The main image for this post",
-            // Fix: Add parse function to handle external URLs
+            description: "The main image for this post (supports both external URLs and media manager)",
             parse: (filename) => {
               if (filename && (filename.startsWith("http://") || filename.startsWith("https://"))) {
                 return filename;
               }
+              if (filename && filename.startsWith("/img/")) {
+                return filename;
+              }
+              if (filename && !filename.startsWith("http") && !filename.startsWith("/")) {
+                return filename;
+              }
               return filename;
             },
-            // Fix: Add previewSrc to properly display external images in editor
             previewSrc: (src) => {
               if (src && (src.startsWith("http://") || src.startsWith("https://"))) {
                 return src;
               }
+              if (src && src.startsWith("/img/")) {
+                return src;
+              }
+              if (src && !src.startsWith("http") && !src.startsWith("/")) {
+                return `/img/${src}`;
+              }
               return src;
             }
+          },
+          {
+            type: "string",
+            name: "coverImgAttribution",
+            label: "Cover Image Attribution",
+            description: "Attribution for the cover image (e.g., 'Designed by Freepik')",
+            required: false
+          },
+          {
+            type: "string",
+            name: "coverImgAttributionUrl",
+            label: "Cover Image Attribution URL",
+            description: "URL for the attribution link (e.g., https://www.freepik.com)",
+            required: false
           },
           {
             type: "string",
@@ -126,7 +150,39 @@ var config_default = defineConfig({
             type: "rich-text",
             name: "body",
             label: "Body",
-            isBody: true
+            isBody: true,
+            templates: [
+              {
+                name: "imageWithAttribution",
+                label: "Image with Attribution",
+                fields: [
+                  {
+                    type: "string",
+                    name: "src",
+                    label: "Image URL",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "attribution",
+                    label: "Attribution Text",
+                    description: "e.g., Designed by Freepik"
+                  },
+                  {
+                    type: "string",
+                    name: "attributionUrl",
+                    label: "Attribution URL",
+                    description: "e.g., https://www.freepik.com"
+                  }
+                ]
+              }
+            ]
           }
         ],
         // Add this to your blog collection configuration
@@ -207,21 +263,45 @@ var config_default = defineConfig({
             type: "image",
             name: "coverImg",
             label: "Cover Image",
-            description: "The main image for this project",
-            // Fix: Add same parse function for projects
+            description: "The main image for this project (supports both external URLs and media manager)",
             parse: (filename) => {
               if (filename && (filename.startsWith("http://") || filename.startsWith("https://"))) {
                 return filename;
               }
+              if (filename && filename.startsWith("/img/")) {
+                return filename;
+              }
+              if (filename && !filename.startsWith("http") && !filename.startsWith("/")) {
+                return filename;
+              }
               return filename;
             },
-            // Fix: Add previewSrc to properly display external images in editor
             previewSrc: (src) => {
               if (src && (src.startsWith("http://") || src.startsWith("https://"))) {
                 return src;
               }
+              if (src && src.startsWith("/img/")) {
+                return src;
+              }
+              if (src && !src.startsWith("http") && !src.startsWith("/")) {
+                return `/img/${src}`;
+              }
               return src;
             }
+          },
+          {
+            type: "string",
+            name: "coverImgAttribution",
+            label: "Cover Image Attribution",
+            description: "Attribution for the cover image (e.g., 'Designed by Freepik')",
+            required: false
+          },
+          {
+            type: "string",
+            name: "coverImgAttributionUrl",
+            label: "Cover Image Attribution URL",
+            description: "URL for the attribution link (e.g., https://www.freepik.com)",
+            required: false
           },
           {
             type: "string",
@@ -258,7 +338,39 @@ var config_default = defineConfig({
             type: "rich-text",
             name: "body",
             label: "Body",
-            isBody: true
+            isBody: true,
+            templates: [
+              {
+                name: "imageWithAttribution",
+                label: "Image with Attribution",
+                fields: [
+                  {
+                    type: "string",
+                    name: "src",
+                    label: "Image URL",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "attribution",
+                    label: "Attribution Text",
+                    description: "e.g., Designed by Freepik"
+                  },
+                  {
+                    type: "string",
+                    name: "attributionUrl",
+                    label: "Attribution URL",
+                    description: "e.g., https://www.freepik.com"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

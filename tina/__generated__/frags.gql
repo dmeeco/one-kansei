@@ -5,6 +5,8 @@ fragment PostsParts on Posts {
   date
   featured
   coverImg
+  coverImgAttribution
+  coverImgAttributionUrl
   summary
   category
   tags
@@ -17,6 +19,8 @@ fragment ProjectsParts on Projects {
   shortTitle
   date
   coverImg
+  coverImgAttribution
+  coverImgAttributionUrl
   summary
   industry
   tags

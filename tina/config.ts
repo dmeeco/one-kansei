@@ -82,25 +82,53 @@ export default defineConfig({
             type: "image",
             name: "coverImg",
             label: "Cover Image",
-            description: "The main image for this post",
-            // Fix: Add parse function to handle external URLs
+            description: "The main image for this post (supports both external URLs and media manager)",
             parse: (filename) => {
-              // If it's an external URL (starts with http/https), return as-is
+              // If it's an external URL, return as-is
               if (filename && (filename.startsWith('http://') || filename.startsWith('https://'))) {
                 return filename;
               }
-              // Otherwise, treat as local file
+              // If it's a media manager path (starts with /img/), return as-is
+              if (filename && filename.startsWith('/img/')) {
+                return filename;
+              }
+              // If it's a relative path from media manager, return as-is
+              if (filename && !filename.startsWith('http') && !filename.startsWith('/')) {
+                return filename;
+              }
+              // Otherwise, return the filename as-is
               return filename;
             },
-            // Fix: Add previewSrc to properly display external images in editor
             previewSrc: (src) => {
-              // If it's an external URL, return as-is for preview
+              // If it's an external URL, return as-is
               if (src && (src.startsWith('http://') || src.startsWith('https://'))) {
                 return src;
               }
-              // Otherwise, use default TinaCMS preview logic
+              // If it's a media manager path, construct the full URL
+              if (src && src.startsWith('/img/')) {
+                return src;
+              }
+              // If it's a relative path, construct the full URL
+              if (src && !src.startsWith('http') && !src.startsWith('/')) {
+                return `/img/${src}`;
+              }
+              // Otherwise, return as-is
               return src;
             }
+          },
+          {
+            type: "string",
+            name: "coverImgAttribution",
+            label: "Cover Image Attribution",
+            description: "Attribution for the cover image (e.g., 'Designed by Freepik')",
+            required: false,
+          },
+          {
+            type: "string",
+            name: "coverImgAttributionUrl",
+            label: "Cover Image Attribution URL",
+            description: "URL for the attribution link (e.g., https://www.freepik.com)",
+            required: false,
           },
           {
             type: "string",
@@ -136,6 +164,38 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
+            templates: [
+              {
+                name: "imageWithAttribution",
+                label: "Image with Attribution",
+                fields: [
+                  {
+                    type: "string",
+                    name: "src",
+                    label: "Image URL",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "attribution",
+                    label: "Attribution Text",
+                    description: "e.g., Designed by Freepik",
+                  },
+                  {
+                    type: "string",
+                    name: "attributionUrl",
+                    label: "Attribution URL",
+                    description: "e.g., https://www.freepik.com",
+                  },
+                ],
+              },
+            ],
           },
         ],
                 // Add this to your blog collection configuration
@@ -223,25 +283,53 @@ export default defineConfig({
             type: "image",
             name: "coverImg",
             label: "Cover Image",
-            description: "The main image for this project",
-            // Fix: Add same parse function for projects
+            description: "The main image for this project (supports both external URLs and media manager)",
             parse: (filename) => {
-              // If it's an external URL (starts with http/https), return as-is
+              // If it's an external URL, return as-is
               if (filename && (filename.startsWith('http://') || filename.startsWith('https://'))) {
                 return filename;
               }
-              // Otherwise, treat as local file
+              // If it's a media manager path (starts with /img/), return as-is
+              if (filename && filename.startsWith('/img/')) {
+                return filename;
+              }
+              // If it's a relative path from media manager, return as-is
+              if (filename && !filename.startsWith('http') && !filename.startsWith('/')) {
+                return filename;
+              }
+              // Otherwise, return the filename as-is
               return filename;
             },
-            // Fix: Add previewSrc to properly display external images in editor
             previewSrc: (src) => {
-              // If it's an external URL, return as-is for preview
+              // If it's an external URL, return as-is
               if (src && (src.startsWith('http://') || src.startsWith('https://'))) {
                 return src;
               }
-              // Otherwise, use default TinaCMS preview logic
+              // If it's a media manager path, construct the full URL
+              if (src && src.startsWith('/img/')) {
+                return src;
+              }
+              // If it's a relative path, construct the full URL
+              if (src && !src.startsWith('http') && !src.startsWith('/')) {
+                return `/img/${src}`;
+              }
+              // Otherwise, return as-is
               return src;
             }
+          },
+          {
+            type: "string",
+            name: "coverImgAttribution",
+            label: "Cover Image Attribution",
+            description: "Attribution for the cover image (e.g., 'Designed by Freepik')",
+            required: false,
+          },
+          {
+            type: "string",
+            name: "coverImgAttributionUrl",
+            label: "Cover Image Attribution URL",
+            description: "URL for the attribution link (e.g., https://www.freepik.com)",
+            required: false,
           },
           {
             type: "string",
@@ -279,6 +367,38 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
+            templates: [
+              {
+                name: "imageWithAttribution",
+                label: "Image with Attribution",
+                fields: [
+                  {
+                    type: "string",
+                    name: "src",
+                    label: "Image URL",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "attribution",
+                    label: "Attribution Text",
+                    description: "e.g., Designed by Freepik",
+                  },
+                  {
+                    type: "string",
+                    name: "attributionUrl",
+                    label: "Attribution URL",
+                    description: "e.g., https://www.freepik.com",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },

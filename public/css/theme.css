@@ -12060,3 +12060,35 @@ body {
     padding: 0.5rem 0;
   }
 }
+
+.image-with-attribution-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.image-with-attribution-container .image-attribution {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  line-height: 1;
+  z-index: 10;
+}
+.image-with-attribution-container .image-attribution a {
+  color: white;
+  text-decoration: none;
+}
+.image-with-attribution-container .image-attribution a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+.image-with-attribution-container img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
