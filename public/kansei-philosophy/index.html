@@ -173,7 +173,37 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
     </div>
   </div>
 </div>
+    <!-- Dismissible Evolution Banner -->
+<div id="evolutionBanner" class="alert alert-info alert-dismissible fade show m-0 rounded-0 text-center border-0" role="alert" style="background: linear-gradient(135deg, #e3f2fd 0%, #f1f8e9 100%); border-bottom: 1px solid rgba(0,0,0,0.1);">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="flex-grow-1 px-3">
+        <small class="text-muted fw-medium">
+          Most solutions target symptoms, not systems — join us as we uncover the real levers of systemic change and continuously update this site with our discoveries.
+        </small>
+      </div>
+      <button type="button" class="btn-close btn-close-sm ms-2" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
 
+<script>
+// Store banner dismissal in sessionStorage (resets per session)
+document.addEventListener('DOMContentLoaded', function() {
+  const banner = document.getElementById('evolutionBanner');
+  
+  // Check if banner was dismissed this session
+  if (sessionStorage.getItem('evolutionBannerDismissed') === 'true') {
+    banner.style.display = 'none';
+  }
+  
+  // Listen for dismiss
+  banner.addEventListener('closed.bs.alert', function () {
+    sessionStorage.setItem('evolutionBannerDismissed', 'true');
+  });
+});
+</script>
+    
     <main>
       
 <div class="container my-vh-6">
