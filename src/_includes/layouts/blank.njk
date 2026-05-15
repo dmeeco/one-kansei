@@ -1,58 +1,12 @@
 <!doctype html>
 <html class="h-100" lang="{{ metadata.language }}" data-bs-theme="{{ global.colorMode }}">
-
   <head>
     {% include 'snippets/head.njk' %}
-      <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
   </head>
-
   <body>
-
-    {% include 'snippets/navbar.njk' %}
-    {% include 'snippets/evolution-banner.njk' %}
-    
     <main>
       {{ content | safe }}
     </main>
-
-    <footer class="container">
-      {% include 'snippets/footer.njk' %}
-    </footer>
-
-    <script src="{{ '/js/bootstrap.bundle.min.js' | url }}"></script>
-    <script>
-      if (typeof bootstrap === 'undefined') {
-        console.warn('Bootstrap JS not loaded! Offcanvas and other components may not work.');
-      }
-    </script>
-    <script>
-// Mobile navigation handler
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all mobile nav links
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-  
-  mobileNavLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent default link behavior
-      
-      // Get the URL from href attribute
-      const targetUrl = this.getAttribute('href');
-      
-      // Close the offcanvas first
-      const offcanvasElement = document.getElementById('mobileNavOffcanvas');
-      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || 
-                       new bootstrap.Offcanvas(offcanvasElement);
-      
-      offcanvas.hide();
-      
-      // Navigate after offcanvas closes
-      offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
-        window.location.href = targetUrl;
-      }, { once: true });
-    });
-  });
-});
-    </script>
   </body>
-
 </html>
